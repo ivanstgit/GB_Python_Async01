@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "gb-python-async01"
+version = "0.1.0"
+description = ""
+authors = ["Ivan St <ivanstgit>"]
+readme = "README.md"
+packages = [{include = "gb_python_async01"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+chardet = "^5.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
