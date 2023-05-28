@@ -1,0 +1,2 @@
+chardet==5.1.0 ; python_version >= "3.9" and python_version < "4.0"
+pyyaml==6.0 ; python_version >= "3.9" and python_version < "4.0"
