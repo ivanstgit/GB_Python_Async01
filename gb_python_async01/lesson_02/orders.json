@@ -1,0 +1,18 @@
+{
+    "orders": [
+        {
+            "item": "Поз. 48",
+            "quantity": 46.2,
+            "price": 500.46,
+            "buyer": "Roga inc",
+            "date": "2023-05-28"
+        },
+        {
+            "item": "Поз. 48",
+            "quantity": 46.2,
+            "price": 500.46,
+            "buyer": "Roga inc",
+            "date": "2023-05-28"
+        }
+    ]
+}
