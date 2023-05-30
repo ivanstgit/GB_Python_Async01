@@ -5,9 +5,9 @@ import os
 import socket
 import time
 
-from config import BaseConfig
-from serializers import JIMSerializerError, decode_message, encode_message
-from serializers import ProtocolJIM as prot
+from gb_python_async01.config import BaseConfig
+from gb_python_async01.serializers import JIMSerializerError, decode_message, encode_message
+from gb_python_async01.serializers import ProtocolJIM as prot
 
 config = BaseConfig
 
