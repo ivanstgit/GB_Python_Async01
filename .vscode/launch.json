@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Server",
+            "type": "python",
+            "request": "launch",
+            "program": "gb_python_async01/server.py -p 8080 -a 127.0.0.1",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Client",
+            "type": "python",
+            "request": "launch",
+            "program": "gb_python_async01/client.py 127.0.0.1 8080",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
