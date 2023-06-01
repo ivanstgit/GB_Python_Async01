@@ -2,21 +2,16 @@
 import socket
 import sys
 import time
-from config import BaseConfig
-from serializers import JIMSerializerError, ProtocolSerializerError, decode_message, encode_message
-from serializers import ProtocolJIM as prot
+from gb_python_async01.config import BaseConfig
+from gb_python_async01.serializers import JIMSerializerError, ProtocolSerializerError, decode_message, encode_message
+from gb_python_async01.serializers import ProtocolJIM as prot
 
 config = BaseConfig
 
 
-def init_socket():
-    srv_host = config.SERVER_HOST_DEFAULT
-    srv_port = config.SERVER_PORT_DEFAULT
-    if len(sys.argv) > 1:
-        srv_host = sys.argv[1]
-    if len(sys.argv) > 2:
-        srv_port = int(sys.argv[2])
-
+def init_socket(srv_host=config.SERVER_HOST_DEFAULT, srv_port=config.SERVER_PORT_DEFAULT):
+    # по логике это надо в отдельный класс выносить, но в ТЗ требуют функций...
+    # а в примере вообще логика взаимодействия через сокет по разным модулям/пакетам разнесена...
     srv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     srv_socket.connect((srv_host, srv_port))
     return srv_socket
@@ -38,11 +33,18 @@ def process_response(r):
     _error = r.get(prot.error)
     if _response and not _error:
         return _response
-    return _response + ':' + _error
+    return f'{_response}: {_error}'
 
 
 def main():
-    s = init_socket()
+
+    if len(sys.argv) > 2:
+        srv_host = sys.argv[1]
+        srv_port = int(sys.argv[2])
+        s = init_socket(srv_host=srv_host, srv_port=srv_port)
+    else:
+        s = init_socket()
+
     if s:
         try:
             request = generate_presence()
