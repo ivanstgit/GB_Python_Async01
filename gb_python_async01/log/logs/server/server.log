@@ -1,0 +1,10 @@
+2023-06-02 09:45:16,973 CRITICAL config_server.py Критическая ошибка
+2023-06-02 09:45:16,975 ERROR config_server.py Ошибка
+2023-06-02 09:45:16,976 DEBUG config_server.py Отладочная информация
+2023-06-02 09:45:16,976 INFO config_server.py Информационное сообщение
+2023-06-02 10:47:45,303 CRITICAL server.py Initialization error[Errno 98] Address already in use
+2023-06-02 10:47:56,478 CRITICAL server.py Initialization error[Errno 98] Address already in use
+2023-06-02 10:49:21,253 CRITICAL server.py Initialization error[Errno 98] Address already in use
+2023-06-02 10:50:23,205 CRITICAL server.py Initialization error[Errno 98] Address already in use
+2023-06-02 10:56:25,949 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-02 10:56:49,025 DEBUG server.py ('127.0.0.1', 54944): {'action': 'presence', 'time': 1685692609.024576, 'user': {'account_name': 'guest'}} => {'response': 200, 'time': 1685692609.0249543}

@@ -1,0 +1,9 @@
+2023-06-01 10:40:25,204 INFO client.py Starting client on 127.0.0.1:7777
+2023-06-02 09:48:17,797 CRITICAL config_client.py Критическая ошибка
+2023-06-02 09:48:17,818 ERROR config_client.py Ошибка
+2023-06-02 09:48:17,819 DEBUG config_client.py Отладочная информация
+2023-06-02 09:48:17,819 INFO config_client.py Информационное сообщение
+2023-06-02 10:45:04,002 CRITICAL client.py Connection error [Errno 111] Connection refused
+2023-06-02 10:56:49,024 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-02 10:56:49,024 DEBUG client.py  request: {'action': 'presence', 'time': 1685692609.024576, 'user': {'account_name': 'guest'}}
+2023-06-02 10:56:49,025 DEBUG client.py  response: 200
