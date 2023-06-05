@@ -2,7 +2,7 @@ import socket
 import unittest
 
 from gb_python_async01.client import *
-from gb_python_async01.serializers import ProtocolJIM as prot
+from gb_python_async01.common.serializers import ProtocolJIM as prot
 
 
 class TestClient(unittest.TestCase):

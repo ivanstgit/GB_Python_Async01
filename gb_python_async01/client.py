@@ -1,15 +1,19 @@
 # client.py 127.0.0.1 8081
+import os
 import socket
 import sys
 import time
-from gb_python_async01.config import BaseConfig
-from gb_python_async01.serializers import JIMSerializerError, ProtocolSerializerError, decode_message, encode_message
-from gb_python_async01.serializers import ProtocolJIM as prot
 
-config = BaseConfig
+from config import *
+from log.config_client import init_logger
+from common.serializers import JIMSerializerError, ProtocolSerializerError, decode_message, encode_message
+from common.serializers import ProtocolJIM as prot
+
+config = DevConfig
+logger = init_logger(config.DEBUG, config.TESTING)
 
 
-def init_socket(srv_host=config.SERVER_HOST_DEFAULT, srv_port=config.SERVER_PORT_DEFAULT):
+def init_socket(srv_host, srv_port):
     # по логике это надо в отдельный класс выносить, но в ТЗ требуют функций...
     # а в примере вообще логика взаимодействия через сокет по разным модулям/пакетам разнесена...
     srv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -41,25 +45,30 @@ def main():
     if len(sys.argv) > 2:
         srv_host = sys.argv[1]
         srv_port = int(sys.argv[2])
-        s = init_socket(srv_host=srv_host, srv_port=srv_port)
     else:
-        s = init_socket()
+        srv_host = config.SERVER_HOST_DEFAULT
+        srv_port = config.SERVER_PORT_DEFAULT
 
-    if s:
-        try:
-            request = generate_presence()
-            # print(request)
-            message = encode_message(request)
-            s.send(message)
+    s = None
+    try:
+        logger.info(f'Connecting to {srv_host}:{srv_port}')
+        s = init_socket(srv_host=srv_host, srv_port=srv_port)
 
-            message = s.recv(config.MESSAGE_MAX_SIZE)
-            response = decode_message(message)
-            # print(response)
-            print(process_response(response))
+        request = generate_presence()
+        logger.debug(f' request: {request}')
+        message = encode_message(request)
+        s.send(message)
 
-        except JIMSerializerError:
-            print('Serialization error')
-        finally:
+        message = s.recv(config.MESSAGE_MAX_SIZE)
+        response = decode_message(message)
+        logger.debug(f' response: {process_response(response)}')
+
+    except ConnectionRefusedError as e:
+        logger.critical(f'Connection error {e}')
+    except JIMSerializerError:
+        logger.critical('Serialization error')
+    finally:
+        if s:
             s.close()
 
 
