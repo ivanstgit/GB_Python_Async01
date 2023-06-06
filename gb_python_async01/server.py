@@ -1,13 +1,12 @@
 # Server app
 # server.py -p 8080 -a 127.0.0.1
 import argparse
-import os
 import socket
-import sys
 import time
 
 
 from config import *
+from devutils.debug_decorators import Log
 from log.config_server import init_logger
 from common.serializers import JIMSerializerError, decode_message, encode_message
 from common.serializers import ProtocolJIM as prot
@@ -16,6 +15,7 @@ config = DevConfig
 logger = init_logger(config.DEBUG, config.TESTING)
 
 
+@Log(logger)
 def process_request(request):
     _action = request.get(prot.action)
     _time = request.get(prot.time)
@@ -32,6 +32,7 @@ def process_request(request):
     }
 
 
+@Log(logger)
 def init_socket(srv_host, srv_port):
     srv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     srv_socket.bind((srv_host, srv_port))
@@ -39,6 +40,7 @@ def init_socket(srv_host, srv_port):
     return srv_socket
 
 
+@Log(logger)
 def run(s):
     while True:
         client, client_address = s.accept()

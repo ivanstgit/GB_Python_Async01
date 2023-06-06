@@ -5,6 +5,7 @@ import sys
 import time
 
 from config import *
+from devutils.debug_decorators import Log
 from log.config_client import init_logger
 from common.serializers import JIMSerializerError, ProtocolSerializerError, decode_message, encode_message
 from common.serializers import ProtocolJIM as prot
@@ -13,6 +14,7 @@ config = DevConfig
 logger = init_logger(config.DEBUG, config.TESTING)
 
 
+@Log(logger)
 def init_socket(srv_host, srv_port):
     # по логике это надо в отдельный класс выносить, но в ТЗ требуют функций...
     # а в примере вообще логика взаимодействия через сокет по разным модулям/пакетам разнесена...
@@ -21,6 +23,7 @@ def init_socket(srv_host, srv_port):
     return srv_socket
 
 
+@Log(logger)
 def generate_presence():
     return {
         prot.action: 'presence',
@@ -31,6 +34,7 @@ def generate_presence():
     }
 
 
+@Log(logger)
 def process_response(r):
     _response = r.get(prot.response)
     _time = r.get(prot.time)

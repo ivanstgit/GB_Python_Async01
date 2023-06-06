@@ -7,3 +7,21 @@
 2023-06-02 10:56:49,024 INFO client.py Connecting to 127.0.0.1:7777
 2023-06-02 10:56:49,024 DEBUG client.py  request: {'action': 'presence', 'time': 1685692609.024576, 'user': {'account_name': 'guest'}}
 2023-06-02 10:56:49,025 DEBUG client.py  response: 200
+2023-06-05 20:09:06,598 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-05 20:09:06,604 DEBUG client.py Функция init_socket модуля client.py вызвана c параметрами (), {'srv_host': '127.0.0.1', 'srv_port': 7777} из модуля client.py, функции main
+2023-06-05 20:09:06,605 DEBUG client.py Функция generate_presence модуля client.py вызвана c параметрами (), {} из модуля client.py, функции main
+2023-06-05 20:09:06,605 DEBUG client.py  request: {'action': 'presence', 'time': 1685984946.6053884, 'user': {'account_name': 'guest'}}
+2023-06-05 20:09:06,609 DEBUG client.py Функция process_response модуля client.py вызвана c параметрами ({'response': 200, 'time': 1685984946.6092944},), {} из модуля client.py, функции main
+2023-06-05 20:09:06,610 DEBUG client.py  response: 200
+2023-06-05 20:09:07,709 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-05 20:09:07,723 DEBUG client.py Функция init_socket модуля client.py вызвана c параметрами (), {'srv_host': '127.0.0.1', 'srv_port': 7777} из модуля client.py, функции main
+2023-06-05 20:09:07,723 DEBUG client.py Функция generate_presence модуля client.py вызвана c параметрами (), {} из модуля client.py, функции main
+2023-06-05 20:09:07,723 DEBUG client.py  request: {'action': 'presence', 'time': 1685984947.7237208, 'user': {'account_name': 'guest'}}
+2023-06-05 20:09:07,724 DEBUG client.py Функция process_response модуля client.py вызвана c параметрами ({'response': 200, 'time': 1685984947.724325},), {} из модуля client.py, функции main
+2023-06-05 20:09:07,724 DEBUG client.py  response: 200
+2023-06-05 20:09:08,698 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-05 20:09:08,703 DEBUG client.py Функция init_socket модуля client.py вызвана c параметрами (), {'srv_host': '127.0.0.1', 'srv_port': 7777} из модуля client.py, функции main
+2023-06-05 20:09:08,704 DEBUG client.py Функция generate_presence модуля client.py вызвана c параметрами (), {} из модуля client.py, функции main
+2023-06-05 20:09:08,704 DEBUG client.py  request: {'action': 'presence', 'time': 1685984948.7042012, 'user': {'account_name': 'guest'}}
+2023-06-05 20:09:08,705 DEBUG client.py Функция process_response модуля client.py вызвана c параметрами ({'response': 200, 'time': 1685984948.704831},), {} из модуля client.py, функции main
+2023-06-05 20:09:08,705 DEBUG client.py  response: 200
