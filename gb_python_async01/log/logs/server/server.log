@@ -1,19 +1,4 @@
-2023-06-02 09:45:16,973 CRITICAL config_server.py Критическая ошибка
-2023-06-02 09:45:16,975 ERROR config_server.py Ошибка
-2023-06-02 09:45:16,976 DEBUG config_server.py Отладочная информация
-2023-06-02 09:45:16,976 INFO config_server.py Информационное сообщение
-2023-06-02 10:47:45,303 CRITICAL server.py Initialization error[Errno 98] Address already in use
-2023-06-02 10:47:56,478 CRITICAL server.py Initialization error[Errno 98] Address already in use
-2023-06-02 10:49:21,253 CRITICAL server.py Initialization error[Errno 98] Address already in use
-2023-06-02 10:50:23,205 CRITICAL server.py Initialization error[Errno 98] Address already in use
-2023-06-02 10:56:25,949 INFO server.py Starting server on 127.0.0.1:7777
-2023-06-02 10:56:49,025 DEBUG server.py ('127.0.0.1', 54944): {'action': 'presence', 'time': 1685692609.024576, 'user': {'account_name': 'guest'}} => {'response': 200, 'time': 1685692609.0249543}
-2023-06-05 20:09:02,340 INFO server.py Starting server on 127.0.0.1:7777
-2023-06-05 20:09:02,347 DEBUG server.py Функция init_socket модуля server.py вызвана c параметрами ('127.0.0.1', 7777), {} из модуля server.py, функции main
-2023-06-05 20:09:02,347 DEBUG server.py Функция run модуля server.py вызвана c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)>,), {} из модуля server.py, функции main
-2023-06-05 20:09:06,609 DEBUG server.py Функция process_request модуля server.py вызвана c параметрами ({'action': 'presence', 'time': 1685984946.6053884, 'user': {'account_name': 'guest'}},), {} из модуля server.py, функции run
-2023-06-05 20:09:06,609 DEBUG server.py ('127.0.0.1', 53146): {'action': 'presence', 'time': 1685984946.6053884, 'user': {'account_name': 'guest'}} => {'response': 200, 'time': 1685984946.6092944}
-2023-06-05 20:09:07,724 DEBUG server.py Функция process_request модуля server.py вызвана c параметрами ({'action': 'presence', 'time': 1685984947.7237208, 'user': {'account_name': 'guest'}},), {} из модуля server.py, функции run
-2023-06-05 20:09:07,724 DEBUG server.py ('127.0.0.1', 53160): {'action': 'presence', 'time': 1685984947.7237208, 'user': {'account_name': 'guest'}} => {'response': 200, 'time': 1685984947.724325}
-2023-06-05 20:09:08,704 DEBUG server.py Функция process_request модуля server.py вызвана c параметрами ({'action': 'presence', 'time': 1685984948.7042012, 'user': {'account_name': 'guest'}},), {} из модуля server.py, функции run
-2023-06-05 20:09:08,704 DEBUG server.py ('127.0.0.1', 37740): {'action': 'presence', 'time': 1685984948.7042012, 'user': {'account_name': 'guest'}} => {'response': 200, 'time': 1685984948.704831}
+2023-06-18 15:00:27,736 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687089623.7440176, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test 2'}
+2023-06-18 15:00:28,385 DEBUG server.py Sending response Responce 200: OK
+2023-06-18 15:00:41,541 DEBUG server.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687089623.7440176, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test 2'} to <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 34370)> at ('127.0.0.1', 34370)
+2023-06-18 15:00:41,542 DEBUG server.py Response Responce 200: OK
