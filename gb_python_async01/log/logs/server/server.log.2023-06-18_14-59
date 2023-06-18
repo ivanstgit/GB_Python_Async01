@@ -1,0 +1,4 @@
+2023-06-18 14:59:09,730 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687089545.5140052, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test 1'}
+2023-06-18 14:59:11,584 DEBUG server.py Sending response Responce 200: OK
+2023-06-18 14:59:40,501 DEBUG server.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687089545.5140052, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test 1'} to <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 34370)> at ('127.0.0.1', 34370)
+2023-06-18 14:59:53,410 DEBUG server.py Response Responce 200: OK

@@ -1,1 +1,2 @@
-poetry export --without-hashes --format=requirements.txt > requirements.txt
+python gb_python_async01/server.py -p 8080 -a 127.0.0.1
+python gb_python_async01/client.py 127.0.0.1 8080

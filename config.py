@@ -7,9 +7,12 @@ class BaseConfig(object):
     SERVER_HOST_DEFAULT = '127.0.0.1'
     SERVER_PORT_DEFAULT = 7777
 
-    CONNECTION_LIMIT = 5
+    SERVER_CONNECTION_LIMIT = 5
+    SERVER_TIMEOUT = 0.5
 
     MESSAGE_MAX_SIZE = 4096
+
+    ANONIMOUS_USER = 'guest'
 
 
 class DevConfig(BaseConfig):

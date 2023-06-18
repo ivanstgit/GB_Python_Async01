@@ -25,3 +25,29 @@
 2023-06-05 20:09:08,704 DEBUG client.py  request: {'action': 'presence', 'time': 1685984948.7042012, 'user': {'account_name': 'guest'}}
 2023-06-05 20:09:08,705 DEBUG client.py Функция process_response модуля client.py вызвана c параметрами ({'response': 200, 'time': 1685984948.704831},), {} из модуля client.py, функции main
 2023-06-05 20:09:08,705 DEBUG client.py  response: 200
+2023-06-18 14:45:44,763 INFO client.py Connecting to 127.0.0.1:7777, mode r
+2023-06-18 14:45:44,764 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-18 14:45:44,764 DEBUG client.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687088744.7642963, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-18 14:45:54,429 DEBUG client.py Response <gb_python_async01.common.model.message.Response object at 0x7fb1edc96dc0>
+2023-06-18 14:48:27,016 INFO client.py Connecting to 127.0.0.1:7777, mode w
+2023-06-18 14:48:27,016 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-18 14:48:27,016 DEBUG client.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687088907.016315, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-18 14:48:38,221 DEBUG client.py Response <gb_python_async01.common.model.message.Response object at 0x7f37a3afed00>
+2023-06-18 14:49:04,383 DEBUG client.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687088944.383079, '_user_account': None, '_user_status': None, '_receiver': '', '_sender': 'guest', '_message': 'test1'}
+2023-06-18 14:49:12,131 DEBUG client.py Response <gb_python_async01.common.model.message.Response object at 0x7f37a3afed60>
+2023-06-18 14:49:43,219 DEBUG client.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687088944.383079, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test1'}
+2023-06-18 14:50:51,065 DEBUG client.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687089051.0658977, '_user_account': None, '_user_status': None, '_receiver': '', '_sender': 'guest', '_message': 'test2'}
+2023-06-18 14:58:04,928 INFO client.py Connecting to 127.0.0.1:7777, mode r
+2023-06-18 14:58:04,929 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-18 14:58:04,929 DEBUG client.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687089484.9294775, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-18 14:58:13,528 DEBUG client.py Response Responce 200: OK
+2023-06-18 14:58:32,752 INFO client.py Connecting to 127.0.0.1:7777, mode w
+2023-06-18 14:58:32,752 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-18 14:58:32,752 DEBUG client.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687089512.7528775, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-18 14:58:39,192 DEBUG client.py Response Responce 200: OK
+2023-06-18 14:59:05,514 DEBUG client.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687089545.5140052, '_user_account': None, '_user_status': None, '_receiver': '', '_sender': 'guest', '_message': 'test 1'}
+2023-06-18 14:59:11,585 DEBUG client.py Response Responce 200: OK
+2023-06-18 14:59:42,842 DEBUG client.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687089545.5140052, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test 1'}
+2023-06-18 15:00:23,744 DEBUG client.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687089623.7440176, '_user_account': None, '_user_status': None, '_receiver': '', '_sender': 'guest', '_message': 'test 2'}
+2023-06-18 15:00:28,386 DEBUG client.py Response Responce 200: OK
+2023-06-18 15:00:41,542 DEBUG client.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687089623.7440176, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test 2'}

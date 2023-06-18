@@ -1,0 +1,7 @@
+2023-06-18 14:57:45,301 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-18 14:58:04,929 DEBUG endpoints.py Client ('127.0.0.1', 34370) connected
+2023-06-18 14:58:12,689 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687089484.9294775, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-18 14:58:13,527 DEBUG server.py Sending response Responce 200: OK
+2023-06-18 14:58:32,753 DEBUG endpoints.py Client ('127.0.0.1', 33088) connected
+2023-06-18 14:58:38,236 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687089512.7528775, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-18 14:58:39,191 DEBUG server.py Sending response Responce 200: OK
