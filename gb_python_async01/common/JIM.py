@@ -16,7 +16,7 @@ class MessageSerializerFactory():
             'presence': ActionPresenceSerializer,  # 'присутствие. Сервисное сообщение для извещения сервера о присутствии клиента online',
             'prоbe': None,  # 'проверка присутствия. Сервисное сообщение от сервера для проверки присутствии клиента online',
             'msg': ActionMessageSerializer,  # 'простое сообщение пользователю или в чат',
-            'quit': None,  # 'отключение от сервера',
+            'quit': ActionExitSerializer,  # 'отключение от сервера',
             'authenticate': None,  # 'авторизация на сервере',
             'join': None,  # 'присоединиться к чату',
             'leave': None,  # 'покинуть чат',

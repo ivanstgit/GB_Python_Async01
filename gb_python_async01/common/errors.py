@@ -2,7 +2,8 @@ from typing import Any
 
 
 class JIMNotImplementedError(NotImplementedError):
-    pass
+    def __str__(self):
+        return f'Action or Response code is not implemented'
 
 
 class JIMValidationError(Exception):
@@ -19,9 +20,14 @@ class JIMValidationError(Exception):
 
 class JIMSerializerError(Exception):
     def __str__(self):
-        'Serialization error'
+        return 'Serialization error'
 
 
 class EndpointCommunicationError(Exception):
     def __str__(self):
-        'Communication error'
+        return 'Communication error'
+
+
+class EndpointTimeout(Exception):
+    def __str__(self):
+        return 'timeout'

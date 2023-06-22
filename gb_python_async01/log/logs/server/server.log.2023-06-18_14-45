@@ -1,4 +1,0 @@
-2023-06-18 14:45:29,435 INFO server.py Starting server on 127.0.0.1:7777
-2023-06-18 14:45:48,676 DEBUG endpoints.py Client ('127.0.0.1', 59458) connected
-2023-06-18 14:45:54,428 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687088744.7642963, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
-2023-06-18 14:45:54,428 DEBUG server.py Sending response <gb_python_async01.common.model.message.Response200 object at 0x7f85681b2a30>

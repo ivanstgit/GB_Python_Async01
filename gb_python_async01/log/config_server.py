@@ -19,7 +19,7 @@ def init_logger(debug=False, testing=False):
     stream_handler.setLevel(logging.ERROR)
 
     file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs', 'server', 'server.log')
-    file_handler = TimedRotatingFileHandler(file_path, encoding='utf8', interval=1, when='M')
+    file_handler = TimedRotatingFileHandler(file_path, encoding='utf8', interval=1, when='D')
     file_handler.setFormatter(formatter)
 
     logger = logging.getLogger(LOGGER_NAME)

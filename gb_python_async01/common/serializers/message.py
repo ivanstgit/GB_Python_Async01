@@ -82,6 +82,28 @@ class ActionMessageSerializer(MessageSerializer):
             raise JIMValidationError
 
 
+class ActionExitSerializer(MessageSerializer):
+
+    def to_dict(self, msg: ActionExit) -> dict:
+        return {
+            self.action: msg.action,
+            self.time: msg.time
+        }
+
+    def from_dict(self, msg: dict) -> ActionExit:
+        time = msg.get(self.time)
+        if not time:
+            raise JIMValidationError(self.time)
+
+        message = msg.get(self.message)
+        if not message:
+            raise JIMValidationError(self.time)
+        try:
+            return ActionExit(time=time)
+        except Exception as e:
+            raise JIMValidationError
+
+
 class ResponseSerializer(MessageSerializer):
     def to_dict(self, msg: Response) -> dict:
         res = {self.response: str(msg.response)}

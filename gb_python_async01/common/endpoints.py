@@ -1,7 +1,7 @@
 import socket
 import json
 
-from gb_python_async01.common.errors import EndpointCommunicationError
+from gb_python_async01.common.errors import EndpointCommunicationError, EndpointTimeout
 
 
 class Endpoint():
@@ -38,12 +38,15 @@ class Endpoint():
         try:
             self.resource.send(message)
         except (ConnectionResetError, ConnectionError, ConnectionAbortedError) as e:
-            self.logger.critical(f'Put failed with {e}', stacklevel=2)
+            self.logger.error(f'Put failed with {e}', stacklevel=2)
             raise EndpointCommunicationError(e)
 
     def get_message(self) -> bytes:
         try:
-            return self.resource.recv(self.maxsize)
+            data = self.resource.recv(self.maxsize)
+            return data
+        except socket.timeout:
+            raise EndpointTimeout()
         except (ConnectionResetError, ConnectionError, ConnectionAbortedError) as e:
             self.logger.critical(f'Get message failed with {e}', stacklevel=2)
             raise EndpointCommunicationError(e)
@@ -56,8 +59,10 @@ class Endpoint():
 
 
 class ClientEndpoint(Endpoint):
-    def connect_to_server(self, host: str, port: int):
+    def connect_to_server(self, host: str, port: int, timeout=0.0):
         try:
+            if timeout > 0.0:
+                self.resource.settimeout(timeout)
             self.logger.info(f'Connecting to {host}:{port}', stacklevel=2)
             self.resource.connect((host, port))
             self.is_connected = True
