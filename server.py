@@ -5,6 +5,7 @@ import select
 import time
 
 from config import *
+from gb_python_async01.common.descriptors import EndpointHost, EndpointPort
 from gb_python_async01.common.endpoints import *
 from gb_python_async01.common.model.message import *
 from gb_python_async01.common.JIM import JIMSerializer
@@ -15,6 +16,9 @@ from gb_python_async01.log.config_server import init_logger
 
 
 class Server():
+    port = EndpointPort()
+    host = EndpointHost()
+
     def __init__(self):
         self.config = DevConfig
         self.logger = init_logger(self.config.DEBUG, self.config.TESTING)
@@ -68,10 +72,10 @@ class Server():
             client.close()
 
     def run(self, srv_host, srv_port: int):
-        self.host = srv_host or self.config.SERVER_HOST_DEFAULT
-        self.port = srv_port or self.config.SERVER_PORT_DEFAULT
-
         try:
+            self.host = srv_host or self.config.SERVER_HOST_DEFAULT
+            self.port = srv_port or self.config.SERVER_PORT_DEFAULT
+
             self.conn.start_server(self.host, self.port,
                                    self.config.SERVER_CONNECTION_LIMIT,
                                    self.config.SERVER_TIMEOUT)

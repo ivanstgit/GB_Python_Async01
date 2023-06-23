@@ -31,3 +31,16 @@ class EndpointCommunicationError(Exception):
 class EndpointTimeout(Exception):
     def __str__(self):
         return 'timeout'
+
+
+class EndpointParamError(Exception):
+    def __init__(self, *args: object, param=None, error_desc='') -> None:
+        super().__init__(*args)
+        self._param = param
+        self._error_desc = error_desc
+
+    def __str__(self):
+        if self._param:
+            return f'Endpoint invalid parameter {self._param}: {self._error_desc}'
+
+        return f'EndpointParamError'

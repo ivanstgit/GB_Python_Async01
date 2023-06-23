@@ -698,3 +698,7 @@
 2023-06-22 16:41:54,331 DEBUG client.py test2 Reader: try to lock False
 2023-06-22 16:41:54,331 DEBUG client.py test2 Reader: get lock True
 2023-06-22 16:41:54,832 DEBUG client.py test2 Reader: unlocked False
+2023-06-23 17:46:14,840 INFO client.py Connecting to 127.0.0.1:7777, user guest
+2023-06-23 17:46:14,841 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-23 17:46:14,841 CRITICAL client.py Connection error [Errno 111] Connection refused
+2023-06-23 17:46:14,841 CRITICAL client.py Communication error
