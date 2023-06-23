@@ -61,7 +61,7 @@ class Action(Message):
 
     @property
     def receiver(self):
-        return self._sender
+        return self._receiver
 
     @property
     def message(self):
@@ -92,6 +92,15 @@ class ActionMessage(Action):
         self._receiver = receiver
         self._sender = sender
         self._message = message
+
+
+class ActionExit(Action):
+    @staticmethod
+    def get_action():
+        return 'quit'
+
+    def __init__(self, time: float):
+        super().__init__(ActionExit.get_action(), time)
 
 
 class Response(Message):

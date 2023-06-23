@@ -1,5 +1,0 @@
-2023-06-18 14:48:27,016 DEBUG endpoints.py Client ('127.0.0.1', 33350) connected
-2023-06-18 14:48:37,499 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687088907.016315, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
-2023-06-18 14:48:38,220 DEBUG server.py Sending response <gb_python_async01.common.model.message.Response200 object at 0x7f8569212490>
-2023-06-18 14:49:10,172 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687088944.383079, '_user_account': None, '_user_status': None, '_receiver': 'guest', '_sender': 'guest', '_message': 'test1'}
-2023-06-18 14:49:12,130 DEBUG server.py Sending response <gb_python_async01.common.model.message.Response200 object at 0x7f856921c6d0>
