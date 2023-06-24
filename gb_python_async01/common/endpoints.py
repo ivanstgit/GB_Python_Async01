@@ -2,9 +2,10 @@ import socket
 import json
 
 from gb_python_async01.common.errors import EndpointCommunicationError, EndpointTimeout
+from gb_python_async01.common.metaclasses import EndpointVerifier, ClientEndpointVerifier, ServerEndpointVerifier
 
 
-class Endpoint():
+class Endpoint(metaclass=EndpointVerifier):
     """ Communication class"""
 
     def __init__(self, logger, message_max_size, address=None, from_existing_resource=None):
@@ -58,7 +59,7 @@ class Endpoint():
         self.resource.close()
 
 
-class ClientEndpoint(Endpoint):
+class ClientEndpoint(Endpoint, metaclass=ClientEndpointVerifier):
     def connect_to_server(self, host: str, port: int, timeout=0.0):
         try:
             if timeout > 0.0:
@@ -72,7 +73,7 @@ class ClientEndpoint(Endpoint):
             raise EndpointCommunicationError(e)
 
 
-class ServerEndpoint(Endpoint):
+class ServerEndpoint(Endpoint, metaclass=ServerEndpointVerifier):
     def start_server(self, host: str, port: int, connection_limit: int, timeout: float):
         try:
             self.logger.info(f'Starting server on {host}:{port}', stacklevel=2)

@@ -42,3 +42,6 @@
 2023-06-22 16:41:55,329 DEBUG server.py Sending response Responce 400: Bad Request
 2023-06-22 16:41:55,329 ERROR server.py Put failed with [Errno 32] Broken pipe
 2023-06-22 16:41:55,329 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 41156) disconnected
+2023-06-23 18:09:37,829 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-23 18:11:56,137 CRITICAL server.py Server error Endpoint invalid parameter port: Попытка запуска сервера с указанием неподходящего порта 45345634656. Допустимы адреса с 1024 до 65535.
+2023-06-23 18:27:44,638 CRITICAL server.py Server error Endpoint invalid parameter host: Попытка запуска сервера с указанием неподходящего адреса 127.0.0.1.6. 
