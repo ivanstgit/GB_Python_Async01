@@ -45,3 +45,132 @@
 2023-06-23 18:09:37,829 INFO server.py Starting server on 127.0.0.1:7777
 2023-06-23 18:11:56,137 CRITICAL server.py Server error Endpoint invalid parameter port: Попытка запуска сервера с указанием неподходящего порта 45345634656. Допустимы адреса с 1024 до 65535.
 2023-06-23 18:27:44,638 CRITICAL server.py Server error Endpoint invalid parameter host: Попытка запуска сервера с указанием неподходящего адреса 127.0.0.1.6. 
+2023-06-26 16:33:28,618 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-26 17:04:54,509 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-26 17:05:01,395 DEBUG endpoints.py Client ('127.0.0.1', 50606) connected
+2023-06-26 17:05:01,396 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50606)> at ('127.0.0.1', 50606) connected
+2023-06-26 17:05:01,396 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788301.395759, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:01,396 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50606)> at ('127.0.0.1', 50606) authorized with name test1
+2023-06-26 17:05:01,680 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:05:01,784 DEBUG endpoints.py Client ('127.0.0.1', 50622) connected
+2023-06-26 17:05:01,784 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50622)> at ('127.0.0.1', 50622) connected
+2023-06-26 17:05:01,784 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788301.7840726, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:01,785 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50622)> at ('127.0.0.1', 50622) authorized with name test2
+2023-06-26 17:05:01,800 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:05:01,974 DEBUG endpoints.py Client ('127.0.0.1', 50634) connected
+2023-06-26 17:05:01,974 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50634)> at ('127.0.0.1', 50634) connected
+2023-06-26 17:05:01,974 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788301.9740303, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:01,974 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 50634)> at ('127.0.0.1', 50634) authorized with name test3
+2023-06-26 17:05:01,998 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:05:08,324 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:08,523 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:08,523 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:08,523 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:05:08,523 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 50634) disconnected
+2023-06-26 17:05:11,360 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:12,360 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:12,360 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:12,360 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:05:12,360 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 50622) disconnected
+2023-06-26 17:05:16,102 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:16,256 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:16,256 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:05:16,256 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:05:16,256 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 50606) disconnected
+2023-06-26 17:07:29,599 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-26 17:07:34,203 DEBUG endpoints.py Client ('127.0.0.1', 44300) connected
+2023-06-26 17:07:34,203 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44300)> at ('127.0.0.1', 44300) connected
+2023-06-26 17:07:34,203 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788454.203367, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:34,203 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44300)> at ('127.0.0.1', 44300) authorized with name test1
+2023-06-26 17:07:34,240 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:07:34,306 DEBUG endpoints.py Client ('127.0.0.1', 44308) connected
+2023-06-26 17:07:34,307 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44308)> at ('127.0.0.1', 44308) connected
+2023-06-26 17:07:34,307 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788454.3067577, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:34,307 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44308)> at ('127.0.0.1', 44308) authorized with name test2
+2023-06-26 17:07:34,321 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:07:34,438 DEBUG endpoints.py Client ('127.0.0.1', 44324) connected
+2023-06-26 17:07:34,438 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44324)> at ('127.0.0.1', 44324) connected
+2023-06-26 17:07:34,438 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788454.4382472, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:34,438 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44324)> at ('127.0.0.1', 44324) authorized with name test3
+2023-06-26 17:07:34,500 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:07:40,823 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:41,011 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:41,012 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:41,012 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:07:41,012 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 44324) disconnected
+2023-06-26 17:07:44,421 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:44,859 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:44,859 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:44,859 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:07:44,859 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 44308) disconnected
+2023-06-26 17:07:47,181 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:47,769 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:47,769 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:07:47,769 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:07:47,769 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 44300) disconnected
+2023-06-26 17:10:59,191 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-26 17:11:02,331 DEBUG endpoints.py Client ('127.0.0.1', 38556) connected
+2023-06-26 17:11:02,331 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 38556)> at ('127.0.0.1', 38556) connected
+2023-06-26 17:11:02,331 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788662.3315597, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:02,331 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 38556)> at ('127.0.0.1', 38556) authorized with name test1
+2023-06-26 17:11:02,454 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:11:02,668 DEBUG endpoints.py Client ('127.0.0.1', 38558) connected
+2023-06-26 17:11:02,668 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 38558)> at ('127.0.0.1', 38558) connected
+2023-06-26 17:11:02,668 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788662.6679373, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:02,668 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 38558)> at ('127.0.0.1', 38558) authorized with name test2
+2023-06-26 17:11:02,678 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:11:03,125 DEBUG endpoints.py Client ('127.0.0.1', 38560) connected
+2023-06-26 17:11:03,126 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 38560)> at ('127.0.0.1', 38560) connected
+2023-06-26 17:11:03,126 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788663.1258698, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:03,126 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 38560)> at ('127.0.0.1', 38560) authorized with name test3
+2023-06-26 17:11:03,132 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:11:09,469 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:09,647 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:09,647 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:09,648 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:11:09,648 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 38560) disconnected
+2023-06-26 17:11:12,281 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:13,272 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:13,273 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:13,273 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:11:13,273 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 38558) disconnected
+2023-06-26 17:11:15,654 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:16,008 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:16,008 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:11:16,008 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:11:16,008 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 38556) disconnected
+2023-06-26 17:14:45,335 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-26 17:14:56,258 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-26 17:16:00,292 DEBUG endpoints.py Client ('127.0.0.1', 44538) connected
+2023-06-26 17:16:00,292 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44538)> at ('127.0.0.1', 44538) connected
+2023-06-26 17:16:00,293 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687788960.2915883, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:16:00,293 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44538)> at ('127.0.0.1', 44538) authorized with name guest
+2023-06-26 17:16:00,376 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:18:58,840 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:20:26,729 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:20:26,729 DEBUG server.py Sending response Responce 400: Bad Request
+2023-06-26 17:20:26,730 ERROR server.py Put failed with [Errno 32] Broken pipe
+2023-06-26 17:20:26,730 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777)> at ('127.0.0.1', 44538) disconnected
+2023-06-26 17:21:02,980 INFO server.py Starting server on 127.0.0.1:7777
+2023-06-26 17:21:06,594 DEBUG endpoints.py Client ('127.0.0.1', 42748) connected
+2023-06-26 17:21:06,594 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42748)> at ('127.0.0.1', 42748) connected
+2023-06-26 17:21:06,594 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687789266.594351, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:06,594 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42748)> at ('127.0.0.1', 42748) authorized with name test1
+2023-06-26 17:21:06,621 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:21:06,753 DEBUG endpoints.py Client ('127.0.0.1', 42752) connected
+2023-06-26 17:21:06,753 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42752)> at ('127.0.0.1', 42752) connected
+2023-06-26 17:21:06,754 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687789266.7534795, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:06,754 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42752)> at ('127.0.0.1', 42752) authorized with name test2
+2023-06-26 17:21:06,796 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:21:06,837 DEBUG endpoints.py Client ('127.0.0.1', 42760) connected
+2023-06-26 17:21:06,837 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42760)> at ('127.0.0.1', 42760) connected
+2023-06-26 17:21:06,837 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'presence', '_time': 1687789266.8371315, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:06,837 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42760)> at ('127.0.0.1', 42760) authorized with name test3
+2023-06-26 17:21:06,844 DEBUG server.py Sending response Responce 200: OK
+2023-06-26 17:21:13,237 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'quit', '_time': 1687789272.9965422, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:13,237 INFO server.py Client <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42760)> at ('127.0.0.1', 42760) disconnected
+2023-06-26 17:21:18,165 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'quit', '_time': 1687789278.1649668, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:18,165 INFO server.py Client <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42752)> at ('127.0.0.1', 42752) disconnected
+2023-06-26 17:21:21,015 DEBUG server.py Accepting Action {'_type': 'action', '_action': 'quit', '_time': 1687789280.9890676, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:21,015 INFO server.py Client <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 42748)> at ('127.0.0.1', 42748) disconnected
+

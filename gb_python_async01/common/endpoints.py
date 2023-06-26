@@ -8,7 +8,7 @@ from gb_python_async01.common.metaclasses import EndpointVerifier, ClientEndpoin
 class Endpoint(metaclass=EndpointVerifier):
     """ Communication class"""
 
-    def __init__(self, logger, message_max_size, address=None, from_existing_resource=None):
+    def __init__(self, logger, message_max_size, address=(), from_existing_resource=None):
         if from_existing_resource:
             self.resource = from_existing_resource
         else:

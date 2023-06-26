@@ -38,9 +38,9 @@ class Client():
         while True:
             time.sleep(timeout)
             if not lock.locked():
-                self.logger.debug(f'{self.user} Reader: try to lock {lock.locked()}')
+                # self.logger.debug(f'{self.user} Reader: try to lock {lock.locked()}')
                 with lock:
-                    self.logger.debug(f'{self.user} Reader: get lock {lock.locked()}')
+                    # self.logger.debug(f'{self.user} Reader: get lock {lock.locked()}')
                     try:
                         action = self._read_message()
                     except EndpointTimeout:
@@ -49,7 +49,7 @@ class Client():
                         # CLI / GUI serializer (?)
                         if action.action == ActionMessage.get_action():
                             print(f'{action.sender}: {action.message}')
-                self.logger.debug(f'{self.user} Reader: unlocked {lock.locked()}')
+                # self.logger.debug(f'{self.user} Reader: unlocked {lock.locked()}')
             time.sleep(self.waiting_time)
 
     def sender_loop(self, lock: threading.Lock):
@@ -67,11 +67,11 @@ class Client():
                                        message=msg_txt,
                                        sender=self.user,
                                        receiver=receiver)
-            self.logger.debug(f'{self.user} Sender: try to lock {lock.locked()}')
+            # self.logger.debug(f'{self.user} Sender: try to lock {lock.locked()}')
             with lock:
-                self.logger.debug(f'{self.user} Sender: locked {lock.locked()}')
+                # self.logger.debug(f'{self.user} Sender: locked {lock.locked()}')
                 response = self._send_message(action)
-            self.logger.debug(f'{self.user} Sender: unlocked {lock.locked()}')
+            # self.logger.debug(f'{self.user} Sender: unlocked {lock.locked()}')
 
             if response.is_error:
                 self.logger.info(f'{self.user} Error response {response}')
@@ -88,7 +88,7 @@ class Client():
             # Connecting to server
             self.logger.info(f'Connecting to {self.host}:{self.port}, user {self.user}')
             # Reading and writing in one socket -> timeout needed for resource lock releasing
-            self.conn.connect_to_server(host=self.host, port=self.port, timeout=0.5)
+            self.conn.connect_to_server(host=self.host, port=self.port, timeout=1)
 
             # Presence (identification) message generation
             action = ActionPresence(time=time.time(),
@@ -127,6 +127,8 @@ class Client():
         except JIMSerializerError as e:
             self.logger.critical(e)
         except JIMValidationError as e:
+            self.logger.critical(e)
+        except Exception as e:
             self.logger.critical(e)
         finally:
             self.conn.close()

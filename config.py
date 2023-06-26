@@ -10,6 +10,8 @@ class BaseConfig(object):
     SERVER_CONNECTION_LIMIT = 5
     SERVER_TIMEOUT = 0.5
 
+    SERVER_DB_URL = 'sqlite:///server_base.db3'
+
     MESSAGE_MAX_SIZE = 4096
 
     ANONIMOUS_USER = 'guest'
