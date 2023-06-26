@@ -10,6 +10,7 @@ packages = [{include = "gb_python_async01"}]
 python = "^3.9"
 chardet = "^5.1.0"
 pyyaml = "^6.0"
+sqlalchemy = "^2.0.17"
 
 
 [tool.poetry.group.dev.dependencies]

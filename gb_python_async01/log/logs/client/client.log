@@ -702,3 +702,125 @@
 2023-06-23 17:46:14,841 INFO client.py Connecting to 127.0.0.1:7777
 2023-06-23 17:46:14,841 CRITICAL client.py Connection error [Errno 111] Connection refused
 2023-06-23 17:46:14,841 CRITICAL client.py Communication error
+2023-06-26 17:05:01,395 INFO client.py Connecting to 127.0.0.1:7777, user test1
+2023-06-26 17:05:01,395 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:05:01,395 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788301.395759, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:01,681 DEBUG client.py test1 Response Responce 200: OK
+2023-06-26 17:05:01,696 DEBUG client.py test1 Reader thread started
+2023-06-26 17:05:01,783 INFO client.py Connecting to 127.0.0.1:7777, user test2
+2023-06-26 17:05:01,783 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:05:01,784 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788301.7840726, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:01,801 DEBUG client.py test2 Response Responce 200: OK
+2023-06-26 17:05:01,802 DEBUG client.py test2 Reader thread started
+2023-06-26 17:05:01,973 INFO client.py Connecting to 127.0.0.1:7777, user test3
+2023-06-26 17:05:01,973 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:05:01,974 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788301.9740303, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:01,999 DEBUG client.py test3 Response Responce 200: OK
+2023-06-26 17:05:01,999 DEBUG client.py test3 Reader thread started
+2023-06-26 17:05:02,198 DEBUG client.py test1 Sender thread started
+2023-06-26 17:05:02,303 DEBUG client.py test2 Sender thread started
+2023-06-26 17:05:02,503 DEBUG client.py test3 Sender thread started
+2023-06-26 17:05:08,324 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788307.343267, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:08,325 DEBUG client.py test3 Response Responce 400: Bad Request
+2023-06-26 17:05:08,325 INFO client.py test3 Error response Responce 400: Bad Request
+2023-06-26 17:05:08,522 DEBUG client.py test3 Client stopped...
+2023-06-26 17:05:11,360 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788311.1834955, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:11,361 DEBUG client.py test2 Response Responce 400: Bad Request
+2023-06-26 17:05:11,361 INFO client.py test2 Error response Responce 400: Bad Request
+2023-06-26 17:05:12,355 DEBUG client.py test2 Client stopped...
+2023-06-26 17:05:16,102 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788315.7596488, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:05:16,102 DEBUG client.py test1 Response Responce 400: Bad Request
+2023-06-26 17:05:16,102 INFO client.py test1 Error response Responce 400: Bad Request
+2023-06-26 17:05:16,256 DEBUG client.py test1 Client stopped...
+2023-06-26 17:07:34,202 INFO client.py Connecting to 127.0.0.1:7777, user test1
+2023-06-26 17:07:34,202 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:07:34,203 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788454.203367, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:34,241 DEBUG client.py test1 Response Responce 200: OK
+2023-06-26 17:07:34,241 DEBUG client.py test1 Reader thread started
+2023-06-26 17:07:34,306 INFO client.py Connecting to 127.0.0.1:7777, user test2
+2023-06-26 17:07:34,306 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:07:34,306 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788454.3067577, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:34,321 DEBUG client.py test2 Response Responce 200: OK
+2023-06-26 17:07:34,322 DEBUG client.py test2 Reader thread started
+2023-06-26 17:07:34,437 INFO client.py Connecting to 127.0.0.1:7777, user test3
+2023-06-26 17:07:34,438 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:07:34,438 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788454.4382472, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:34,501 DEBUG client.py test3 Response Responce 200: OK
+2023-06-26 17:07:34,501 DEBUG client.py test3 Reader thread started
+2023-06-26 17:07:34,742 DEBUG client.py test1 Sender thread started
+2023-06-26 17:07:34,825 DEBUG client.py test2 Sender thread started
+2023-06-26 17:07:35,003 DEBUG client.py test3 Sender thread started
+2023-06-26 17:07:40,822 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788460.085384, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:40,823 DEBUG client.py test3 Response Responce 400: Bad Request
+2023-06-26 17:07:40,823 INFO client.py test3 Error response Responce 400: Bad Request
+2023-06-26 17:07:41,011 DEBUG client.py test3 Client stopped...
+2023-06-26 17:07:44,421 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788464.421419, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:44,422 DEBUG client.py test2 Response Responce 400: Bad Request
+2023-06-26 17:07:44,422 INFO client.py test2 Error response Responce 400: Bad Request
+2023-06-26 17:07:44,853 DEBUG client.py test2 Client stopped...
+2023-06-26 17:07:47,181 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788467.1815264, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:07:47,182 DEBUG client.py test1 Response Responce 400: Bad Request
+2023-06-26 17:07:47,182 INFO client.py test1 Error response Responce 400: Bad Request
+2023-06-26 17:07:47,764 DEBUG client.py test1 Client stopped...
+2023-06-26 17:11:02,330 INFO client.py Connecting to 127.0.0.1:7777, user test1
+2023-06-26 17:11:02,330 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:11:02,331 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788662.3315597, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:02,454 DEBUG client.py test1 Response Responce 200: OK
+2023-06-26 17:11:02,455 DEBUG client.py test1 Reader thread started
+2023-06-26 17:11:02,667 INFO client.py Connecting to 127.0.0.1:7777, user test2
+2023-06-26 17:11:02,667 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:11:02,667 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788662.6679373, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:02,711 DEBUG client.py test2 Response Responce 200: OK
+2023-06-26 17:11:02,712 DEBUG client.py test2 Reader thread started
+2023-06-26 17:11:02,956 DEBUG client.py test1 Sender thread started
+2023-06-26 17:11:03,125 INFO client.py Connecting to 127.0.0.1:7777, user test3
+2023-06-26 17:11:03,125 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:11:03,125 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788663.1258698, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:03,132 DEBUG client.py test3 Response Responce 200: OK
+2023-06-26 17:11:03,133 DEBUG client.py test3 Reader thread started
+2023-06-26 17:11:03,224 DEBUG client.py test2 Sender thread started
+2023-06-26 17:11:03,634 DEBUG client.py test3 Sender thread started
+2023-06-26 17:11:09,469 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788668.565375, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:09,470 DEBUG client.py test3 Response Responce 400: Bad Request
+2023-06-26 17:11:09,470 INFO client.py test3 Error response Responce 400: Bad Request
+2023-06-26 17:11:09,647 DEBUG client.py test3 Client stopped...
+2023-06-26 17:11:12,280 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788672.2775054, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:12,281 DEBUG client.py test2 Response Responce 400: Bad Request
+2023-06-26 17:11:12,281 INFO client.py test2 Error response Responce 400: Bad Request
+2023-06-26 17:11:13,267 DEBUG client.py test2 Client stopped...
+2023-06-26 17:11:15,653 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687788675.6536353, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:11:15,654 DEBUG client.py test1 Response Responce 400: Bad Request
+2023-06-26 17:11:15,654 INFO client.py test1 Error response Responce 400: Bad Request
+2023-06-26 17:11:16,003 DEBUG client.py test1 Client stopped...
+2023-06-26 17:16:00,290 INFO client.py Connecting to 127.0.0.1:7777, user guest
+2023-06-26 17:16:00,291 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:16:00,291 DEBUG client.py guest Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687788960.2915883, '_user_account': 'guest', '_user_status': 'guest is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:16:00,377 DEBUG client.py guest Response Responce 200: OK
+2023-06-26 17:16:00,380 DEBUG client.py guest Reader thread started
+2023-06-26 17:16:00,882 DEBUG client.py guest Sender thread started
+2023-06-26 17:17:39,414 DEBUG client.py guest Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687789028.7684267, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:20:17,619 DEBUG client.py guest Client stopped...
+2023-06-26 17:21:06,593 INFO client.py Connecting to 127.0.0.1:7777, user test1
+2023-06-26 17:21:06,593 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:21:06,594 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687789266.594351, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:06,621 DEBUG client.py test1 Response Responce 200: OK
+2023-06-26 17:21:06,622 DEBUG client.py test1 Reader thread started
+2023-06-26 17:21:06,752 INFO client.py Connecting to 127.0.0.1:7777, user test2
+2023-06-26 17:21:06,753 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:21:06,753 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687789266.7534795, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:06,797 DEBUG client.py test2 Response Responce 200: OK
+2023-06-26 17:21:06,797 DEBUG client.py test2 Reader thread started
+2023-06-26 17:21:06,836 INFO client.py Connecting to 127.0.0.1:7777, user test3
+2023-06-26 17:21:06,837 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-26 17:21:06,837 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687789266.8371315, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:06,856 DEBUG client.py test3 Response Responce 200: OK
+2023-06-26 17:21:06,857 DEBUG client.py test3 Reader thread started
+2023-06-26 17:21:07,123 DEBUG client.py test1 Sender thread started
+2023-06-26 17:21:07,299 DEBUG client.py test2 Sender thread started
+2023-06-26 17:21:07,359 DEBUG client.py test3 Sender thread started
+2023-06-26 17:21:13,236 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687789272.9965422, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:13,432 DEBUG client.py test3 Client stopped...
+2023-06-26 17:21:18,165 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687789278.1649668, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:18,390 DEBUG client.py test2 Client stopped...
+2023-06-26 17:21:21,015 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687789280.9890676, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-26 17:21:21,200 DEBUG client.py test1 Client stopped...

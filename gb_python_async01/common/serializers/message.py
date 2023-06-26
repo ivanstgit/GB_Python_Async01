@@ -95,9 +95,6 @@ class ActionExitSerializer(MessageSerializer):
         if not time:
             raise JIMValidationError(self.time)
 
-        message = msg.get(self.message)
-        if not message:
-            raise JIMValidationError(self.time)
         try:
             return ActionExit(time=time)
         except Exception as e:

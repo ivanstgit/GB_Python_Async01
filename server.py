@@ -13,6 +13,7 @@ from gb_python_async01.common.errors import EndpointCommunicationError, JIMSeria
 
 from gb_python_async01.devutils.debug_decorators import Log
 from gb_python_async01.log.config_server import init_logger
+from gb_python_async01.server.db.view import ServerStorage
 
 
 class Server():
@@ -27,6 +28,9 @@ class Server():
         self.inputs = []  # resources for read
         self.outputs = []  # resources for write
         self.clients = {}  # parameters for resources (username)
+
+        self.db = ServerStorage(self.config.SERVER_DB_URL)
+        self.db.init_db_tables()
 
     def _send_message(self, client: Endpoint, msg: Action) -> Response:
         self.logger.debug(f'Sending {msg} to {client}')
@@ -50,10 +54,11 @@ class Server():
             self.inputs.append(client)
         self.clients[client] = None
 
-    def _auth_client(self, client: Endpoint, username: str) -> bool:
-        if client in self.clients and (not username in self.clients.values()):
-            self.logger.info(f'Client {client} authorized with name {username}')
-            self.clients[client] = username
+    def _auth_client(self, client: Endpoint, user_name: str, user_status: str) -> bool:
+        if client in self.clients and (not user_name in self.clients.values()):
+            self.logger.info(f'Client {client} authorized with name {user_name}')
+            self.clients[client] = user_name
+            self.db.user_login(user_name=user_name, ip=client.address[0], port=client.address[1], status=user_status)
             # добавляем соединение клиента в очередь
             if client not in self.outputs:
                 self.outputs.append(client)
@@ -63,7 +68,8 @@ class Server():
     def _remove_client(self, client: Endpoint):
         self.logger.info(f'Client {client} disconnected')
         if client in self.clients:
-            self.clients.pop(client)
+            cl = self.clients.pop(client)
+            self.db.user_logout(user_name=cl)
         if client in self.outputs:
             self.outputs.remove(client)
         if client in self.inputs:
@@ -114,7 +120,7 @@ class Server():
                                         self.messages[client] = [action]
                                     self._send_response(client, Response200())
                                 elif action.action == ActionPresence.get_action():
-                                    if self._auth_client(client, action.user_account):  # type: ignore
+                                    if self._auth_client(client, action.user_account, action.user_status):  # type: ignore
                                         self._send_response(client, Response200())
                                     else:
                                         self._send_response(client, Response400('Already exists'))
