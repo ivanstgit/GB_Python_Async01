@@ -2,7 +2,8 @@ import datetime
 import socket
 import unittest
 
-from gb_python_async01.common.JIM import *
+from gb_python_async01.transport.errors import *
+from gb_python_async01.transport.protocol import *
 
 
 class TestSocketSerializers(unittest.TestCase):

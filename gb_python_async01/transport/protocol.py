@@ -3,9 +3,9 @@
 # Вообще без идентификатора сообщения на сервере только первый вариант
 import json
 
-from gb_python_async01.common.errors import JIMSerializerError
-from gb_python_async01.common.model.message import *
-from gb_python_async01.common.serializers.message import *
+from gb_python_async01.transport.errors import *
+from gb_python_async01.transport.model.message import *
+from gb_python_async01.transport.serializers.message import *
 
 MESSAGE_ENCODING = 'utf-8'
 
@@ -20,9 +20,13 @@ class MessageSerializerFactory():
             'authenticate': None,  # 'авторизация на сервере',
             'join': None,  # 'присоединиться к чату',
             'leave': None,  # 'покинуть чат',
+            ActionGetContacts.get_action(): ActionGetContactsSerializer,  # получение списка контактов
+            ActionAddContact.get_action(): ActionAddDelContactSerializer,  # добавление контакта
+            ActionDeleteContact.get_action(): ActionAddDelContactSerializer  # yдаление контакта
         },
         MessageSerializer.response: {
             '200': ResponseSerializer,
+            '202': ResponseSerializer,
             '400': ResponseSerializer,
         },
     }

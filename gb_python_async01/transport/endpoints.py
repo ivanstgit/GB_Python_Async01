@@ -1,8 +1,7 @@
 import socket
-import json
 
-from gb_python_async01.common.errors import EndpointCommunicationError, EndpointTimeout
-from gb_python_async01.common.metaclasses import EndpointVerifier, ClientEndpointVerifier, ServerEndpointVerifier
+from gb_python_async01.transport.errors import EndpointCommunicationError, EndpointTimeout
+from gb_python_async01.transport.metaclasses import EndpointVerifier, ClientEndpointVerifier, ServerEndpointVerifier
 
 
 class Endpoint(metaclass=EndpointVerifier):
