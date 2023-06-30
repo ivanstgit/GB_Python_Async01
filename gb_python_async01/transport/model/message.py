@@ -6,9 +6,9 @@
 # Да и хранение скорее всего будет в плоской структуре (и ответы наверно храниться не будут...)
 # Поэтому классы ниже - это скорее набор конструкторов к одному объекту с параметрами по умолчанию,
 # Вероятно, лучше было бы сделать отдельные методы или общий плоский конструктор/builder + валидаторы...
-from gb_python_async01.common.model.user import User
+# from gb_python_async01.transport.model.user import User
 
-from gb_python_async01.common.errors import JIMNotImplementedError, JIMValidationError
+from gb_python_async01.transport.errors import JIMValidationError
 
 
 class Message():
@@ -34,6 +34,7 @@ class Action(Message):
         self._receiver = None
         self._sender = None
         self._message = None
+        self._contact = None
 
     @property
     def action(self):
@@ -62,6 +63,10 @@ class Action(Message):
     @property
     def receiver(self):
         return self._receiver
+
+    @property
+    def contact(self):
+        return self._contact
 
     @property
     def message(self):
@@ -103,12 +108,44 @@ class ActionExit(Action):
         super().__init__(ActionExit.get_action(), time)
 
 
+class ActionGetContacts(Action):
+    @staticmethod
+    def get_action():
+        return 'get_contacts'
+
+    def __init__(self, time: float, user_account: str):
+        super().__init__(self.get_action(), time)
+        self._user_account = user_account
+
+
+class ActionAddContact(Action):
+    @staticmethod
+    def get_action():
+        return 'add_contact'
+
+    def __init__(self, time: float, user_account: str, contact: str):
+        super().__init__(self.get_action(), time)
+        self._user_account = user_account
+        self._contact = contact
+
+
+class ActionDeleteContact(Action):
+    @staticmethod
+    def get_action():
+        return 'del_contact'
+
+    def __init__(self, time: float, user_account: str, contact: str):
+        super().__init__(self.get_action(), time)
+        self._user_account = user_account
+        self._contact = contact
+
+
 class Response(Message):
     @staticmethod
     def get_type():
         return 'response'
 
-    def __init__(self, response: int, msg=''):
+    def __init__(self, response: int, msg='', data=None):
         super().__init__(Response.get_type())
         if response >= 400:
             self._is_error = True
@@ -118,6 +155,7 @@ class Response(Message):
             raise JIMValidationError
         self._response = response
         self._message = msg
+        self._data = data
 
     @property
     def is_error(self):
@@ -137,13 +175,22 @@ class Response(Message):
         if self.is_error:
             return self._message
 
+    @property
+    def data(self):
+        return self._data
+
     def __str__(self) -> str:
-        return f'Responce {self._response}: {self._message}'
+        return f'Response {self._response}: {self._message}, {self.data}'
 
 
 class Response200(Response):
     def __init__(self, alert='OK'):
         super().__init__(200, alert)
+
+
+class Response202(Response):
+    def __init__(self, data):
+        super().__init__(202, data=data)
 
 
 class Response400(Response):

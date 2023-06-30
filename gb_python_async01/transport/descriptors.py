@@ -1,5 +1,5 @@
 import socket
-from gb_python_async01.common.errors import EndpointParamError
+from gb_python_async01.transport.errors import EndpointParamError
 
 
 class EndpointPort:

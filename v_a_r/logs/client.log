@@ -824,3 +824,31 @@
 2023-06-26 17:21:18,390 DEBUG client.py test2 Client stopped...
 2023-06-26 17:21:21,015 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687789280.9890676, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
 2023-06-26 17:21:21,200 DEBUG client.py test1 Client stopped...
+2023-06-27 00:35:39,752 INFO client.py Connecting to 127.0.0.1:7777, user test1
+2023-06-27 00:35:39,752 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-27 00:35:39,752 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687815339.752852, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-27 00:35:39,783 DEBUG client.py test1 Response Responce 200: OK
+2023-06-27 00:35:39,783 DEBUG client.py test1 Reader thread started
+2023-06-27 00:35:39,816 INFO client.py Connecting to 127.0.0.1:7777, user test2
+2023-06-27 00:35:39,816 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-27 00:35:39,816 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687815339.8166337, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-27 00:35:39,825 DEBUG client.py test2 Response Responce 200: OK
+2023-06-27 00:35:39,825 DEBUG client.py test2 Reader thread started
+2023-06-27 00:35:39,990 INFO client.py Connecting to 127.0.0.1:7777, user test3
+2023-06-27 00:35:39,990 INFO client.py Connecting to 127.0.0.1:7777
+2023-06-27 00:35:39,990 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687815339.9906266, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None}
+2023-06-27 00:35:40,005 DEBUG client.py test3 Response Responce 200: OK
+2023-06-27 00:35:40,006 DEBUG client.py test3 Reader thread started
+2023-06-27 00:35:40,284 DEBUG client.py test1 Sender thread started
+2023-06-27 00:35:40,326 DEBUG client.py test2 Sender thread started
+2023-06-27 00:35:40,508 DEBUG client.py test3 Sender thread started
+2023-06-27 00:35:51,192 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687815350.6872022, '_user_account': None, '_user_status': None, '_receiver': '', '_sender': 'test3', '_message': 'quit'}
+2023-06-27 00:35:51,193 DEBUG client.py test3 Response Responce 200: OK
+2023-06-27 00:35:51,563 DEBUG client.py test1 Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687815350.6872022, '_user_account': None, '_user_status': None, '_receiver': '', '_sender': 'test3', '_message': 'quit'}
+2023-06-27 00:35:51,592 DEBUG client.py test2 Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1687815350.6872022, '_user_account': None, '_user_status': None, '_receiver': '', '_sender': 'test3', '_message': 'quit'}
+2023-06-27 00:35:56,016 DEBUG client.py test3 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687815355.0554097, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-27 00:35:56,589 DEBUG client.py test3 Client stopped...
+2023-06-27 00:36:04,449 DEBUG client.py test2 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687815364.4160407, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-27 00:36:05,393 DEBUG client.py test2 Client stopped...
+2023-06-27 00:36:11,193 DEBUG client.py test1 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687815371.1929471, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None}
+2023-06-27 00:36:11,369 DEBUG client.py test1 Client stopped...
