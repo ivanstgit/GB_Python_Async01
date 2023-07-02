@@ -1,8 +1,11 @@
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QAction, QApplication, QDialog, QFileDialog,
+# Графические компоненты интерфейса. Простейшие обработчики определены сразу, межкомпонентные - в контроллере
+# Принципиально не реализована бредовая логика по изменению хоста и выбору пути к файлу БД
+# Изменения порта и строки подключения для демонстрации работы приложения вполне достаточно, кмк
+from PyQt5.QtGui import QIntValidator
+from PyQt5.QtWidgets import (QAction, QDialog, QFileDialog,
                              QLabel, QLineEdit, QMainWindow, QMessageBox,
-                             QPushButton, QTableView, qApp)
+                             QPushButton, QTableView)
 
 from gb_python_async01.server.gui.controller import ServerGUIController
 from gb_python_async01.server.gui.model import *
@@ -23,7 +26,7 @@ class MainWindow(QMainWindow, Observer):
         # Кнопка выхода
         exitAction = QAction('Выход', self)
         exitAction.setShortcut('Ctrl+Q')
-        exitAction.triggered.connect(qApp.quit)
+        exitAction.triggered.connect(self.controller.app_quit)
 
         # Кнопка обновить список клиентов
         self.refresh_button = QAction('Обновить список', self)
@@ -120,81 +123,93 @@ class SettingsWindow(QDialog, Observer):
 
     def initUI(self):
         # Настройки окна
-        self.setFixedSize(365, 260)
+        self.setFixedSize(500, 160)
         self.setWindowTitle('Настройки сервера')
 
         # Надпись о файле базы данных:
-        self.db_path_label = QLabel('Путь до файла базы данных: ', self)
-        self.db_path_label.move(10, 10)
-        self.db_path_label.setFixedSize(240, 15)
+        self.db_url_label = QLabel('Строка подключения к базе данных: ', self)
+        self.db_url_label.move(10, 10)
+        self.db_url_label.setFixedSize(480, 15)
+
+        # Строка с путём базы (current)
+        self.db_url_display = QLineEdit(self)
+        self.db_url_display.setFixedSize(480, 20)
+        self.db_url_display.move(10, 30)
+        self.db_url_display.setEnabled(False)
 
         # Строка с путём базы
-        self.db_path = QLineEdit(self)
-        self.db_path.setFixedSize(250, 20)
-        self.db_path.move(10, 30)
-        self.db_path.setReadOnly(True)
+        self.db_url_edit = QLineEdit(self)
+        self.db_url_edit.setFixedSize(480, 20)
+        self.db_url_edit.move(10, 55)
+        self.db_url_edit.textEdited.connect(self.change_db_url)
 
-        # Кнопка выбора пути.
-        self.db_path_select = QPushButton('Обзор...', self)
-        self.db_path_select.move(275, 28)
-        self.db_path_select.clicked.connect(self.open_file_dialog)
+        # # Кнопка выбора пути.
+        # self.db_path_select = QPushButton('Обзор...', self)
+        # self.db_path_select.move(275, 28)
+        # self.db_path_select.clicked.connect(self.open_file_dialog)
 
-        # Метка с именем поля файла базы данных
-        self.db_file_label = QLabel('Имя файла базы данных: ', self)
-        self.db_file_label.move(10, 68)
-        self.db_file_label.setFixedSize(180, 15)
+        # # Метка с именем поля файла базы данных
+        # self.db_file_label = QLabel('Имя файла базы данных: ', self)
+        # self.db_file_label.move(10, 68)
+        # self.db_file_label.setFixedSize(180, 15)
 
-        # Поле для ввода имени файла
-        self.db_file = QLineEdit(self)
-        self.db_file.move(200, 66)
-        self.db_file.setFixedSize(150, 20)
+        # # Поле для ввода имени файла
+        # self.db_file = QLineEdit(self)
+        # self.db_file.move(200, 66)
+        # self.db_file.setFixedSize(150, 20)
 
         # Метка с номером порта
-        self.port_label = QLabel('Номер порта для соединений:', self)
-        self.port_label.move(10, 108)
-        self.port_label.setFixedSize(180, 15)
+        self.port_display_label = QLabel('Порт для соединений (текущий):', self)
+        self.port_display_label.move(10, 85)
+        self.port_display_label.setFixedSize(300, 20)
 
+        # Поле для номера порта
+        self.port_display = QLineEdit(self)
+        self.port_display.move(310, 85)
+        self.port_display.setFixedSize(200, 20)
+        self.port_display.setEnabled(False)
+
+        self.port_display_label = QLabel('Порт для соединений (новый):', self)
+        self.port_display_label.move(10, 105)
+        self.port_display_label.setFixedSize(300, 20)
+
+        self.port_validator = QIntValidator(EndpointPort.min_value, EndpointPort.max_value, self)
         # Поле для ввода номера порта
-        self.port = QLineEdit(self)
-        self.port.move(200, 108)
-        self.port.setFixedSize(150, 20)
-
-        # Very strange logic...
-        # # Метка с адресом для соединений
-        # self.ip_label = QLabel('С какого IP принимаем соединения:', self)
-        # self.ip_label.move(10, 148)
-        # self.ip_label.setFixedSize(180, 15)
-
-        # # Метка с напоминанием о пустом поле.
-        # self.ip_label_note = QLabel(' оставьте это поле пустым, чтобы\n принимать соединения с любых адресов.', self)
-        # self.ip_label_note.move(10, 168)
-        # self.ip_label_note.setFixedSize(500, 30)
-
-        # # Поле для ввода ip
-        # self.ip = QLineEdit(self)
-        # self.ip.move(200, 148)
-        # self.ip.setFixedSize(150, 20)
+        self.port_edit = QLineEdit(self)
+        self.port_edit.move(310, 105)
+        self.port_edit.setFixedSize(200, 20)
+        self.port_edit.setValidator(self.port_validator)
+        self.port_edit.textEdited.connect(self.change_port)
 
         # Кнопка сохранения настроек
         self.save_btn = QPushButton('Сохранить', self)
-        self.save_btn.move(190, 220)
+        self.save_btn.move(190, 130)
         self.save_btn.clicked.connect(self.controller.save_server_config)
 
         # Кнапка закрытия окна
         self.close_button = QPushButton('Закрыть', self)
-        self.close_button.move(275, 220)
+        self.close_button.move(275, 130)
         self.close_button.clicked.connect(self.controller.hide_settings_window)
 
 #         self.show()
 
-    # Функция обработчик открытия окна выбора папки
-    def open_file_dialog(self):
-        dialog = QFileDialog(self)
-        path = dialog.getExistingDirectory()
-        path = path.replace('/', '\\')
-        self.db_path.insert(path)
+    # # Функция обработчик открытия окна выбора папки
+    # def open_file_dialog(self):
+    #     dialog = QFileDialog(self)
+    #     path = dialog.getExistingDirectory()
+    #     path = path.replace('/', '\\')
+    #     self.db_path.insert(path)
+
+    def change_db_url(self):
+        self.model.db_url = self.db_url_edit.text()
+
+    def change_port(self):
+        self.model.port = self.port_edit.text()
 
     def modelChanged(self):
-        self.model.refresh()
-        self.db_file.insert(self.model.db_path)
-        self.port.insert(str(self.model.port))
+        self.db_url_display.setText(self.model.db_url)
+        if self.db_url_edit.text() == '':
+            self.db_url_edit.setText(self.model.db_url)
+        self.port_display.setText(str(self.model.port))
+        if self.port_edit.text() == '':
+            self.port_edit.setText(str(self.model.port))

@@ -4,6 +4,12 @@ class Observer():
         raise NotImplemented
 
 
+class ObserverExt(Observer):
+
+    def modelChanged(self, notifier):
+        raise NotImplemented
+
+
 class ObserverNotifier():
 
     def __init__(self) -> None:
@@ -17,4 +23,7 @@ class ObserverNotifier():
 
     def notifyObservers(self):
         for x in self._observers:
-            x.modelChanged()
+            if isinstance(x, ObserverExt):
+                x.modelChanged(self)
+            else:
+                x.modelChanged()

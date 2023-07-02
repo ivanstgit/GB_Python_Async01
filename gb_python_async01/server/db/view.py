@@ -44,6 +44,9 @@ class ServerStorage():
                 session.add(loginh)
             session.commit()
 
+    def stop(self):
+        self.db_engine.dispose()
+
     # internal use methods (db_model format)
     def user_get(self, user_name: str):
         with Session(self.db_engine) as session:

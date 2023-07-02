@@ -23,3 +23,9 @@ class ServerConfig(ObserverNotifier):
         self.message_max_size = default_config.MESSAGE_MAX_SIZE
         self.connection_limit = default_config.SERVER_CONNECTION_LIMIT
         self.timeout = default_config.SERVER_TIMEOUT
+
+        self.gui_enabled = True
+
+    def set_db_url_from_path(self, dir: str, filename: str):
+        # просто не могу делать эту порнографию.... в боевом режиме никаких файлов не будет, а админ достоточно грамотен, чтобы ввести полную строку подключения...
+        pass

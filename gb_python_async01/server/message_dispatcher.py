@@ -87,7 +87,7 @@ class ServerMessageDispatcher():
         self.db.cl_message_mark_delivered(msg_id)
         self.messages.pop(msg_id, None)
 
-    def run(self, terminate_on: threading.Event):
+    def run(self, terminate_on: threading.Event, mainloop_timeout=1):
         try:
 
             self.conn.start_server(self.config.host, self.config.port,  # type: ignore
@@ -98,7 +98,7 @@ class ServerMessageDispatcher():
             self.messages = {}  # здесь будем хранить сообщения для сокетов, по идее надо из базы инициализировать...
 
             while not terminate_on.isSet():
-                reads, send, excepts = select.select(self.inputs, self.outputs, self.inputs)
+                reads, send, excepts = select.select(self.inputs, self.outputs, self.inputs, mainloop_timeout)
 
                 # список READS - сокеты, готовые к чтению
                 for client in reads:
@@ -151,7 +151,10 @@ class ServerMessageDispatcher():
 
                                 elif action.action == ActionAddContact.get_action():
                                     try:
-                                        contacts = self.db.cl_user_contact_add(user_name=action.user_account, contact_name=action.contact)  # type: ignore
+                                        if action.user_account == action.contact:
+                                            self._send_response(client, Response400(error="Can't add yourself as a contact"))
+                                        else:
+                                            contacts = self.db.cl_user_contact_add(user_name=action.user_account, contact_name=action.contact)  # type: ignore
                                     except Exception as e:
                                         self._send_response(client, Response400(error=str(e)))
                                     else:

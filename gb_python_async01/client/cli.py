@@ -27,7 +27,7 @@ class ClientCLI(Observer):
             if self.has_new_messages:
                 self.has_new_messages = False
                 with self.db_lock:
-                    messages = self.db.message_history(self.message_history_pointer)
+                    messages = self.db.message_history(contact_name='', limit=5)
                 for message in messages:
                     if message.is_inbound:
                         res = f'Получено {message.created_at}, {message.contact_id}:\n {message.msg_txt}'
