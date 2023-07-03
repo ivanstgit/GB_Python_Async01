@@ -1,5 +1,6 @@
+# Модели с данными для GUI. Т.к. в проекте исползуется SQLAlchemy, то это скорее интеграционная прослойка
+from copy import copy
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from PyQt5.QtCore import QTimer
 from gb_python_async01.server.config import ServerConfig
 
 from gb_python_async01.server.db.view import ActiveUser, ServerStorage
@@ -56,14 +57,17 @@ class UserStatisticsModel(QStandardItemModel):
 
 
 class SettingsModel():
-    host = EndpointHost
     port = EndpointPort
 
-    def __init__(self, config: ServerConfig) -> None:
-        self.config = config
-        self.refresh()
+    def __init__(self, config4edit: ServerConfig) -> None:
+        self._config_orig = copy(config4edit)
+        self._config = config4edit
+        self.db_url = self._config.db_url
+        self.port = str(self._config.port)
 
-    def refresh(self):
-        self.db_path = self.config.db_url
-        self.host = self.config.host
-        self.port = self.config.port
+    def restore(self):
+        self._config = self._config_orig
+
+    def apply_config_changes(self):
+        self._config.db_url = self.db_url
+        self._config.port = int(self.port)  # type: ignore

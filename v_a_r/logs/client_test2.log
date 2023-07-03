@@ -1,185 +1,28 @@
-2023-06-28 22:44:59,112 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-28 22:44:59,112 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-28 22:44:59,112 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1687981499.1128752, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-28 22:44:59,121 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-28 22:44:59,121 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1687981499.1216667, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-28 22:44:59,123 DEBUG transport.py test2 Response Response 202: , None
-2023-06-28 22:44:59,123 DEBUG app.py test2 Reader thread started
-2023-06-28 22:44:59,631 DEBUG app.py test2 Sender thread started
-2023-06-28 22:45:29,213 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'add_contact', '_time': 1687981529.1667173, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': 'test3'}
-2023-06-28 22:45:29,222 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-28 22:45:48,537 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'msg', '_time': 1687981548.3958006, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'eevpppevpe', '_contact': None}
-2023-06-28 22:45:48,538 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-28 22:46:47,589 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'add_contact', '_time': 1687981607.2834857, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': 'tessd'}
-2023-06-28 22:46:47,591 DEBUG transport.py test2 Response Response 400: DB error, None
-2023-06-28 22:46:47,591 ERROR transport.py test2 Error response on add_contact message: Response 400: DB error, None
-2023-06-28 22:47:33,380 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'add_contact', '_time': 1687981653.3801336, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': 'test1'}
-2023-06-28 22:47:33,386 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-28 22:47:44,190 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'del_contact', '_time': 1687981664.1724477, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': 'test1'}
-2023-06-28 22:47:44,200 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-28 22:47:47,813 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1687981667.2924027, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-28 22:47:47,814 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-28 22:47:49,066 DEBUG app.py test2 Client stopped...
-2023-06-29 12:11:29,994 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:11:29,994 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:11:29,995 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688029889.9949815, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:11:30,019 CRITICAL transport.py Get message failed with [Errno 104] Connection reset by peer
-2023-06-29 12:11:30,019 CRITICAL app.py Communication error
-2023-06-29 12:14:47,823 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:14:47,823 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:14:47,824 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688030087.823966, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:14:47,849 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 12:14:47,849 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688030087.8495626, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:14:47,853 DEBUG transport.py test2 Response Response 202: , ['test3']
-2023-06-29 12:14:47,853 DEBUG app.py test2 Reader thread started
-2023-06-29 12:14:48,354 DEBUG app.py test2 Sender thread started
-2023-06-29 12:16:01,609 DEBUG app.py test2 Client stopped...
-2023-06-29 12:19:01,165 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:19:01,165 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:19:01,165 CRITICAL transport.py Connection error [Errno 111] Connection refused
-2023-06-29 12:19:01,165 CRITICAL transport.py Communication error
-2023-06-29 12:19:16,557 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:19:16,557 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:19:16,557 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688030356.5573876, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:19:17,559 CRITICAL app.py timeout
-2023-06-29 12:20:01,385 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:20:01,385 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:20:01,386 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688030401.3860998, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:20:01,409 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 12:20:01,409 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688030401.4097395, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:20:01,413 DEBUG transport.py test2 Response Response 202: , ['test3']
-2023-06-29 12:20:01,413 DEBUG app.py test2 Reader thread started
-2023-06-29 12:20:01,915 DEBUG app.py test2 Sender thread started
-2023-06-29 12:21:13,249 DEBUG app.py test2 Client stopped...
-2023-06-29 12:22:39,094 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:22:39,094 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:22:39,095 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688030559.0949929, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:22:39,121 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 12:22:39,121 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688030559.1217146, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:22:39,125 DEBUG transport.py test2 Response Response 202: , ['test3']
-2023-06-29 12:22:39,126 DEBUG app.py test2 Reader thread started
-2023-06-29 12:22:39,627 DEBUG app.py test2 Sender thread started
-2023-06-29 12:23:43,866 DEBUG app.py test2 Client stopped...
-2023-06-29 12:26:33,594 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:26:33,594 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:26:33,594 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688030793.5946164, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:26:33,611 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 12:26:33,611 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688030793.611938, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:26:33,615 DEBUG transport.py test2 Response Response 202: , ['test3']
-2023-06-29 12:26:33,615 DEBUG app.py test2 Reader thread started
-2023-06-29 12:26:34,117 DEBUG app.py test2 Sender thread started
-2023-06-29 12:28:01,409 DEBUG app.py test2 Client stopped...
-2023-06-29 12:29:47,480 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 12:29:47,481 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 12:29:47,481 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688030987.4812057, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:29:47,492 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 12:29:47,492 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688030987.492706, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 12:29:47,497 DEBUG transport.py test2 Response Response 202: , ['test3']
-2023-06-29 12:29:47,497 DEBUG app.py test2 Reader thread started
-2023-06-29 12:29:47,998 DEBUG app.py test2 Sender thread started
-2023-06-29 12:31:31,369 DEBUG app.py test2 Client stopped...
-2023-06-29 15:59:20,709 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 15:59:20,709 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 15:59:20,710 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688043560.7100036, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 15:59:20,725 CRITICAL app.py Serialization error
-2023-06-29 15:59:36,963 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 15:59:36,963 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 15:59:36,963 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688043576.9638145, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 15:59:36,972 CRITICAL app.py Serialization error
-2023-06-29 16:24:43,858 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 16:24:43,858 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 16:24:43,859 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688045083.85897, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:24:44,862 CRITICAL app.py timeout
-2023-06-29 16:25:33,416 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 16:25:33,416 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 16:25:33,416 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688045133.416455, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:25:33,428 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 16:25:33,428 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688045133.4282544, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:25:33,432 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 16:25:33,432 DEBUG app.py test2 Reader thread started
-2023-06-29 16:25:33,938 DEBUG app.py test2 Sender thread started
-2023-06-29 16:26:43,990 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 16:26:43,990 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 16:26:43,990 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688045203.9909134, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:26:44,015 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 16:26:44,016 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688045204.0160706, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:26:44,019 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 16:26:44,019 DEBUG app.py test2 Reader thread started
-2023-06-29 16:26:44,523 DEBUG app.py test2 Sender thread started
-2023-06-29 16:29:40,268 DEBUG app.py test2 Client stopped...
-2023-06-29 16:46:16,336 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 16:46:16,336 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 16:46:16,336 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688046376.3362908, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:46:16,422 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 16:46:16,422 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688046376.422206, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:46:16,425 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 16:46:16,425 DEBUG app.py test2 Reader thread started
-2023-06-29 16:46:16,933 DEBUG app.py test2 Sender thread started
-2023-06-29 16:46:39,244 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688046398.6423638, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 16:46:39,245 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 16:46:41,009 DEBUG app.py test2 Client stopped...
-2023-06-29 17:02:43,066 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 17:02:43,066 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 17:02:43,066 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688047363.0669131, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 17:02:43,080 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 17:02:43,080 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688047363.080743, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 17:02:43,084 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 17:02:43,084 DEBUG app.py test2 Reader thread started
-2023-06-29 17:02:43,585 DEBUG app.py test2 Sender thread started
-2023-06-29 17:03:08,644 DEBUG app.py test2 Client stopped...
-2023-06-29 17:08:33,089 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 17:08:33,089 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 17:08:33,090 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688047713.090012, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 17:08:33,113 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 17:08:33,113 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688047713.1137524, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 17:08:33,139 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 17:08:33,140 DEBUG app.py test2 Reader thread started
-2023-06-29 17:08:33,643 DEBUG app.py test2 Sender thread started
-2023-06-29 17:11:17,361 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 17:11:17,361 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 17:11:17,362 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688047877.3622243, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 17:11:17,438 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 17:11:17,438 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688047877.4388626, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 17:11:17,444 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 17:11:17,445 DEBUG app.py test2 Reader thread started
-2023-06-29 17:11:17,946 DEBUG app.py test2 Sender thread started
-2023-06-29 19:19:47,771 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 19:19:47,771 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 19:19:47,771 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688055587.7716284, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:19:47,782 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 19:19:47,782 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688055587.7826564, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:19:47,786 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 19:19:47,812 DEBUG app.py test2 Reader thread started
-2023-06-29 19:19:48,328 DEBUG app.py test2 Sender thread started
-2023-06-29 19:21:43,600 DEBUG app.py test2 Client stopped...
-2023-06-29 19:53:26,097 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 19:53:26,097 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 19:53:26,097 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688057606.097377, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:53:26,119 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 19:53:26,119 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688057606.1193929, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:53:26,123 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 19:53:26,123 DEBUG app.py test2 Reader thread started
-2023-06-29 19:53:26,637 DEBUG app.py test2 Sender thread started
-2023-06-29 19:54:13,751 DEBUG app.py test2 Client stopped...
-2023-06-29 19:55:51,208 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 19:55:51,208 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 19:55:51,208 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688057751.2088716, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:55:52,221 CRITICAL app.py timeout
-2023-06-29 19:56:08,037 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 19:56:08,037 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 19:56:08,037 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688057768.0372477, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:56:08,063 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 19:56:08,063 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688057768.0633485, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:56:08,066 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 19:56:08,067 DEBUG app.py test2 Reader thread started
-2023-06-29 19:56:08,568 DEBUG app.py test2 Sender thread started
-2023-06-29 19:57:40,851 DEBUG app.py test2 Client stopped...
-2023-06-29 19:59:22,110 INFO transport.py Connecting to 127.0.0.1:7777, user test2
-2023-06-29 19:59:22,110 INFO transport.py Connecting to 127.0.0.1:7777
-2023-06-29 19:59:22,110 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688057962.110543, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:59:22,145 DEBUG transport.py test2 Response Response 200: OK, None
-2023-06-29 19:59:22,145 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688057962.1454098, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
-2023-06-29 19:59:22,148 DEBUG transport.py test2 Response Response 202: , None
-2023-06-29 19:59:22,149 DEBUG app.py test2 Reader thread started
-2023-06-29 19:59:22,659 DEBUG app.py test2 Sender thread started
-2023-06-29 20:00:26,798 DEBUG app.py test2 Client stopped...
+2023-07-02 19:02:33,009 DEBUG app.py test2 Connecting to server
+2023-07-02 19:02:33,009 INFO transport.py Connecting to 127.0.0.1:7777, user test2
+2023-07-02 19:02:33,009 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-02 19:02:33,009 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688313753.009924, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-02 19:02:33,101 DEBUG transport.py test2 Response Response 200: OK, None
+2023-07-02 19:02:33,101 DEBUG app.py test2 Synchronizing contacts
+2023-07-02 19:02:33,101 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688313753.101229, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-02 19:02:33,103 DEBUG transport.py test2 Response Response 202: , ['test1', 'test3']
+2023-07-02 19:02:33,110 DEBUG app.py test2 Starting server integration thread
+2023-07-02 19:02:33,110 DEBUG app.py test2 Reader thread started
+2023-07-02 19:03:38,308 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688313817.6709063, '_user_account': None, '_user_status': None, '_receiver': 'test1', '_sender': 'test2', '_message': 'Hi, at least', '_contact': None}
+2023-07-02 19:03:38,317 DEBUG transport.py test2 Response Response 200: OK, None
+2023-07-02 19:08:23,016 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688314102.833005, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'fgfd', '_contact': None}
+2023-07-02 19:08:23,023 DEBUG transport.py test2 Response Response 200: OK, None
+2023-07-02 19:27:59,052 DEBUG app.py test2 Connecting to server
+2023-07-02 19:27:59,053 INFO transport.py Connecting to 127.0.0.1:7777, user test2
+2023-07-02 19:27:59,053 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-02 19:27:59,053 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688315279.053374, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-02 19:27:59,062 DEBUG transport.py test2 Response Response 200: OK, None
+2023-07-02 19:27:59,062 DEBUG app.py test2 Synchronizing contacts
+2023-07-02 19:27:59,062 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688315279.0628426, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-02 19:27:59,065 DEBUG transport.py test2 Response Response 202: , ['test1', 'test3']
+2023-07-02 19:27:59,086 DEBUG app.py test2 Starting server integration thread
+2023-07-02 19:27:59,086 DEBUG app.py test2 Reader thread started
+2023-07-02 19:28:38,863 DEBUG transport.py test2 Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688315318.8630347, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'hi', '_contact': None}
+2023-07-02 19:28:38,889 DEBUG transport.py test2 Response Response 200: OK, None
+2023-07-02 19:28:58,429 DEBUG transport.py test2 Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688315337.6395996, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test3', '_message': 'И тебе не хворать', '_contact': None}
+2023-07-02 19:29:14,000 DEBUG transport.py test2 Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688315353.467853, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test3', '_message': 'Моментально доходят', '_contact': None}

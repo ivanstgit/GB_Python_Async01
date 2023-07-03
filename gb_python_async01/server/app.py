@@ -1,3 +1,4 @@
+from copy import copy
 import threading
 import time
 from gb_python_async01.server.config import ServerConfig
@@ -19,31 +20,59 @@ class ServerApp():
         self.logger = ServerLogger(self.config.logger_file_path, self.config.debug, self.config.testing).logger
 
     def run(self):
-
-        config_changed = threading.Event()
-
-        self._start_db()
-        thread_message_dispatcher = self._start_message_dispatcher(terminate_on=config_changed)
-        thread_gui = self._start_gui(to_terminate=config_changed)
+        self.logger.info(f'Starting threads: {self.config}')
+        self._start_threads()
 
         while True:
             time.sleep(1)
-            if config_changed is None or config_changed.isSet():
-                self.logger.debug(f'(Re)starting threads: {self.config}')
-                config_changed = threading.Event()
-                self._start_db()
-                thread_message_dispatcher = self._start_message_dispatcher(terminate_on=config_changed)
-                thread_gui = self._start_gui(to_terminate=config_changed)
+            # config was changed - restart threads
+            if self.ev_config_changed.isSet():
+                config_before = copy(self.config)
 
-            if thread_message_dispatcher.is_alive() and thread_gui.is_alive():
+                try:
+                    self._stop_threads()
+                    self.config = self.config_editable
+                    self.logger.info(f'Restarting threads: {self.config}')
+                    self._start_threads()
+                except Exception as e:
+                    self._stop_threads()
+                    self.logger.info(f'Error restarting threads {e}, use previous config')
+                    self.config = config_before
+                    self._start_threads()
+
+            if self.thread_message_dispatcher and self.thread_message_dispatcher.is_alive():
+                # Server can work without GUI, even start w/o GUI
                 continue
-            self.logger.debug(f'Server stopped...')
+            self.logger.info(f'Server stopped...')
             break
 
-    def _start_db(self):
+    def _start_threads(self):
+        self.ev_config_changed = threading.Event()
+        self.config_editable = copy(self.config)
+
         self.db = ServerStorage(self.config.db_url)
         self.db.init_db_tables()
         self.db.clear_active_connections()
+
+        self.thread_message_dispatcher = self._start_message_dispatcher(terminate_on=self.ev_config_changed)
+        if self.config.gui_enabled:
+            self.thread_gui = self._start_gui(config_editable=self.config_editable, config_changed_event=self.ev_config_changed)
+
+    def _stop_threads(self):
+        if self.thread_message_dispatcher:
+            for i in range(30):
+                if self.thread_message_dispatcher.is_alive():
+                    time.sleep(1)
+            if self.thread_message_dispatcher.is_alive():
+                self.logger.critical('Error stopping dispatcher thread')
+        if self.thread_gui:
+            for i in range(30):
+                if self.thread_gui.is_alive():
+                    time.sleep(1)
+            if self.thread_gui.is_alive():
+                self.logger.critical('Error stopping gui thread')
+        if self.db:
+            self.db.stop()
 
     def _start_message_dispatcher(self, terminate_on: threading.Event) -> threading.Thread:
         self.message_dispatcher = ServerMessageDispatcher(self.logger, self.config, self.db)
@@ -53,9 +82,9 @@ class ServerApp():
         self.logger.debug(f'Message dispatcher thread started')
         return thread
 
-    def _start_gui(self, to_terminate: threading.Event) -> threading.Thread:
-        self.gui = ServerGUI(config=self.config, db=self.db)
-        thread = threading.Thread(target=self.gui.run, name='GUI dispatcher', args=(to_terminate,))
+    def _start_gui(self, config_editable, config_changed_event: threading.Event) -> threading.Thread:
+        self.gui = ServerGUI(config=self.config, config4edit=config_editable, db=self.db)
+        thread = threading.Thread(target=self.gui.run, name='GUI dispatcher', args=(config_changed_event,))
         thread.daemon = True
         thread.start()
         self.logger.debug(f'GUI thread started')

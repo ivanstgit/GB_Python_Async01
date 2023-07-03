@@ -44,3 +44,10 @@ class MessageHistory(Base):
     msg_txt: Mapped[str] = mapped_column('msg_txt', UnicodeText)
 
     contact: Mapped["Contact"] = relationship(back_populates="message_history")
+
+    def __repr__(self) -> str:
+        if self.is_inbound:
+            res = f'Получено {self.created_at}:\n {self.msg_txt}'
+        else:
+            res = f'Отправлено {self.created_at}:\n {self.msg_txt}'
+        return res

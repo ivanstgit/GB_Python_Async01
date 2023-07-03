@@ -65,9 +65,13 @@ class ClientStorage():
         with Session(self.db_engine) as session:
             stmt_contacts = (
                 select(Contact)
+                .where(Contact.is_active == True)
             )
             contacts = session.scalars(stmt_contacts).fetchall()
-            contact_names = list([contact.name for contact in contacts])
+            if contacts:
+                contact_names = list([contact.name for contact in contacts])
+            else:
+                contact_names = []
             return contact_names
 
     def message_add(self, contact_name: str, is_inbound: bool, created_at: datetime.datetime, msg_txt: str):
@@ -86,13 +90,19 @@ class ClientStorage():
             session.add(message)
             session.commit()
 
-    def message_history(self, dt_from: datetime.datetime):
+    def message_history(self, contact_name: str, limit: int) -> list:
         with Session(self.db_engine) as session:
-            stmt_message_history = (
-                select(MessageHistory)
-                .where(MessageHistory.created_at > dt_from)
-            )
-            message_history = session.scalars(stmt_message_history).fetchall()
-            return list(message_history)
+            contact = session.query(Contact).filter_by(name=contact_name).first()
+            if contact:
+                stmt_message_history = (
+                    select(MessageHistory)
+                    .where(MessageHistory.contact_id == contact.id)
+                    .order_by(-MessageHistory.created_at)
+                    .limit(limit)
+                )
+                message_history = session.scalars(stmt_message_history).fetchall()
+                return list(message_history)
+            else:
+                return []
 
 # raise ClientDBError(msg=f'Incorrect contact {contact_name}')
