@@ -8,12 +8,12 @@ from gb_python_async01.transport.protocol import *
 
 class TestSocketSerializers(unittest.TestCase):
     test_time = 65.5
-    test_presence_200 = ActionPresence(test_time, 'ua', 'us')
-    test_message_200 = ActionMessage(time=test_time, receiver='ua', sender='ua', message='test 1')
+    test_presence_200 = JIMActionPresence(test_time, 'ua', 'us')
+    test_message_200 = JIMActionMessage(time=test_time, receiver='ua', sender='ua', message='test 1')
 
-    test_response_200 = Response200()
+    test_response_200 = JIMResponse200()
 
-    test_response_400 = Response400()
+    test_response_400 = JIMResponse400()
     jim = JIMSerializer()
 
     def test_action_decode_encode_OK(self):

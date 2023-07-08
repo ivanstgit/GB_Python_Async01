@@ -1,7 +1,11 @@
 from gb_python_async01.transport.model.message import *
 
 
-class MessageSerializer():
+class JIMMessageSerializer():
+    auth_action = 'auth_action'
+    data1 = 'secret1'
+    data2 = 'secret2'
+
     action = 'action'
 
     time = 'time'
@@ -22,7 +26,7 @@ class MessageSerializer():
     data = 'data'
 
     @staticmethod
-    def to_dict(msg: Message):
+    def to_dict(msg: JIMMessage):
         pass
 
     @staticmethod
@@ -30,8 +34,26 @@ class MessageSerializer():
         pass
 
 
-class ActionPresenceSerializer(MessageSerializer):
-    def to_dict(self, msg: ActionPresence) -> dict:
+class JIMAuthSerializer(JIMMessageSerializer):
+    def to_dict(self, msg: JIMAuth) -> dict:
+        return {
+            self.auth_action: msg.auth_action,
+            self.data1: msg.data1,
+            self.data2: msg.data2
+        }
+
+    def from_dict(self, msg: dict) -> JIMAuth:
+        auth_action = msg.get(self.auth_action) or ''
+        if not auth_action:
+            raise JIMValidationError(self.user)
+
+        data1 = msg.get(self.data1) or ''
+        data2 = msg.get(self.data2) or ''
+        return JIMAuth(auth_action, data1, data2)
+
+
+class JIMActionPresenceSerializer(JIMMessageSerializer):
+    def to_dict(self, msg: JIMActionPresence) -> dict:
         return {
             self.action: msg.action,
             self.time: msg.time,
@@ -41,7 +63,7 @@ class ActionPresenceSerializer(MessageSerializer):
             }
         }
 
-    def from_dict(self, msg: dict) -> ActionPresence:
+    def from_dict(self, msg: dict) -> JIMActionPresence:
         time = msg.get(self.time)
         if not time:
             raise JIMValidationError(self.time)
@@ -50,16 +72,16 @@ class ActionPresenceSerializer(MessageSerializer):
         if not user:
             raise JIMValidationError(self.user)
         try:
-            return ActionPresence(time=time,
-                                  user_account=user.get(self.user_account),
-                                  user_status=user.get(self.user_status))
+            return JIMActionPresence(time=time,
+                                     user_account=user.get(self.user_account),
+                                     user_status=user.get(self.user_status))
         except Exception as e:
             raise JIMValidationError
 
 
-class ActionMessageSerializer(MessageSerializer):
+class JIMActionMessageSerializer(JIMMessageSerializer):
 
-    def to_dict(self, msg: ActionMessage) -> dict:
+    def to_dict(self, msg: JIMActionMessage) -> dict:
         return {
             self.action: msg.action,
             self.time: msg.time,
@@ -68,7 +90,7 @@ class ActionMessageSerializer(MessageSerializer):
             self.message: msg.message
         }
 
-    def from_dict(self, msg: dict) -> ActionMessage:
+    def from_dict(self, msg: dict) -> JIMActionMessage:
         time = msg.get(self.time)
         if not time:
             raise JIMValidationError(self.time)
@@ -77,42 +99,42 @@ class ActionMessageSerializer(MessageSerializer):
         if not message:
             raise JIMValidationError(self.time)
         try:
-            return ActionMessage(time=time,
-                                 receiver=msg.get(self.receiver),
-                                 sender=msg.get(self.sender),
-                                 message=message)
+            return JIMActionMessage(time=time,
+                                    receiver=msg.get(self.receiver),
+                                    sender=msg.get(self.sender),
+                                    message=message)
         except Exception as e:
             raise JIMValidationError
 
 
-class ActionExitSerializer(MessageSerializer):
+class JIMActionExitSerializer(JIMMessageSerializer):
 
-    def to_dict(self, msg: ActionExit) -> dict:
+    def to_dict(self, msg: JIMActionExit) -> dict:
         return {
             self.action: msg.action,
             self.time: msg.time
         }
 
-    def from_dict(self, msg: dict) -> ActionExit:
+    def from_dict(self, msg: dict) -> JIMActionExit:
         time = msg.get(self.time)
         if not time:
             raise JIMValidationError(self.time)
 
         try:
-            return ActionExit(time=time)
+            return JIMActionExit(time=time)
         except Exception as e:
             raise JIMValidationError
 
 
-class ActionGetContactsSerializer(MessageSerializer):
-    def to_dict(self, msg: ActionGetContacts) -> dict:
+class JIMActionGetContactsSerializer(JIMMessageSerializer):
+    def to_dict(self, msg: JIMActionGetContacts) -> dict:
         return {
             self.action: msg.action,
             self.time: msg.time,
             self.user_account: msg.user_account
         }
 
-    def from_dict(self, msg: dict) -> ActionGetContacts:
+    def from_dict(self, msg: dict) -> JIMActionGetContacts:
         time = msg.get(self.time)
         if not time:
             raise JIMValidationError(self.time)
@@ -121,13 +143,13 @@ class ActionGetContactsSerializer(MessageSerializer):
         if not user_account:
             raise JIMValidationError(self.user_account)
         try:
-            return ActionGetContacts(time=time, user_account=user_account)
+            return JIMActionGetContacts(time=time, user_account=user_account)
         except Exception as e:
             raise JIMValidationError
 
 
-class ActionAddDelContactSerializer(MessageSerializer):
-    def to_dict(self, msg: ActionAddContact or ActionDeleteContact) -> dict:
+class JIMActionAddDelContactSerializer(JIMMessageSerializer):
+    def to_dict(self, msg: JIMActionAddContact or JIMActionDeleteContact) -> dict:
         return {
             self.action: msg.action,
             self.time: msg.time,
@@ -135,7 +157,7 @@ class ActionAddDelContactSerializer(MessageSerializer):
             self.contact: msg.contact
         }
 
-    def from_dict(self, msg: dict) -> Action:
+    def from_dict(self, msg: dict) -> JIMAction:
         time = msg.get(self.time)
         if not time:
             raise JIMValidationError(self.time)
@@ -150,17 +172,17 @@ class ActionAddDelContactSerializer(MessageSerializer):
 
         try:
             action = msg.get(self.action)
-            if action == ActionAddContact.get_action():
-                return ActionAddContact(time=time, user_account=user_account, contact=contact)
-            elif action == ActionDeleteContact.get_action():
-                return ActionDeleteContact(time=time, user_account=user_account, contact=contact)
+            if action == JIMActionAddContact.get_action():
+                return JIMActionAddContact(time=time, user_account=user_account, contact=contact)
+            elif action == JIMActionDeleteContact.get_action():
+                return JIMActionDeleteContact(time=time, user_account=user_account, contact=contact)
         except Exception as e:
             raise JIMValidationError
         raise JIMValidationError(self.action)
 
 
-class ResponseSerializer(MessageSerializer):
-    def to_dict(self, msg: Response) -> dict:
+class JIMResponseSerializer(JIMMessageSerializer):
+    def to_dict(self, msg: JIMResponse) -> dict:
         res = {self.response: str(msg.response)}
         if msg.error:
             res[self.error] = msg.error
@@ -170,13 +192,13 @@ class ResponseSerializer(MessageSerializer):
             res[self.data] = msg.data
         return res
 
-    def from_dict(self, msg: dict) -> Response:
+    def from_dict(self, msg: dict) -> JIMResponse:
         response = msg.get(self.response)
         if not response:
             raise JIMValidationError(field=self.response)
         message = msg.get(self.alert) or msg.get(self.error) or ''
         data = msg.get(self.data) or None
         try:
-            return Response(int(response), message, data)
+            return JIMResponse(int(response), message, data)
         except Exception as e:
             raise JIMValidationError(e)

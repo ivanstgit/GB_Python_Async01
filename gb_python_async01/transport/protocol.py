@@ -10,31 +10,35 @@ from gb_python_async01.transport.serializers.message import *
 MESSAGE_ENCODING = 'utf-8'
 
 
-class MessageSerializerFactory():
+class JIMMessageSerializerFactory():
     methods = {
-        MessageSerializer.action: {
-            'presence': ActionPresenceSerializer,  # 'присутствие. Сервисное сообщение для извещения сервера о присутствии клиента online',
+        JIMAuth.get_type(): JIMAuthSerializer,
+        JIMAction.get_type(): {
+            JIMActionPresence.get_action(): JIMActionPresenceSerializer,  # 'присутствие. Сервисное сообщение для извещения сервера о присутствии клиента online',
             'prоbe': None,  # 'проверка присутствия. Сервисное сообщение от сервера для проверки присутствии клиента online',
-            'msg': ActionMessageSerializer,  # 'простое сообщение пользователю или в чат',
-            'quit': ActionExitSerializer,  # 'отключение от сервера',
+            JIMActionMessage.get_action(): JIMActionMessageSerializer,  # 'простое сообщение пользователю или в чат',
+            JIMActionExit.get_action(): JIMActionExitSerializer,  # 'отключение от сервера',
             'authenticate': None,  # 'авторизация на сервере',
             'join': None,  # 'присоединиться к чату',
             'leave': None,  # 'покинуть чат',
-            ActionGetContacts.get_action(): ActionGetContactsSerializer,  # получение списка контактов
-            ActionAddContact.get_action(): ActionAddDelContactSerializer,  # добавление контакта
-            ActionDeleteContact.get_action(): ActionAddDelContactSerializer  # yдаление контакта
+            JIMActionGetContacts.get_action(): JIMActionGetContactsSerializer,  # получение списка контактов
+            JIMActionAddContact.get_action(): JIMActionAddDelContactSerializer,  # добавление контакта
+            JIMActionDeleteContact.get_action(): JIMActionAddDelContactSerializer  # yдаление контакта
         },
-        MessageSerializer.response: {
-            '200': ResponseSerializer,
-            '202': ResponseSerializer,
-            '400': ResponseSerializer,
-        },
+        JIMResponse.get_type(): JIMResponseSerializer,
     }
+
+    @staticmethod
+    def get_auth_serializer():
+        res = JIMMessageSerializerFactory.methods[JIMAuth.get_type()]
+        if res:
+            return res()
+        raise JIMNotImplementedError
 
     @staticmethod
     def get_action_serializer(action):
         if action:
-            res = MessageSerializerFactory.methods[MessageSerializer.action].get(str(action))
+            res = JIMMessageSerializerFactory.methods[JIMAction.get_type()].get(str(action))
             if res:
                 return res()
         raise JIMNotImplementedError
@@ -42,19 +46,10 @@ class MessageSerializerFactory():
     @staticmethod
     def get_response_serializer(response):
         if response:
-            res = MessageSerializerFactory.methods[MessageSerializer.response].get(str(response))
+            res = JIMMessageSerializerFactory.methods[JIMResponse.get_type()]
             if res:
                 return res()
         raise JIMNotImplementedError
-
-    # def __init__(self):
-    #     self._serializers = dict()
-
-    # def register_serializer_for_action(self, action, serializer):
-    #     self._serializers['action'][action] = serializer
-
-    # def register_serializer_for_(self, , serializer):
-    #     self._serializers['action'][action] = serializer
 
 
 class JIMSerializer():
@@ -69,15 +64,30 @@ class JIMSerializer():
         except Exception as e:
             raise JIMSerializerError(e)
 
-    def decode_action(self, message: bytes) -> Action:
+    def from_bytes(self, message: bytes) -> JIMMessage:
         msg = self._decode_message(message)
-        action = msg.get(MessageSerializer.action)
-        return MessageSerializerFactory.get_action_serializer(action).from_dict(msg)
+        action = msg.get(JIMMessageSerializer.action)
+        response = msg.get(JIMMessageSerializer.response)
+        if action and not response:
+            return JIMMessageSerializerFactory.get_action_serializer(action).from_dict(msg)
+        elif response and not action:
+            return JIMMessageSerializerFactory.get_response_serializer(response).from_dict(msg)
+        else:
+            return JIMMessageSerializerFactory.get_auth_serializer().from_dict(msg)
 
-    def decode_response(self, message: bytes) -> Response:
+    def decode_auth(self, message: bytes) -> JIMAuth:
         msg = self._decode_message(message)
-        response = msg.get(MessageSerializer.response)
-        return MessageSerializerFactory.get_response_serializer(response).from_dict(msg)
+        return JIMMessageSerializerFactory.get_auth_serializer().from_dict(msg)
+
+    def decode_action(self, message: bytes) -> JIMAction:
+        msg = self._decode_message(message)
+        action = msg.get(JIMMessageSerializer.action)
+        return JIMMessageSerializerFactory.get_action_serializer(action).from_dict(msg)
+
+    def decode_response(self, message: bytes) -> JIMResponse:
+        msg = self._decode_message(message)
+        response = msg.get(JIMMessageSerializer.response)
+        return JIMMessageSerializerFactory.get_response_serializer(response).from_dict(msg)
 
     def _encode_message(self, message: dict) -> bytes:
         try:
@@ -85,17 +95,41 @@ class JIMSerializer():
         except Exception as e:
             raise JIMSerializerError(e)
 
-    def encode_action(self, message: Action) -> bytes:
+    def to_bytes(self, message: JIMMessage) -> bytes:
         try:
-            serializer = MessageSerializerFactory.get_action_serializer(message.action)
+            if message.type == JIMAuth.get_type():
+                serializer = JIMMessageSerializerFactory.get_auth_serializer()
+            elif message.type == JIMAction.get_type():
+                serializer = JIMMessageSerializerFactory.get_action_serializer(message.action)  # type: ignore
+            elif message.type == JIMResponse.get_type():
+                serializer = JIMMessageSerializerFactory.get_response_serializer(message)
+            else:
+                raise JIMSerializerError
+
             msg_dict = serializer.to_dict(message)
             return self._encode_message(msg_dict)
         except Exception as e:
             raise JIMSerializerError(e)
 
-    def encode_response(self, message: Response) -> bytes:
+    def encode_auth(self, message: JIMAuth) -> bytes:
         try:
-            serializer = MessageSerializerFactory.get_response_serializer(message.response)
+            serializer = JIMMessageSerializerFactory.get_auth_serializer()
+            msg_dict = serializer.to_dict(message)
+            return self._encode_message(msg_dict)
+        except Exception as e:
+            raise JIMSerializerError(e)
+
+    def encode_action(self, message: JIMAction) -> bytes:
+        try:
+            serializer = JIMMessageSerializerFactory.get_action_serializer(message.action)
+            msg_dict = serializer.to_dict(message)
+            return self._encode_message(msg_dict)
+        except Exception as e:
+            raise JIMSerializerError(e)
+
+    def encode_response(self, message: JIMResponse) -> bytes:
+        try:
+            serializer = JIMMessageSerializerFactory.get_response_serializer(message.response)
             msg_dict = serializer.to_dict(message)
             return self._encode_message(msg_dict)
         except Exception as e:

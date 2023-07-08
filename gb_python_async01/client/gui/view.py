@@ -176,6 +176,7 @@ class MessagesGroupBox(QGroupBox, ObserverExt):
         self.modelChanged(None)
         self.m_contact_selected.addObserver(self)
         self.m_message_list.addObserver(self)
+        self.list_table.scrollToBottom()
 
     def initUI(self):
 
@@ -185,6 +186,8 @@ class MessagesGroupBox(QGroupBox, ObserverExt):
         self.list_table = QListWidget()
         self.list_table.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
         self.list_table.setMinimumWidth(400)
+        self.list_table.setAutoScroll(True)
+        self.list_table.setWordWrap(True)
 
         self.add_label = QLabel()
         self.add_label.setText(f'Enter message')
@@ -243,6 +246,7 @@ class MessagesGroupBox(QGroupBox, ObserverExt):
             for message in self.m_message_list.messages:
                 item = QListWidgetItem(str(message))
                 self.list_table.addItem(item)
+            self.list_table.scrollToBottom()
 
     def send_message(self):
         contact = self.m_contact_selected.selected_contact

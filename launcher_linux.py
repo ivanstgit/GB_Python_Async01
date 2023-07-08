@@ -19,7 +19,7 @@ while True:
         time.sleep(0.1)
     elif ACTION == 'c':
         for user in ['test1', 'test2', 'test3']:
-            PROCESS.append(subprocess.Popen(f'gnome-terminal --disable-factory -- python client.py -u {user}',
+            PROCESS.append(subprocess.Popen(f'gnome-terminal --disable-factory -- python client.py -u {user} -p 123',
                                             stdout=subprocess.PIPE,
                                             stderr=None,
                                             shell=True

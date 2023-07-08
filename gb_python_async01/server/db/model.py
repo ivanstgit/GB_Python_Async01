@@ -2,7 +2,7 @@
 import datetime
 from typing import Annotated, List, Optional
 
-from sqlalchemy import FetchedValue, ForeignKey, Integer, String, UnicodeText, func
+from sqlalchemy import FetchedValue, ForeignKey, Integer, String, Text, UnicodeText, func
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 intpk = Annotated[int, mapped_column('id', Integer, primary_key=True, autoincrement=True)]
@@ -27,26 +27,59 @@ class User(Base):
 
     id: Mapped[intpk]
     name: Mapped[str] = mapped_column('name', String(30), unique=True)
+    is_active: Mapped[bool] = mapped_column('is_active', default=True)
+    updated_at: Mapped[updated_at]
 
     status: Mapped['UserStatus'] = relationship(back_populates="user")
-    login_history: Mapped[List['UserLoginHistory']] = relationship(back_populates="user")
+    login_history: Mapped[List['UserSession']] = relationship(back_populates="user")
 
     def __repr__(self) -> str:
         return f'User(id={self.id!r}, name={self.name!r}'
 
+    def activate(self):
+        self.is_active = True
 
-class UserLoginHistory(Base):
-    __tablename__ = "user_login_history"
+    def deactivate(self):
+        self.is_active = False
+
+
+class UserPrivate(Base):
+    __tablename__ = "user_private"
 
     id: Mapped[intpk]
     user_id: Mapped[extpk] = mapped_column('user_id', ForeignKey('users.id'))
-    login_at: Mapped[created_at]
+    updated_at: Mapped[updated_at]
+    password: Mapped[str] = mapped_column('password', String(30))
+
+    user: Mapped["User"] = relationship()
+
+    def __repr__(self) -> str:
+        return f'UserPrivate(id={self.id!r}'
+
+
+class UserSession(Base):
+    """ История регистраций пользователя 
+    Публичный ключ хранится для отправки пользователю-контакту 
+    Для отложенной отправки важно передать контакту тот ключ, которым сообщение было зашифровано! """
+    __tablename__ = "user_sessions"
+
+    id: Mapped[intpk]
+    user_id: Mapped[extpk] = mapped_column('user_id', ForeignKey('users.id'))
+    created_at: Mapped[created_at]
     ip: Mapped[str] = mapped_column('ip')
     port: Mapped[int] = mapped_column('port')
     is_active: Mapped[bool] = mapped_column('is_active')
+    is_last: Mapped[bool] = mapped_column('is_last')  # SQL query optimization
     updated_at: Mapped[updated_at]
+    pubkey: Mapped[str]
 
-    user: Mapped["User"] = relationship(back_populates="login_history")
+    user: Mapped["User"] = relationship()
+
+    def activate(self):
+        self.is_active = True
+
+    def deactivate(self):
+        self.is_active = False
 
 
 class UserStatus(Base):
@@ -57,7 +90,7 @@ class UserStatus(Base):
     updated_at: Mapped[updated_at]
     status: Mapped[str] = mapped_column('status', String(30))
 
-    user: Mapped["User"] = relationship(back_populates="status")
+    user: Mapped["User"] = relationship(back_populates="status", viewonly=True)
 
 
 class UserContact(Base):
@@ -69,18 +102,34 @@ class UserContact(Base):
     created_at: Mapped[created_at]
     is_active: Mapped[bool] = mapped_column('is_active', default=True)
 
-    # user: Mapped["User"] = relationship(back_populates="users")
-    # contact: Mapped["User"] = relationship(back_populates="contacts")
+    user: Mapped["User"] = relationship(foreign_keys=[user_id], viewonly=True)
+    contact: Mapped["User"] = relationship(foreign_keys=[contact_id], viewonly=True)
+
+    def activate(self):
+        self.is_active = True
+
+    def deactivate(self):
+        self.is_active = False
 
 
-class MessageHistory(Base):
-    __tablename__ = "message_history"
+class Message(Base):
+    """ История сообщений 
+    Контент сообщения зашифрован ключем отправителя, действующим 
+    на момент регистрации, поэтому храним ссылку на него.
+    Контент сообщения очищается после получения адресатом """
+    __tablename__ = "messages"
 
     id: Mapped[intpk]
     sender_id: Mapped[extpk] = mapped_column('sender_id', ForeignKey('users.id'))
     receiver_id: Mapped[extpk] = mapped_column('receiver_id', ForeignKey('users.id'))
-    created_at: Mapped[created_at]
-    msg_txt: Mapped[str] = mapped_column('msg_txt', UnicodeText)
+    created_at: Mapped[db_time]
+    msg_txt: Mapped[str] = mapped_column('msg_txt', Text)
     is_delivered: Mapped[bool] = mapped_column('is_delivered', default=False)
+    sender_session_id: Mapped[extpk] = mapped_column('login_id', ForeignKey('user_sessions.id'))
 
-    # sender: Mapped["User"] = relationship()
+    sender: Mapped["User"] = relationship(foreign_keys=[sender_id], viewonly=True)
+    receiver: Mapped["User"] = relationship(foreign_keys=[receiver_id], viewonly=True)
+
+    def set_delivered(self) -> None:
+        self.is_delivered = True
+        self.msg_txt = ''

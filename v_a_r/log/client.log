@@ -1,0 +1,293 @@
+2023-07-08 22:34:15,293 DEBUG app.py Connecting to server
+2023-07-08 22:34:15,355 DEBUG app.py Connecting to server
+2023-07-08 22:34:15,403 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:34:15,443 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:34:15,487 DEBUG app.py Connecting to server
+2023-07-08 22:34:15,525 DEBUG transport.py Sending Auth 2
+2023-07-08 22:34:15,537 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:15,564 DEBUG transport.py Sending Auth 2
+2023-07-08 22:34:15,572 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:34:15,576 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:15,701 DEBUG transport.py Sending Auth 2
+2023-07-08 22:34:15,713 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:19,771 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:34:19,886 DEBUG transport.py Sending Auth 2
+2023-07-08 22:34:19,899 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:21,041 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:34:21,041 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688844861.0414445, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:21,045 DEBUG transport.py Response Response 202: 
+2023-07-08 22:34:21,052 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688844861.05274, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:21,068 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:21,068 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:34:21,068 DEBUG app.py test3 Reader thread started
+2023-07-08 22:34:23,819 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:34:23,933 DEBUG transport.py Sending Auth 2
+2023-07-08 22:34:23,945 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:25,091 DEBUG app.py test2 Synchronizing contacts
+2023-07-08 22:34:25,091 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688844865.0918922, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:25,099 DEBUG transport.py Response Response 202: 
+2023-07-08 22:34:25,124 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688844865.1242902, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:25,132 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:25,132 DEBUG app.py test2 Starting server integration thread
+2023-07-08 22:34:25,132 DEBUG app.py test2 Reader thread started
+2023-07-08 22:34:27,748 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:34:27,867 DEBUG transport.py Sending Auth 2
+2023-07-08 22:34:27,892 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:29,032 DEBUG app.py test1 Synchronizing contacts
+2023-07-08 22:34:29,032 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688844869.032798, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:29,037 DEBUG transport.py Response Response 202: 
+2023-07-08 22:34:29,052 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688844869.0527866, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:29,061 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:29,061 DEBUG app.py test1 Starting server integration thread
+2023-07-08 22:34:29,062 DEBUG app.py test1 Reader thread started
+2023-07-08 22:34:43,127 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688844882.1431699, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'e2e?XIS8sUT3BSqdbq9MwaSyqpr2jZiXy2vM7ckBryVAqgRkVLFfrcog4ElWsGxxMqkjBOpKQwyD24Ae0Wo8X+XwYSzddrHESm8jZYqszttXhb+sXUXADUoiyocjlnD1iitMXQcfyEh2TyCCit4u+fTmqlCLqftiMc+PtgUx+prWOjzCsb779e2fKdTALmmh5+AMH23BY/kqK2SukNFu6/jvEjExWCS48RcUxTdvcjrD31oF3/oaWonnyhe35Zr7CzmehdzVHlMwx/SF1yEk2gk5MCQbRGys7deEfJpcVoFvUeifNEhStXi6ogbumLi0YuB76kPYrhNpSMYVA18CKUDJhg==\n', '_contact': None}
+2023-07-08 22:34:43,159 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688844882.14317, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'e2e?XIS8sUT3BSqdbq9MwaSyqpr2jZiXy2vM7ckBryVAqgRkVLFfrcog4ElWsGxxMqkjBOpKQwyD24Ae0Wo8X+XwYSzddrHESm8jZYqszttXhb+sXUXADUoiyocjlnD1iitMXQcfyEh2TyCCit4u+fTmqlCLqftiMc+PtgUx+prWOjzCsb779e2fKdTALmmh5+AMH23BY/kqK2SukNFu6/jvEjExWCS48RcUxTdvcjrD31oF3/oaWonnyhe35Zr7CzmehdzVHlMwx/SF1yEk2gk5MCQbRGys7deEfJpcVoFvUeifNEhStXi6ogbumLi0YuB76kPYrhNpSMYVA18CKUDJhg==\n', '_contact': None}
+2023-07-08 22:34:43,159 DEBUG transport.py Response Response 202: 
+2023-07-08 22:34:43,167 CRITICAL controller.py Error ((sqlite3.IntegrityError) NOT NULL constraint failed: contacts.last_login
+[SQL: INSERT INTO contacts (name, is_active, last_login, status, pubkey) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('test2', 0, None, None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)) processing inbound message (Action {'_type': 'action', '_action': 'msg', '_time': 1688844882.14317, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'e2e?XIS8sUT3BSqdbq9MwaSyqpr2jZiXy2vM7ckBryVAqgRkVLFfrcog4ElWsGxxMqkjBOpKQwyD24Ae0Wo8X+XwYSzddrHESm8jZYqszttXhb+sXUXADUoiyocjlnD1iitMXQcfyEh2TyCCit4u+fTmqlCLqftiMc+PtgUx+prWOjzCsb779e2fKdTALmmh5+AMH23BY/kqK2SukNFu6/jvEjExWCS48RcUxTdvcjrD31oF3/oaWonnyhe35Zr7CzmehdzVHlMwx/SF1yEk2gk5MCQbRGys7deEfJpcVoFvUeifNEhStXi6ogbumLi0YuB76kPYrhNpSMYVA18CKUDJhg==\n', '_contact': None}) 
+2023-07-08 22:35:31,539 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688844931.3872461, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:35:31,547 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:35:31,547 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:35:34,019 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688844933.8572884, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:35:34,031 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:35:34,031 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:35:36,767 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688844935.796011, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:35:36,812 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:35:36,813 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:38:43,339 DEBUG app.py Connecting to server
+2023-07-08 22:38:43,417 DEBUG app.py Connecting to server
+2023-07-08 22:38:43,452 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:38:43,513 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:38:43,570 DEBUG transport.py Sending Auth 2
+2023-07-08 22:38:43,590 DEBUG app.py Connecting to server
+2023-07-08 22:38:43,653 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:43,666 DEBUG transport.py Sending Auth 2
+2023-07-08 22:38:43,676 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:38:43,678 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:43,799 DEBUG transport.py Sending Auth 2
+2023-07-08 22:38:43,813 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:48,855 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:38:48,980 DEBUG transport.py Sending Auth 2
+2023-07-08 22:38:49,016 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:50,142 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:38:50,142 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845130.1425626, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:50,146 DEBUG transport.py Response Response 202: 
+2023-07-08 22:38:50,153 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845130.1534836, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:50,173 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:50,173 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:38:50,173 DEBUG app.py test3 Reader thread started
+2023-07-08 22:38:53,048 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:38:53,168 DEBUG transport.py Sending Auth 2
+2023-07-08 22:38:53,180 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:54,306 DEBUG app.py test2 Synchronizing contacts
+2023-07-08 22:38:54,307 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845134.3070364, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:54,326 DEBUG transport.py Response Response 202: 
+2023-07-08 22:38:54,355 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845134.3552494, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:54,375 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:54,375 DEBUG app.py test2 Starting server integration thread
+2023-07-08 22:38:54,376 DEBUG app.py test2 Reader thread started
+2023-07-08 22:38:56,544 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:38:56,658 DEBUG transport.py Sending Auth 2
+2023-07-08 22:38:56,669 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:57,814 DEBUG app.py test1 Synchronizing contacts
+2023-07-08 22:38:57,814 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845137.814204, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:57,818 DEBUG transport.py Response Response 202: 
+2023-07-08 22:38:57,826 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845137.826134, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:57,847 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:57,847 DEBUG app.py test1 Starting server integration thread
+2023-07-08 22:38:57,847 DEBUG app.py test1 Reader thread started
+2023-07-08 22:39:30,526 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845169.5599446, '_user_account': None, '_user_status': None, '_receiver': 'test1', '_sender': 'test2', '_message': 'e2e?U5vlvvi1AUlBQ1/G8yHWYr5V7K9o9ucUdb5oRZBSO3nJeH4SMkOdRP9ETu4MeeSMpB5XhRBPsXfIpOSfiitaHIQlD33/SDyFn15aOZa4ObH24A7BeBke9yEggTlqjAhlJ66a1ndvnSgOamB0IUuwRr5nCrRFvQ2MXIyIX2Wj75AStHs9KU3cmwF30z2/2Ap5H6xlVAbiQR2erHQNtDNlnto23aWaYNpX8NnJYnd0NQBXjTgfBAOGFk7dFsGyB1Ygq21GpMThgWkmSANdQwyCLJScd+7r+zP2zPoDUUBoz/zPWOGccTMwLbDDes/nZaoRnnCbtCMr9+Yh4dVaJxqiSQ==\n', '_contact': None}
+2023-07-08 22:39:30,549 DEBUG transport.py Response Response 202: 
+2023-07-08 22:39:30,573 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845169.559945, '_user_account': None, '_user_status': None, '_receiver': 'test1', '_sender': 'test2', '_message': 'e2e?U5vlvvi1AUlBQ1/G8yHWYr5V7K9o9ucUdb5oRZBSO3nJeH4SMkOdRP9ETu4MeeSMpB5XhRBPsXfIpOSfiitaHIQlD33/SDyFn15aOZa4ObH24A7BeBke9yEggTlqjAhlJ66a1ndvnSgOamB0IUuwRr5nCrRFvQ2MXIyIX2Wj75AStHs9KU3cmwF30z2/2Ap5H6xlVAbiQR2erHQNtDNlnto23aWaYNpX8NnJYnd0NQBXjTgfBAOGFk7dFsGyB1Ygq21GpMThgWkmSANdQwyCLJScd+7r+zP2zPoDUUBoz/zPWOGccTMwLbDDes/nZaoRnnCbtCMr9+Yh4dVaJxqiSQ==\n', '_contact': None}
+2023-07-08 22:39:46,337 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'add_contact', '_time': 1688845186.1906662, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': 'test2'}
+2023-07-08 22:39:46,348 DEBUG transport.py Response Response 202: 
+2023-07-08 22:40:08,132 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845207.434644, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?buv8lYsQcOdfKHcnSjOSi0+Fx08QvhNPiNL9BJBWw4QG1usU45ApCopxShb3a0240pJLH9PpbpvJ5VwMOBZEcRIABeFpIdNQijp5dtJYag+vpCxL0s+FgsNK0rflUH6Ew4dRWj9Fa6D4cGom6I0bg3VFOa/rs57p9lAhSCdaXKPI9PJZ3b3gD2TgjkaUlHs1CdoEUPB+g4S3s5jqV9McTWJU+qeFQeJ6FYIvfGQl2CkgI4ad3eIa/oGsDU0+sPK4+AV8IreqYSWhaawO4pXFBMwwh5zIy+6kShmjsT8qxH/yQR2QaJ1SkcBlbtIWQI3h0jKOM/K7bZ6Qemg5Es/iLg==\n', '_contact': None}
+2023-07-08 22:40:08,145 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845207.434644, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?buv8lYsQcOdfKHcnSjOSi0+Fx08QvhNPiNL9BJBWw4QG1usU45ApCopxShb3a0240pJLH9PpbpvJ5VwMOBZEcRIABeFpIdNQijp5dtJYag+vpCxL0s+FgsNK0rflUH6Ew4dRWj9Fa6D4cGom6I0bg3VFOa/rs57p9lAhSCdaXKPI9PJZ3b3gD2TgjkaUlHs1CdoEUPB+g4S3s5jqV9McTWJU+qeFQeJ6FYIvfGQl2CkgI4ad3eIa/oGsDU0+sPK4+AV8IreqYSWhaawO4pXFBMwwh5zIy+6kShmjsT8qxH/yQR2QaJ1SkcBlbtIWQI3h0jKOM/K7bZ6Qemg5Es/iLg==\n', '_contact': None}
+2023-07-08 22:40:08,146 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:01,818 DEBUG app.py Connecting to server
+2023-07-08 22:45:01,960 DEBUG app.py Connecting to server
+2023-07-08 22:45:01,964 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:45:02,084 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:45:02,091 DEBUG app.py Connecting to server
+2023-07-08 22:45:02,094 DEBUG transport.py Sending Auth 2
+2023-07-08 22:45:02,107 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:02,199 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:45:02,208 DEBUG transport.py Sending Auth 2
+2023-07-08 22:45:02,223 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:02,324 DEBUG transport.py Sending Auth 2
+2023-07-08 22:45:02,336 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:05,752 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:45:05,863 DEBUG transport.py Sending Auth 2
+2023-07-08 22:45:05,878 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:07,002 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:45:07,002 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845507.0026217, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:07,006 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:07,013 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845507.0129952, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:07,020 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:07,020 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:45:07,020 DEBUG app.py test3 Reader thread started
+2023-07-08 22:45:11,448 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:45:11,568 DEBUG transport.py Sending Auth 2
+2023-07-08 22:45:11,580 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:12,699 DEBUG app.py test2 Synchronizing contacts
+2023-07-08 22:45:12,699 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845512.6993399, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:12,706 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:12,717 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845512.7170072, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:12,724 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:12,724 DEBUG app.py test2 Starting server integration thread
+2023-07-08 22:45:12,724 DEBUG app.py test2 Reader thread started
+2023-07-08 22:45:15,085 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:45:15,198 DEBUG transport.py Sending Auth 2
+2023-07-08 22:45:15,210 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:16,333 DEBUG app.py test1 Synchronizing contacts
+2023-07-08 22:45:16,333 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845516.3334284, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:16,339 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:16,349 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845516.3497133, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:16,360 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:16,360 DEBUG app.py test1 Starting server integration thread
+2023-07-08 22:45:16,360 DEBUG app.py test1 Reader thread started
+2023-07-08 22:45:22,319 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845521.5725102, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?itQ5boovS7Y8nPXi7nddtxapPYqfsWGAgaVhVU/fCTpPA8C8BZNS6fhEC3OxDQYcc4k1S7nT/vBaIhAqqf5tsISCzLSThPvkOF/etykIzvdJIezbwzjYRL75o+piJSg1Zh6UKZlWEawMJQR5FL1yTwIfZ1TBnq8inS4sACx7dvhL8XxFrUepHxFLYz9Rs/cnDkk2bPW+/wIP4Dj+li3W4LYew/SWvJoLXYFbqAHY+byn+Rr0JlHvCK4fCjTJkdCqOHK2oLOi1sAg2NnG+Jn8M0pGGXxJIc3BfWk04YJgbAHp9tdgFsHPNWtbvCrZueWfzxoEhSzyaBmAwse1+IX+8w==\n', '_contact': None}
+2023-07-08 22:45:22,329 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:22,530 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845521.57251, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?itQ5boovS7Y8nPXi7nddtxapPYqfsWGAgaVhVU/fCTpPA8C8BZNS6fhEC3OxDQYcc4k1S7nT/vBaIhAqqf5tsISCzLSThPvkOF/etykIzvdJIezbwzjYRL75o+piJSg1Zh6UKZlWEawMJQR5FL1yTwIfZ1TBnq8inS4sACx7dvhL8XxFrUepHxFLYz9Rs/cnDkk2bPW+/wIP4Dj+li3W4LYew/SWvJoLXYFbqAHY+byn+Rr0JlHvCK4fCjTJkdCqOHK2oLOi1sAg2NnG+Jn8M0pGGXxJIc3BfWk04YJgbAHp9tdgFsHPNWtbvCrZueWfzxoEhSzyaBmAwse1+IX+8w==\n', '_contact': None}
+2023-07-08 22:45:23,533 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845522.995833, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?e4+DBFvP1kiCsvrkNd0gKCxF7yMWq/nEok2XRR7ddkFhVtrH31bpXfxJIOPUZP50Wds97WoPOEIehS+9k1I9rn/XTJvLfYodW51nUjcmZWXt/0T09hwXNuZn7mwlu0HZ/9csvp+tCXGVJK097uP5/M1kZuLTiqK/UZEVBIhDdogtSEQihRKv6V+SuY8PRp4NvmJ+Nv1/mB5Eh58cKiq101xNQ88QLJ79gn/A92nSLZoDf0EGdS2llSoA4RhgeCI7YaN73H6gzYTeosZ97F9hZ9puSgbKXIg0o2umwGoXzyJZk0YtPxx4a9sf1FwL6aEjGLT+aPl6OqFVaMHtb/+apA==\n', '_contact': None}
+2023-07-08 22:45:23,542 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845522.995833, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?e4+DBFvP1kiCsvrkNd0gKCxF7yMWq/nEok2XRR7ddkFhVtrH31bpXfxJIOPUZP50Wds97WoPOEIehS+9k1I9rn/XTJvLfYodW51nUjcmZWXt/0T09hwXNuZn7mwlu0HZ/9csvp+tCXGVJK097uP5/M1kZuLTiqK/UZEVBIhDdogtSEQihRKv6V+SuY8PRp4NvmJ+Nv1/mB5Eh58cKiq101xNQ88QLJ79gn/A92nSLZoDf0EGdS2llSoA4RhgeCI7YaN73H6gzYTeosZ97F9hZ9puSgbKXIg0o2umwGoXzyJZk0YtPxx4a9sf1FwL6aEjGLT+aPl6OqFVaMHtb/+apA==\n', '_contact': None}
+2023-07-08 22:45:23,543 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:23,557 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845523.5573552, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?mtb/HmrFH/2vl0FbGt7hxsE80CLqRsFraMKUHdCKG6PMOakWpCkKwMNQf81hxNoqhP1uJcKWCeMXYtu/uXmJC5QLnB6lSmlEfpqQO0XIsx2gGrDLGM60nNLf2kctpMIuPUyiJ/UttATJg7v+E3rZkFfZsi4P/ecIz2utSZiqFmkMotoELtxCZbeUAtm055p3UcyjsdlR7GW6uwN8M4qc9LZRLAskeXNlTF+FkDyDz1TyY/OsaRFxFYC1WFTbCa7BOR7ni6xsSLqvFxNSDlY4z1koBnyvsh0iGEENKOrIr/llOcqst+oFv0bp2VDhUSuLmKhRiAqGAQ2cVWvUQHO4GQ==\n', '_contact': None}
+2023-07-08 22:45:23,568 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:23,581 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845523.581468, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?sPFS1NVKdpFAKy0zHxLn84ci11ZPhQqLUK81PzRA8LHJmXN+A3iLVbBadq8NbRUWjjmJpeha6h3wvZzUnvKJ8xhiGGiewmwXIAG/hTRzaK/ZvYev0+C1zvqvGYAnQiOfqYboTfJWj5TWwLQxe+VbQUt/qyantHoQCzfjo+CriendwDgqagXI0quV/LJ9MAFZFYqjTkW4w+VioC/Zll9lfzi1WskR0Lq5rrsjEiPRQe47dD00OfheBPi9NVs7tN2VDSA/BqBOR3cy5NYHms2LqetubN0xsdC7BeDRqGE06rn3bZOljZQ13T6fVkV59d22Ci2o/qJDBt3cEGQpFmg6Zg==\n', '_contact': None}
+2023-07-08 22:45:23,592 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:24,750 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845523.749031, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?SunNs7kYWb7F15ygckFz9+dPHZRQNyAKygfAyz+3vrFW6UY9aF4SZl32PFgCD7EmYzkh5ZKgoeLYdO5jYh6FfuEfl5ZYQtLI0QFN8VuNwWlb0a62MhvB65it3Sk25ilsqQFYWSENCR/WLVURCjjC39XUHQfYXLbv4UIVrbS66h2xqo3gTTzTjX0GObU50ToJ/k/vPzKWyu98iP4Knvd9QaDYmS9W8bMjC4e3p0pkMgTJhs4eu7nfBNirYNQD8lcCraEAFAf6s83+2USjCI8Y0R9cP/JffpVRYAPZ3t3ZMvUF8j9GsCQSXVHmMaWFa0Xo6ABra+6/omaJMCAyov3qgQ==\n', '_contact': None}
+2023-07-08 22:45:24,760 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845523.749031, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?SunNs7kYWb7F15ygckFz9+dPHZRQNyAKygfAyz+3vrFW6UY9aF4SZl32PFgCD7EmYzkh5ZKgoeLYdO5jYh6FfuEfl5ZYQtLI0QFN8VuNwWlb0a62MhvB65it3Sk25ilsqQFYWSENCR/WLVURCjjC39XUHQfYXLbv4UIVrbS66h2xqo3gTTzTjX0GObU50ToJ/k/vPzKWyu98iP4Knvd9QaDYmS9W8bMjC4e3p0pkMgTJhs4eu7nfBNirYNQD8lcCraEAFAf6s83+2USjCI8Y0R9cP/JffpVRYAPZ3t3ZMvUF8j9GsCQSXVHmMaWFa0Xo6ABra+6/omaJMCAyov3qgQ==\n', '_contact': None}
+2023-07-08 22:45:24,761 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:24,775 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845524.7757275, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?K0uInwmi0x+btsE2r3gxSjb8XDLrXJchH2s0PSZutBGOfiVbo4UGt0LQSi3An9QebpGaR9/phzrPpsIZTIGXRYRxmvJxHOJagbeMKvkbJIumdnlg5N77cd56YuV2F+rqxAuY1fVVaY5XQJd9Sc8cNtmFW02bItEHRav+9BeqRDKjAX7Eej0GCDu7K3QIJ/HBBWRfXEkMaoTcNiWK1h0LMxo88DE73oCqs+eA80Q38gwmtJmsGwUUWUlj+JD6HuvHo/+ABpwcodCDQSQo8J/6PGkp8icMfLJX3ZaPqqvRdCc4lCX1KgtC+r4r4yNdQuD4fiENvjlxVv/j0hQWIYh34Q==\n', '_contact': None}
+2023-07-08 22:45:24,787 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:24,806 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845524.806492, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?GTsJfrBoWgiIW913BDi5BYURveqZCAQWgRH/WFG8RT7az84YdRjGXXgCJI2WDFXHGszhfg4zfaS3dKi3qRaNmEZzLiyWE9Ne2W0nakW3aJ1TwQWdzmj1JxwSkntP5iVbxGTRsveLwnqqS59LHtj44Q9HVTRPX2LywFd5TWTuM3zkSM2nCZISe8aW4D0u0JDQtZXiaqeq+ykq3t/Cx3scL+LD9qc8TNkeRzhl1Q0uO1IFiUhUOJRU1LBSxAYUMJONCuVoXB5/EctTsiEzDt1OJrMlHlzTtCvx7iT6FYlEv9AjsoZQlB073WxbJWO3pFjzGr/yB8qkAK8kDLz9lBgw6w==\n', '_contact': None}
+2023-07-08 22:45:24,818 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:24,830 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845524.8302827, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?KgQmnwmJjKaXEmdJB7z34ge2ZT1Am9qwBrTwxcBV/xP7fxdnYCzEWAzEC63h3wm9YmHrzUnLSosqWdEJrK8gZRWtw/oqp5vZ/C9J+RGURi2N92CuqW91gyOkptR0HfTrKdllWdCH5gOzq4MB99EY2ibMLKnDEMYjULqAzA37ZO+Gg9asS1wmHjlB/GK7cyBxFaHRmWVDPIv8tuABj40ET+mObhFMRm2q7M3PU74z9JEooT1AOpXRjtmheY9hHI59sNqEEE1TcWqE9MudDHtvmTzd+Kyqgp0Ru7Z3UMY3a7NmB4g1hbNt/3xLlLv4A41yH1evcq+MCNEefQGr9cXSaA==\n', '_contact': None}
+2023-07-08 22:45:24,849 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:24,861 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845524.8612597, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?BQh+gUlD0uA9h2LWlxlsfxS394rbbcakPW/GeUnwrwCkyDZG4ORqLNnolxIJExY4RWwz8zPR0RTU54nqyy/058YHRkq1U6o7qUEKptCyXzJMoKlUI0+fTV6yaevphvkO8PBggmvIijoT4x2zebnXVomtuohZ9Bct5TYUgqUCHTxjsHJD72SNkmwQnoH0cgIK/DFTv9iaB/WCbVpUmtnuy9k7sAENgmr3PZbuwDYUB6Qh1CoIs93P4eQx36rl+JaW9aOhEXE79YXj4TgPve++rLQg5Gavo3JhzA3q23/hxVjZ7DGN/4JrzPfxjJBMzPBFm1e2/rosSDmEusqSZ9JASg==\n', '_contact': None}
+2023-07-08 22:45:24,873 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:24,913 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845524.9136734, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?PpB3ephlFP6NxjIQco3AS+sSSAK1/FHGTBws6XilQSNBUc5d6w7PbScgl/qqwQY6ClBOBFMx1hT/M5czohb/gCLc/MWzSjNdKBHJr90W3hQ30gyFcWjXmWLcTMEz1Zigrk7mszGtRB7zVteWsjQZ6OcUqx1OL6bSVb60geiva6mNN8ktsMXq/CKVpfshvLakeK1EYKaqWTqJS3H9P8Tmwcn0XnjpkanoW++EAxAXe0D6UUVgxRu4WZxmigHKlHT4taSL4IeaxpaflXpa9ew/O3e+kqd8DsMhElTcnu8Z7r5EkMVDbaolAMFXVkx4pVVF1yEyM9JIuzqWNrRg9ygFsg==\n', '_contact': None}
+2023-07-08 22:45:24,924 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:29,582 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845528.903776, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?X9OA7yLZ1B8Wfj1Hr6Edxb/njt2EVYRlY2LOexU6J0kVnjvMwyB/kJQL5kxb4GSfCxx2ldM1N/tWm0h1lBzK413kYd91yAU0VPh7LdaU7mjFabaNAdKrTPCVOZUmabSNNmk9pizO2H0d2VXCOB+Giav94oPNwPMzgj20jQ3FG8Gs387A1dUacRAnUUnxC33LvYyxHXqU954xcdWpHoPLR4wCmBsqEeEF5gfjaE1h6uxhp9YbCk6jZF8AMUqLprS3kO1iSFz2fp5ivSU4JN891KlFfjZbnUKYsFbvwjhXpoAPP1yUZp8OJaCcG+g+SjDa/DOsAmoy6fh5KXL0zm7+kA==\n', '_contact': None}
+2023-07-08 22:45:29,595 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845528.903776, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?X9OA7yLZ1B8Wfj1Hr6Edxb/njt2EVYRlY2LOexU6J0kVnjvMwyB/kJQL5kxb4GSfCxx2ldM1N/tWm0h1lBzK413kYd91yAU0VPh7LdaU7mjFabaNAdKrTPCVOZUmabSNNmk9pizO2H0d2VXCOB+Giav94oPNwPMzgj20jQ3FG8Gs387A1dUacRAnUUnxC33LvYyxHXqU954xcdWpHoPLR4wCmBsqEeEF5gfjaE1h6uxhp9YbCk6jZF8AMUqLprS3kO1iSFz2fp5ivSU4JN891KlFfjZbnUKYsFbvwjhXpoAPP1yUZp8OJaCcG+g+SjDa/DOsAmoy6fh5KXL0zm7+kA==\n', '_contact': None}
+2023-07-08 22:45:29,596 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:30,800 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845530.0358226, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?s79R6jTDlTN/4irJiQWf4Ej1tPHflD569AhtYVSBaoBXgQyidMpTOVW2IjloDkZjgduRIVz87AXHMECkVdgvrUsHpuU4sUF9h8EoBLJSsoYHWIUfzl8+SQlANfEpza5fXjEBJufCK9avHdEodw9EFDr1iFo0NWsF7wlgVK1Wj0T2q7l6IYrVpfVtRhFC6oXDZdjv7CzyWJreqiRpCFquZN1B7Dvs4wzGayeI8lmyImpaIYrT63mDLGz45vn5WH0gTo3L8ANHkONsqwTOFi8D3HUFmt0c/oytra2SBE2foSVLDO4LHYHJ7nvp4z+TrA7qJIpX5JDk8V7gfxz/kM1Ohg==\n', '_contact': None}
+2023-07-08 22:45:30,903 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:31,040 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845530.035823, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?s79R6jTDlTN/4irJiQWf4Ej1tPHflD569AhtYVSBaoBXgQyidMpTOVW2IjloDkZjgduRIVz87AXHMECkVdgvrUsHpuU4sUF9h8EoBLJSsoYHWIUfzl8+SQlANfEpza5fXjEBJufCK9avHdEodw9EFDr1iFo0NWsF7wlgVK1Wj0T2q7l6IYrVpfVtRhFC6oXDZdjv7CzyWJreqiRpCFquZN1B7Dvs4wzGayeI8lmyImpaIYrT63mDLGz45vn5WH0gTo3L8ANHkONsqwTOFi8D3HUFmt0c/oytra2SBE2foSVLDO4LHYHJ7nvp4z+TrA7qJIpX5JDk8V7gfxz/kM1Ohg==\n', '_contact': None}
+2023-07-08 22:51:30,980 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688845890.1361654, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:31,000 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:51:31,000 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:51:34,463 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688845894.3100023, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:34,473 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:51:34,473 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:51:39,731 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688845899.6193964, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:39,744 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:51:39,744 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:51:45,886 DEBUG app.py Connecting to server
+2023-07-08 22:51:45,993 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:51:46,066 DEBUG app.py Connecting to server
+2023-07-08 22:51:46,109 DEBUG app.py Connecting to server
+2023-07-08 22:51:46,115 DEBUG transport.py Sending Auth 2
+2023-07-08 22:51:46,132 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:46,156 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:51:46,200 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:51:46,297 DEBUG transport.py Sending Auth 2
+2023-07-08 22:51:46,329 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:46,353 DEBUG transport.py Sending Auth 2
+2023-07-08 22:51:46,366 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:50,643 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:51:50,758 DEBUG transport.py Sending Auth 2
+2023-07-08 22:51:50,769 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:51,892 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:51:51,892 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845911.8926604, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:51,897 DEBUG transport.py Response Response 202: 
+2023-07-08 22:51:51,904 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845911.9041114, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:51,914 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:51,914 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:51:51,915 DEBUG app.py test3 Reader thread started
+2023-07-08 22:51:54,475 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:51:54,589 DEBUG transport.py Sending Auth 2
+2023-07-08 22:51:54,602 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:55,727 DEBUG app.py test2 Synchronizing contacts
+2023-07-08 22:51:55,727 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845915.727694, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:55,734 DEBUG transport.py Response Response 202: 
+2023-07-08 22:51:55,745 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845915.7451289, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:55,752 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:55,753 DEBUG app.py test2 Starting server integration thread
+2023-07-08 22:51:55,753 DEBUG app.py test2 Reader thread started
+2023-07-08 22:51:58,011 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:51:58,129 DEBUG transport.py Sending Auth 2
+2023-07-08 22:51:58,141 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:59,259 DEBUG app.py test1 Synchronizing contacts
+2023-07-08 22:51:59,259 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845919.2598448, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:59,265 DEBUG transport.py Response Response 202: 
+2023-07-08 22:51:59,274 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845919.2747998, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:59,282 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:59,282 DEBUG app.py test1 Starting server integration thread
+2023-07-08 22:51:59,282 DEBUG app.py test1 Reader thread started
+2023-07-08 22:52:12,480 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845932.3366585, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?QvH3ZCp5x+iqNGb8EiP2VJSEwm/e8Ti4CAjP1FzX0XfiFW8Mb6kQCp18j7GOFbB6NlUbbGuCgy6JezWKzTW96jdpHh2Hgr/SoJeooxVWJNt6L4H1r6NCVf6WseGOKYChXgJGiZhcYZNDLXmhOYb7kdMpMS29QYZQY7C8FNutlB+j6JDx6JFss5KlJpB3U1p3s3mU9AYNPmJ2R3D5VHBn9v6mvyGkyLQB2q0K32PWv/QKp99kjo/VKOcPShwfILwP6jk8BgQvfO7n9b73au8UBSIhZZzgToW1c/1nr9mcPqqkYfDxKR2coj44kjm3Gxw+J4udEf6Z4pzqYiK1TiRnlQ==\n', '_contact': None}
+2023-07-08 22:52:12,507 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845932.336658, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?QvH3ZCp5x+iqNGb8EiP2VJSEwm/e8Ti4CAjP1FzX0XfiFW8Mb6kQCp18j7GOFbB6NlUbbGuCgy6JezWKzTW96jdpHh2Hgr/SoJeooxVWJNt6L4H1r6NCVf6WseGOKYChXgJGiZhcYZNDLXmhOYb7kdMpMS29QYZQY7C8FNutlB+j6JDx6JFss5KlJpB3U1p3s3mU9AYNPmJ2R3D5VHBn9v6mvyGkyLQB2q0K32PWv/QKp99kjo/VKOcPShwfILwP6jk8BgQvfO7n9b73au8UBSIhZZzgToW1c/1nr9mcPqqkYfDxKR2coj44kjm3Gxw+J4udEf6Z4pzqYiK1TiRnlQ==\n', '_contact': None}
+2023-07-08 22:52:12,507 DEBUG transport.py Response Response 202: 
+2023-07-08 22:52:28,239 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688845948.208517, '_user_account': None, '_user_status': None, '_receiver': 'test1', '_sender': 'test2', '_message': 'e2e?F4nPvhtW8L9+ql5uMp1Y4qrNXokG9iNQMIs//O7wW3qlC17qpORmkOdhS12ydoFVzF/VHP4uPXtRWHlj4doBEfWZI7fsV9MEYsmouLM1howi+h5YyBuy8mYiL1RjE9q8wTOFFximFlXKTJA8e6F6wpCKUvnC5xu4Qsecw/c10qzFz0hZtojcPvMadfXwa00LDRDIwYl0+1hHmjD1jhpJTz4ky/hLUHYzgG8oFwWo4Kibp9kw7mW5bNOc6xccmuLAE3T4xMUJO46UC+J5lRlogNbta5fW3uLquPSNuw78G6DrfJ9O5r7oGaShJPS6rRq++Cf9H2ebT7DisfSatpdQFQ==\n', '_contact': None}
+2023-07-08 22:52:28,266 DEBUG transport.py Response Response 202: 
+2023-07-08 22:52:28,429 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688845948.208517, '_user_account': None, '_user_status': None, '_receiver': 'test1', '_sender': 'test2', '_message': 'e2e?F4nPvhtW8L9+ql5uMp1Y4qrNXokG9iNQMIs//O7wW3qlC17qpORmkOdhS12ydoFVzF/VHP4uPXtRWHlj4doBEfWZI7fsV9MEYsmouLM1howi+h5YyBuy8mYiL1RjE9q8wTOFFximFlXKTJA8e6F6wpCKUvnC5xu4Qsecw/c10qzFz0hZtojcPvMadfXwa00LDRDIwYl0+1hHmjD1jhpJTz4ky/hLUHYzgG8oFwWo4Kibp9kw7mW5bNOc6xccmuLAE3T4xMUJO46UC+J5lRlogNbta5fW3uLquPSNuw78G6DrfJ9O5r7oGaShJPS6rRq++Cf9H2ebT7DisfSatpdQFQ==\n', '_contact': None}
+2023-07-08 22:54:22,093 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688846061.1165886, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:22,142 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:54:22,143 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:54:25,524 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688846064.7254703, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:25,534 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:54:25,534 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:54:30,238 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688846069.7802405, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:30,266 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:54:30,266 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:54:33,453 DEBUG app.py Connecting to server
+2023-07-08 22:54:33,563 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:54:33,673 DEBUG app.py Connecting to server
+2023-07-08 22:54:33,688 DEBUG transport.py Sending Auth 2
+2023-07-08 22:54:33,711 DEBUG app.py Connecting to server
+2023-07-08 22:54:33,725 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:33,763 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:54:33,833 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:54:33,890 DEBUG transport.py Sending Auth 2
+2023-07-08 22:54:33,904 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:33,963 DEBUG transport.py Sending Auth 2
+2023-07-08 22:54:33,978 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:38,330 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:54:38,445 DEBUG transport.py Sending Auth 2
+2023-07-08 22:54:38,456 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:39,573 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:54:39,573 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688846079.5735183, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:39,576 DEBUG transport.py Response Response 202: 
+2023-07-08 22:54:39,583 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688846079.5839496, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:39,591 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:39,591 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:54:39,591 DEBUG app.py test3 Reader thread started
+2023-07-08 22:54:42,289 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:54:42,406 DEBUG transport.py Sending Auth 2
+2023-07-08 22:54:42,417 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:43,539 DEBUG app.py test2 Synchronizing contacts
+2023-07-08 22:54:43,539 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688846083.5398407, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:43,546 DEBUG transport.py Response Response 202: 
+2023-07-08 22:54:43,557 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688846083.5573807, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:43,565 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:43,565 DEBUG app.py test2 Starting server integration thread
+2023-07-08 22:54:43,565 DEBUG app.py test2 Reader thread started
+2023-07-08 22:54:48,948 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-08 22:54:49,061 DEBUG transport.py Sending Auth 2
+2023-07-08 22:54:49,074 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:50,209 DEBUG app.py test1 Synchronizing contacts
+2023-07-08 22:54:50,209 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688846090.2097707, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:50,215 DEBUG transport.py Response Response 202: 
+2023-07-08 22:54:50,224 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688846090.2244475, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:50,231 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:50,231 DEBUG app.py test1 Starting server integration thread
+2023-07-08 22:54:50,232 DEBUG app.py test1 Reader thread started
+2023-07-08 22:55:04,657 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688846104.1488857, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?qze29vptrsuAbGY21oX9V6Ge2nEyvj7rfi+3nilPSHqMBj65TvjfK0GYQo8QpBNAgpwMeN29Up9vNtWLXrVweAZ7DlA8oRpOCuWL2yHLAWWz1YEM32BVV84F1/Ip9b81dOW4vlGkVPpakbEXZPCDzeZmHASPzZsxj1HOTToKvg0KCrlyxc44aTJbemHXp+Fw63R4+MbigoHKRV7FREaDJ2T5WJQxNqerFeqJuz5MGdhBbn4DLTP/OuWkJQ3lpdrC5TDy60qzBq76/hTyj6DPJklA8NBKYwqlQYmOgV4HTwHjYpW1FrRDhUrhrY/tBP2G8e9CPJQ4/BltE1IGp0LbSQ==\n', '_contact': None}
+2023-07-08 22:55:04,696 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688846104.148886, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?qze29vptrsuAbGY21oX9V6Ge2nEyvj7rfi+3nilPSHqMBj65TvjfK0GYQo8QpBNAgpwMeN29Up9vNtWLXrVweAZ7DlA8oRpOCuWL2yHLAWWz1YEM32BVV84F1/Ip9b81dOW4vlGkVPpakbEXZPCDzeZmHASPzZsxj1HOTToKvg0KCrlyxc44aTJbemHXp+Fw63R4+MbigoHKRV7FREaDJ2T5WJQxNqerFeqJuz5MGdhBbn4DLTP/OuWkJQ3lpdrC5TDy60qzBq76/hTyj6DPJklA8NBKYwqlQYmOgV4HTwHjYpW1FrRDhUrhrY/tBP2G8e9CPJQ4/BltE1IGp0LbSQ==\n', '_contact': None}
+2023-07-08 22:55:04,697 DEBUG transport.py Response Response 202: 
+2023-07-08 22:55:15,553 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688846115.1246316, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?KAJTJMsA0ZkhZpuzq8H2ytzaQc9A9tXo/mlT/jA2bTqwt/NT80hkGZa+Yt102GSZmI9LRSuAnYpKHynVsoqG0AqpO8M9mJIcIdyN+Lp4c3LNJSCtQGYkjUjUUpgfJJYbjsxs9KZMVf9R2lAv6ZRu2Uh4c3QUJQvdeizO23W7RnWt5e0SjtE8Or7nn/vhXqqDR0VtGIjrIKk1chJxdaKU5MvoqIB3firmybu6Tw+MEjFHAz2g+0o/0ppkm6ECMeExUo0fvA63p5jIpQ/5/DM4dTK5ml46QLzsFm9E2cE6Ng0uR34H7zA0bLebA0WkRyY3N7C4b06pjBmRnBtkpqbexA==\n', '_contact': None}
+2023-07-08 22:55:15,573 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688846115.124632, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?KAJTJMsA0ZkhZpuzq8H2ytzaQc9A9tXo/mlT/jA2bTqwt/NT80hkGZa+Yt102GSZmI9LRSuAnYpKHynVsoqG0AqpO8M9mJIcIdyN+Lp4c3LNJSCtQGYkjUjUUpgfJJYbjsxs9KZMVf9R2lAv6ZRu2Uh4c3QUJQvdeizO23W7RnWt5e0SjtE8Or7nn/vhXqqDR0VtGIjrIKk1chJxdaKU5MvoqIB3firmybu6Tw+MEjFHAz2g+0o/0ppkm6ECMeExUo0fvA63p5jIpQ/5/DM4dTK5ml46QLzsFm9E2cE6Ng0uR34H7zA0bLebA0WkRyY3N7C4b06pjBmRnBtkpqbexA==\n', '_contact': None}
+2023-07-08 22:55:15,573 DEBUG transport.py Response Response 202: 

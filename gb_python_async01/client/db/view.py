@@ -1,10 +1,11 @@
 
+from typing import Optional
 from sqlalchemy import create_engine, select
 from sqlalchemy.orm import Session
 
 from gb_python_async01.client.db.model import *
 from gb_python_async01.client.errors import ClientDBError
-from gb_python_async01.transport.model.user import User as CommonUser
+from gb_python_async01.transport.model.user import JIMUser
 
 
 class ClientStorage():
@@ -14,33 +15,23 @@ class ClientStorage():
     def init_db_tables(self):
         Base.metadata.create_all(self.db_engine)
 
-    # def contacts_update_all(self, contact_name_list: list):
-    #     with Session(self.db_engine) as session:
-    #         stmt_contacts = (
-    #             select(Contact)
-    #         )
-    #         contacts = session.scalars(stmt_contacts).fetchall()
-    #         contact_names = list([contact.name for contact in contacts])
+    def contact_update_from_server(self, c: JIMUser) -> Contact:
+        return self.contact_add_or_update(
+            contact_name=c.username,
+            last_login=datetime.datetime.fromtimestamp(c.last_login),
+            status=c.status or '',
+            pubkey=c.pubkey or ''
+        )
 
-    #         to_delete = [contact for contact in contacts if contact.name not in contact_name_list]
-
-    #         for contact in to_delete:
-    #             contact.is_active = False
-    #             session.add(contact)
-
-    #         to_add = [Contact(name=contact_name, is_active=True)
-    #                   for contact_name in contact_name_list if contact_name not in contact_names]
-    #         session.add_all(to_add)
-
-    #         session.commit()
-
-    def contact_add(self, contact_name: str) -> Contact:
+    def contact_add_or_update(self, contact_name: str, last_login: datetime.datetime, status: str, pubkey: str) -> Contact:
         with Session(self.db_engine) as session:
             contact = session.query(Contact).filter_by(name=contact_name).first()
-            if contact:
-                contact.is_active = True
-            else:
-                contact = Contact(name=contact_name, is_active=True)
+            if not contact:
+                contact = Contact(name=contact_name)
+            contact.is_active = True
+            contact.last_login = last_login
+            contact.status = status
+            contact.pubkey = pubkey
             session.add(contact)
             session.commit()
             return contact
@@ -53,7 +44,7 @@ class ClientStorage():
                 session.add(contact)
             session.commit()
 
-    def contact_get(self, contact_name: str, only_active=True):
+    def contact_get(self, contact_name: str, only_active=True) -> Optional[Contact]:
         with Session(self.db_engine) as session:
             if only_active:
                 contact = session.query(Contact).filter_by(name=contact_name, is_active=True).first()
@@ -61,18 +52,16 @@ class ClientStorage():
                 contact = session.query(Contact).filter_by(name=contact_name).first()
             return contact
 
-    def contact_list(self) -> list:
+    def contact_list(self) -> List[Contact]:
         with Session(self.db_engine) as session:
             stmt_contacts = (
                 select(Contact)
                 .where(Contact.is_active == True)
             )
             contacts = session.scalars(stmt_contacts).fetchall()
-            if contacts:
-                contact_names = list([contact.name for contact in contacts])
-            else:
-                contact_names = []
-            return contact_names
+            if not contacts:
+                contacts = []
+            return list(contacts)
 
     def message_add(self, contact_name: str, is_inbound: bool, created_at: datetime.datetime, msg_txt: str):
         with Session(self.db_engine) as session:

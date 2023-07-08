@@ -16,6 +16,7 @@ class ServerGUIController(ObserverNotifier):
         self.config_changed_event = config_changed
         self.stat_window = None
         self.settings_window = None
+        self.user_window = None
 
     def show_stat_window(self):
         if self.stat_window:
@@ -33,6 +34,14 @@ class ServerGUIController(ObserverNotifier):
         if self.settings_window:
             self.settings_window.hide()
 
+    def show_user_window(self):
+        if self.user_window:
+            self.user_window.show()
+
+    def hide_user_window(self):
+        if self.user_window:
+            self.user_window.hide()
+
     def save_server_config(self):
         self.config_model.apply_config_changes()
         self.config_changed_event.set()
@@ -46,6 +55,9 @@ class ServerGUIController(ObserverNotifier):
 
     def register_settings_window(self, window: QWidget):
         self.settings_window = window
+
+    def register_user_window(self, window: QWidget):
+        self.user_window = window
 
     def app_quit(self):
         qApp.quit()

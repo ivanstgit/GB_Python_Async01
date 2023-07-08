@@ -2,10 +2,11 @@ from copy import copy
 import threading
 import time
 from gb_python_async01.server.config import ServerConfig
-from gb_python_async01.server.db.view import ServerStorage
+from gb_python_async01.server.db.user_session_view import UserSessionView
+from gb_python_async01.server.db.user_view import ServerStorage
 from gb_python_async01.server.gui.app import ServerGUI
 from gb_python_async01.server.log.config import ServerLogger
-from gb_python_async01.server.message_dispatcher import ServerMessageDispatcher
+from gb_python_async01.server.core.app import ServerCore
 
 
 class ServerApp():
@@ -48,15 +49,15 @@ class ServerApp():
 
     def _start_threads(self):
         self.ev_config_changed = threading.Event()
+        self.ev_core_error = threading.Event()
         self.config_editable = copy(self.config)
 
         self.db = ServerStorage(self.config.db_url)
-        self.db.init_db_tables()
-        self.db.clear_active_connections()
+        self.db.adm_init_db_tables()
 
-        self.thread_message_dispatcher = self._start_message_dispatcher(terminate_on=self.ev_config_changed)
+        self.thread_message_dispatcher = self._start_message_dispatcher(terminate_on=self.ev_config_changed, termination=self.ev_core_error)
         if self.config.gui_enabled:
-            self.thread_gui = self._start_gui(config_editable=self.config_editable, config_changed_event=self.ev_config_changed)
+            self.thread_gui = self._start_gui(config_editable=self.config_editable, config_changed_event=self.ev_config_changed, terminate_on=self.ev_core_error)
 
     def _stop_threads(self):
         if self.thread_message_dispatcher:
@@ -74,17 +75,17 @@ class ServerApp():
         if self.db:
             self.db.stop()
 
-    def _start_message_dispatcher(self, terminate_on: threading.Event) -> threading.Thread:
-        self.message_dispatcher = ServerMessageDispatcher(self.logger, self.config, self.db)
-        thread = threading.Thread(target=self.message_dispatcher.run, name='Message dispatcher', args=(terminate_on,))
+    def _start_message_dispatcher(self, terminate_on: threading.Event, termination: threading.Event) -> threading.Thread:
+        self.message_dispatcher = ServerCore(self.logger, self.config, self.db)
+        thread = threading.Thread(target=self.message_dispatcher.run, name='Message dispatcher', args=(termination, terminate_on,))
         thread.daemon = True
         thread.start()
         self.logger.debug(f'Message dispatcher thread started')
         return thread
 
-    def _start_gui(self, config_editable, config_changed_event: threading.Event) -> threading.Thread:
+    def _start_gui(self, config_editable, config_changed_event: threading.Event, terminate_on: threading.Event) -> threading.Thread:
         self.gui = ServerGUI(config=self.config, config4edit=config_editable, db=self.db)
-        thread = threading.Thread(target=self.gui.run, name='GUI dispatcher', args=(config_changed_event,))
+        thread = threading.Thread(target=self.gui.run, name='GUI dispatcher', args=(config_changed_event, terminate_on, ))
         thread.daemon = True
         thread.start()
         self.logger.debug(f'GUI thread started')

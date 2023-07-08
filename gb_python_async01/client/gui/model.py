@@ -30,7 +30,7 @@ class ContactListModel(ObserverNotifier):
         self.refresh()
 
     def refresh(self):
-        self.contacts = self.db.contact_list()
+        self.contacts = list([contact.name for contact in self.db.contact_list()])
         self.notifyObservers()
 
 

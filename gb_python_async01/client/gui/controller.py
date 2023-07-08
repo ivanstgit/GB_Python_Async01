@@ -28,7 +28,7 @@ class ClientGUIController():
         """ return -> is_ok?"""
         error_txt = self.app_controller.add_contact(contact)
         if error_txt:
-            self.show_error_message(f'Error while adding contact {error_txt}')
+            self.show_error_message(f'{error_txt}')
             return False
         else:
             self.m_contact_list.refresh()
@@ -37,7 +37,7 @@ class ClientGUIController():
     def delete_contact(self, contact: str):
         error_txt = self.app_controller.del_contact(contact)
         if error_txt:
-            self.show_error_message(f'Error while deleting contact {error_txt}')
+            self.show_error_message(f'Ошибка при удалении контакта \n {error_txt}')
         else:
             self.m_contact_list.refresh()
 
@@ -50,7 +50,7 @@ class ClientGUIController():
         """ return -> is_ok?"""
         error_txt = self.app_controller.send_message(receiver=contact, msg_txt=msg_txt)
         if error_txt:
-            self.show_error_message(f'Error while deleting contact {error_txt}')
+            self.show_error_message(f'Ошибка при отправке сообщения \n {error_txt}')
             return False
         else:
             self.m_message_list.refresh(contact)
