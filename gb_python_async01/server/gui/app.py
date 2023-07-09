@@ -5,7 +5,7 @@ import threading
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import QApplication
 
-from gb_python_async01.server.db.view import ServerStorage
+from gb_python_async01.server.db.config import ServerStorage
 from gb_python_async01.server.gui.controller import ServerGUIController
 from gb_python_async01.server.gui.model import *
 from gb_python_async01.server.gui.view import *
@@ -18,12 +18,14 @@ class ServerGUI():
         self.config = config
         self.config_editable = config4edit
 
-    def run(self, config_changed: threading.Event):
+    def run(self, config_changed: threading.Event, terminate_on: threading.Event):
         server_app = QApplication(sys.argv)
 
         active_users_model = ActiveUsersModel(self.db)
         user_statistics_model = UserStatisticsModel(self.db)
         settings_model = SettingsModel(self.config_editable)
+        user_model = UserModel(self.db)
+        selected_user_model = SingleSelectionModel()
 
         controller = ServerGUIController(config_changed, self.config, settings_model)
 
@@ -34,10 +36,18 @@ class ServerGUI():
         controller.addObserver(stat_window)
         settings_window = SettingsWindow(settings_model, controller)
         controller.register_settings_window(settings_window)
+        user_window = UserWindow(user_model, selected_user_model, controller)
+        controller.register_user_window(user_window)
 
         timer = QTimer()
-        timer.timeout.connect(controller.notifyObservers)
+        timer.timeout.connect(lambda: self._on_timer(server_app, controller, terminate_on))
         timer.start(1000)
 
         server_app.exec_()
         timer.stop()
+
+    def _on_timer(self, qapp: QApplication, controller: ServerGUIController, terminate_on: threading.Event):
+        if terminate_on.isSet():
+            qapp.closeAllWindows()
+        else:
+            controller.notifyObservers()

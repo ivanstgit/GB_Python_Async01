@@ -1,0 +1,59 @@
+2023-07-08 22:32:40,830 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:32:40,830 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688844760.8303063, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:32:40,836 DEBUG transport.py Response Response 202: 
+2023-07-08 22:32:40,852 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688844760.8526747, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:32:40,862 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:32:40,862 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:32:40,862 DEBUG app.py test3 Reader thread started
+2023-07-08 22:33:58,245 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688844837.7530138, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:33:58,256 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:33:58,256 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:34:21,041 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:34:21,041 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688844861.0414445, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:21,045 DEBUG transport.py Response Response 202: 
+2023-07-08 22:34:21,052 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688844861.05274, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:34:21,068 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:34:21,068 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:34:21,068 DEBUG app.py test3 Reader thread started
+2023-07-08 22:34:43,159 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688844882.14317, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'e2e?XIS8sUT3BSqdbq9MwaSyqpr2jZiXy2vM7ckBryVAqgRkVLFfrcog4ElWsGxxMqkjBOpKQwyD24Ae0Wo8X+XwYSzddrHESm8jZYqszttXhb+sXUXADUoiyocjlnD1iitMXQcfyEh2TyCCit4u+fTmqlCLqftiMc+PtgUx+prWOjzCsb779e2fKdTALmmh5+AMH23BY/kqK2SukNFu6/jvEjExWCS48RcUxTdvcjrD31oF3/oaWonnyhe35Zr7CzmehdzVHlMwx/SF1yEk2gk5MCQbRGys7deEfJpcVoFvUeifNEhStXi6ogbumLi0YuB76kPYrhNpSMYVA18CKUDJhg==\n', '_contact': None}
+2023-07-08 22:34:43,167 CRITICAL controller.py Error ((sqlite3.IntegrityError) NOT NULL constraint failed: contacts.last_login
+[SQL: INSERT INTO contacts (name, is_active, last_login, status, pubkey) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('test2', 0, None, None, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)) processing inbound message (Action {'_type': 'action', '_action': 'msg', '_time': 1688844882.14317, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test2', '_message': 'e2e?XIS8sUT3BSqdbq9MwaSyqpr2jZiXy2vM7ckBryVAqgRkVLFfrcog4ElWsGxxMqkjBOpKQwyD24Ae0Wo8X+XwYSzddrHESm8jZYqszttXhb+sXUXADUoiyocjlnD1iitMXQcfyEh2TyCCit4u+fTmqlCLqftiMc+PtgUx+prWOjzCsb779e2fKdTALmmh5+AMH23BY/kqK2SukNFu6/jvEjExWCS48RcUxTdvcjrD31oF3/oaWonnyhe35Zr7CzmehdzVHlMwx/SF1yEk2gk5MCQbRGys7deEfJpcVoFvUeifNEhStXi6ogbumLi0YuB76kPYrhNpSMYVA18CKUDJhg==\n', '_contact': None}) 
+2023-07-08 22:35:34,019 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688844933.8572884, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:35:34,031 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:35:34,031 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:38:50,142 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:38:50,142 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845130.1425626, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:50,146 DEBUG transport.py Response Response 202: 
+2023-07-08 22:38:50,153 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845130.1534836, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:38:50,173 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:38:50,173 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:38:50,173 DEBUG app.py test3 Reader thread started
+2023-07-08 22:45:07,002 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:45:07,002 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845507.0026217, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:07,006 DEBUG transport.py Response Response 202: 
+2023-07-08 22:45:07,013 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845507.0129952, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:45:07,020 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:45:07,020 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:45:07,020 DEBUG app.py test3 Reader thread started
+2023-07-08 22:51:30,980 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688845890.1361654, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:31,000 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:51:31,000 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:51:51,892 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:51:51,892 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688845911.8926604, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:51,897 DEBUG transport.py Response Response 202: 
+2023-07-08 22:51:51,904 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688845911.9041114, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:51:51,914 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:51:51,914 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:51:51,915 DEBUG app.py test3 Reader thread started
+2023-07-08 22:54:30,238 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688846069.7802405, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:30,266 DEBUG transport.py Response Response 500: Server error
+2023-07-08 22:54:30,266 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-08 22:54:39,573 DEBUG app.py test3 Synchronizing contacts
+2023-07-08 22:54:39,573 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688846079.5735183, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:39,576 DEBUG transport.py Response Response 202: 
+2023-07-08 22:54:39,583 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688846079.5839496, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-08 22:54:39,591 DEBUG transport.py Response Response 200: OK
+2023-07-08 22:54:39,591 DEBUG app.py test3 Starting server integration thread
+2023-07-08 22:54:39,591 DEBUG app.py test3 Reader thread started

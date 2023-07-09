@@ -9,3 +9,8 @@ class ClientDBError(Exception):
             return f'DB error: {self._msg}'
 
         return f'DB error'
+
+
+class ClientNoConnectionError(Exception):
+    def __str__(self):
+        return f'Отсутствует подключение к серверу'

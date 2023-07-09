@@ -1,5 +1,6 @@
 chardet==5.1.0 ; python_version >= "3.9" and python_version < "4.0"
 greenlet==2.0.2 ; python_version >= "3.9" and platform_machine == "aarch64" and python_version < "4.0" or python_version >= "3.9" and platform_machine == "ppc64le" and python_version < "4.0" or python_version >= "3.9" and platform_machine == "x86_64" and python_version < "4.0" or python_version >= "3.9" and platform_machine == "amd64" and python_version < "4.0" or python_version >= "3.9" and platform_machine == "AMD64" and python_version < "4.0" or python_version >= "3.9" and platform_machine == "win32" and python_version < "4.0" or python_version >= "3.9" and platform_machine == "WIN32" and python_version < "4.0"
+pycryptodomex==3.18.0 ; python_version >= "3.9" and python_version < "4.0"
 pyqt5-qt5==5.15.2 ; python_version >= "3.9" and python_version < "4.0"
 pyqt5-sip==12.12.1 ; python_version >= "3.9" and python_version < "4.0"
 pyqt5==5.15.9 ; python_version >= "3.9" and python_version < "4.0"

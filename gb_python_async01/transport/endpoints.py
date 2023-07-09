@@ -7,12 +7,11 @@ from gb_python_async01.transport.metaclasses import EndpointVerifier, ClientEndp
 class Endpoint(metaclass=EndpointVerifier):
     """ Communication class"""
 
-    def __init__(self, logger, message_max_size, address=(), from_existing_resource=None):
+    def __init__(self, message_max_size, address=(), from_existing_resource=None):
         if from_existing_resource:
             self.resource = from_existing_resource
         else:
             self.resource = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.logger = logger
         self.encoding = 'utf-8'
         self.maxsize = message_max_size
         self.address = address
@@ -38,7 +37,6 @@ class Endpoint(metaclass=EndpointVerifier):
         try:
             self.resource.send(message)
         except (ConnectionResetError, ConnectionError, ConnectionAbortedError) as e:
-            self.logger.error(f'Put failed with {e}', stacklevel=2)
             raise EndpointCommunicationError(e)
 
     def get_message(self) -> bytes:
@@ -48,7 +46,6 @@ class Endpoint(metaclass=EndpointVerifier):
         except socket.timeout:
             raise EndpointTimeout()
         except (ConnectionResetError, ConnectionError, ConnectionAbortedError) as e:
-            self.logger.critical(f'Get message failed with {e}', stacklevel=2)
             raise EndpointCommunicationError(e)
 
     def fileno(self):
@@ -63,16 +60,18 @@ class ClientEndpoint(Endpoint, metaclass=ClientEndpointVerifier):
         try:
             if timeout > 0.0:
                 self.resource.settimeout(timeout)
-            self.logger.info(f'Connecting to {host}:{port}', stacklevel=2)
             self.resource.connect((host, port))
             self.is_connected = True
         except ConnectionRefusedError as e:
             self.is_connected = False
-            self.logger.critical(f'Connection error {e}', stacklevel=2)
             raise EndpointCommunicationError(e)
 
 
 class ServerEndpoint(Endpoint, metaclass=ServerEndpointVerifier):
+    def __init__(self, logger, message_max_size):
+        super().__init__(message_max_size,)
+        self.logger = logger
+
     def start_server(self, host: str, port: int, connection_limit: int, timeout: float):
         try:
             self.logger.info(f'Starting server on {host}:{port}', stacklevel=2)
@@ -94,4 +93,4 @@ class ServerEndpoint(Endpoint, metaclass=ServerEndpointVerifier):
         except OSError as e:
             raise EndpointCommunicationError(e)
         else:
-            return Endpoint(self.logger, self.maxsize, address=client_address, from_existing_resource=client)
+            return Endpoint(self.maxsize, address=client_address, from_existing_resource=client)

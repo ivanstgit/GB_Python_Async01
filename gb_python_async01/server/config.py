@@ -14,7 +14,7 @@ class ServerConfig(ObserverNotifier):
         self.testing = default_config.TESTING
 
         self.logger_name = 'server'
-        self.logger_file_path = os.path.join(default_config.LOG_DIR, 'server.log')
+        self.logger_file_path = os.path.join(default_config.VAR_DIR, 'log', 'server.log')
 
         self.db_url = default_config.SERVER_DB_URL
 
