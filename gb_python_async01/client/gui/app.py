@@ -2,7 +2,7 @@
 import sys
 import threading
 
-from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication
 from gb_python_async01.client.controller import ClientController
 
@@ -12,9 +12,10 @@ from gb_python_async01.client.gui.model import *
 from gb_python_async01.client.gui.view import *
 
 
-class ClientGUI():
-
-    def __init__(self, config: ClientConfig, db: ClientStorage, app_controller: ClientController) -> None:
+class ClientGUI:
+    def __init__(
+        self, config: ClientConfig, db: ClientStorage, app_controller: ClientController
+    ) -> None:
         self.db = db
         self.config = config
         self.app_controller = app_controller
@@ -27,14 +28,20 @@ class ClientGUI():
         m_message_list = MessageListModel(self.db)
 
         # inconimg messages
-        self.app_controller.addObserver(m_message_list)
+        self.app_controller.add_observer(m_message_list)
 
-        controller = ClientGUIController(self.config, self.app_controller,
-                                         m_contact_selected, m_contact_list, m_message_list,
-                                         sender_thread)
+        controller = ClientGUIController(
+            self.config,
+            self.app_controller,
+            m_contact_selected,
+            m_contact_list,
+            m_message_list,
+            sender_thread,
+        )
 
-        view = MainWindow(self.config, controller,
-                          m_contact_selected, m_contact_list, m_message_list)
+        view = MainWindow(
+            self.config, controller, m_contact_selected, m_contact_list, m_message_list
+        )
 
         timer = QTimer()
         timer.timeout.connect(controller.check_server_status)

@@ -1,0 +1,95 @@
+2023-07-09 17:23:08,881 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7f622edaae20>
+2023-07-09 17:23:09,012 DEBUG app.py Message dispatcher thread started
+2023-07-09 17:23:09,012 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 17:23:09,014 DEBUG app.py GUI thread started
+2023-07-09 17:28:55,026 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7f8843feba30>
+2023-07-09 17:28:55,055 DEBUG app.py Message dispatcher thread started
+2023-07-09 17:28:55,056 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 17:28:55,056 DEBUG app.py GUI thread started
+2023-07-09 17:43:08,822 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7fdd24fe3fd0>
+2023-07-09 17:43:08,831 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 17:43:08,831 DEBUG app.py Message dispatcher thread started
+2023-07-09 17:43:08,831 CRITICAL app.py Server error [Errno 98] Address already in use
+2023-07-09 17:43:08,832 DEBUG app.py GUI thread started
+2023-07-09 17:43:09,833 INFO app.py Server stopped...
+2023-07-09 17:44:28,327 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7f38215e1f70>
+2023-07-09 17:44:28,336 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 17:44:28,336 DEBUG app.py Message dispatcher thread started
+2023-07-09 17:44:28,342 DEBUG app.py GUI thread started
+2023-07-09 17:52:27,133 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7f80f5b36ac0>
+2023-07-09 17:52:27,161 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 17:52:27,167 DEBUG app.py Message dispatcher thread started
+2023-07-09 17:52:27,210 DEBUG app.py GUI thread started
+2023-07-09 17:54:16,825 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7fd6b29e1fa0>
+2023-07-09 17:54:16,835 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 17:54:16,835 DEBUG app.py Message dispatcher thread started
+2023-07-09 17:54:16,850 DEBUG app.py GUI thread started
+2023-07-09 17:54:57,344 DEBUG endpoints.py Client ('127.0.0.1', 59816) connected
+2023-07-09 17:54:57,344 INFO session_manager.py Client <socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 59816)> at ('127.0.0.1', 59816) connected
+2023-07-09 17:54:57,346 DEBUG endpoints.py Client ('127.0.0.1', 59818) connected
+2023-07-09 17:54:57,346 INFO session_manager.py Client <socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 59818)> at ('127.0.0.1', 59818) connected
+2023-07-09 17:54:57,439 DEBUG endpoints.py Client ('127.0.0.1', 59820) connected
+2023-07-09 17:54:57,439 INFO session_manager.py Client <socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 59820)> at ('127.0.0.1', 59820) connected
+2023-07-09 17:55:04,672 DEBUG endpoints.py Client ('127.0.0.1', 56136) connected
+2023-07-09 17:55:04,672 INFO session_manager.py Client <socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56136)> at ('127.0.0.1', 56136) connected
+2023-07-09 17:55:04,705 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 59820) disconnected
+2023-07-09 17:55:05,977 ERROR client_session.py Error processing client action 
+2023-07-09 17:55:06,066 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 56136) disconnected
+2023-07-09 17:55:09,894 DEBUG endpoints.py Client ('127.0.0.1', 59488) connected
+2023-07-09 17:55:09,894 INFO session_manager.py Client <socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 59488)> at ('127.0.0.1', 59488) connected
+2023-07-09 17:55:09,901 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 59818) disconnected
+2023-07-09 17:55:11,213 ERROR client_session.py Error processing client action 
+2023-07-09 17:55:11,297 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 59488) disconnected
+2023-07-09 17:55:15,829 DEBUG endpoints.py Client ('127.0.0.1', 59502) connected
+2023-07-09 17:55:15,829 INFO session_manager.py Client <socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 59502)> at ('127.0.0.1', 59502) connected
+2023-07-09 17:55:15,835 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 59816) disconnected
+2023-07-09 17:55:17,151 ERROR client_session.py Error processing client action 
+2023-07-09 17:55:17,239 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 59502) disconnected
+2023-07-09 17:57:44,566 DEBUG endpoints.py Client ('127.0.0.1', 44286) connected
+2023-07-09 17:57:44,567 INFO session_manager.py Client <socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44286)> at ('127.0.0.1', 44286) connected
+2023-07-09 17:58:13,786 ERROR client_session.py Error processing client action 
+2023-07-09 17:58:14,700 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 44286) disconnected
+2023-07-09 18:02:20,239 DEBUG endpoints.py Client ('127.0.0.1', 44274) connected
+2023-07-09 18:02:20,240 INFO session_manager.py Client <socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 44274)> at ('127.0.0.1', 44274) connected
+2023-07-09 18:02:21,739 ERROR client_session.py Error processing client action 
+2023-07-09 18:02:22,571 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 44274) disconnected
+2023-07-09 18:05:07,514 DEBUG endpoints.py Client ('127.0.0.1', 40036) connected
+2023-07-09 18:05:07,514 INFO session_manager.py Client <socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 40036)> at ('127.0.0.1', 40036) connected
+2023-07-09 18:05:57,198 ERROR client_session.py Error processing client action 
+2023-07-09 18:05:57,995 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 40036) disconnected
+2023-07-09 18:06:18,502 DEBUG endpoints.py Client ('127.0.0.1', 33506) connected
+2023-07-09 18:06:18,502 INFO session_manager.py Client <socket.socket fd=19, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33506)> at ('127.0.0.1', 33506) connected
+2023-07-09 18:06:18,563 DEBUG endpoints.py Client ('127.0.0.1', 33512) connected
+2023-07-09 18:06:18,563 INFO session_manager.py Client <socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33512)> at ('127.0.0.1', 33512) connected
+2023-07-09 18:06:18,641 DEBUG endpoints.py Client ('127.0.0.1', 33520) connected
+2023-07-09 18:06:18,641 INFO session_manager.py Client <socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33520)> at ('127.0.0.1', 33520) connected
+2023-07-09 18:06:22,447 DEBUG endpoints.py Client ('127.0.0.1', 33536) connected
+2023-07-09 18:06:22,447 INFO session_manager.py Client <socket.socket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33536)> at ('127.0.0.1', 33536) connected
+2023-07-09 18:06:22,452 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 33520) disconnected
+2023-07-09 18:06:29,375 DEBUG endpoints.py Client ('127.0.0.1', 33254) connected
+2023-07-09 18:06:29,375 INFO session_manager.py Client <socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33254)> at ('127.0.0.1', 33254) connected
+2023-07-09 18:06:29,407 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 33512) disconnected
+2023-07-09 18:06:35,792 DEBUG endpoints.py Client ('127.0.0.1', 33270) connected
+2023-07-09 18:06:35,792 INFO session_manager.py Client <socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 33270)> at ('127.0.0.1', 33270) connected
+2023-07-09 18:06:35,797 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 33506) disconnected
+2023-07-09 18:27:13,111 ERROR client_session.py Error processing client action 
+2023-07-09 18:27:13,218 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 33270) disconnected
+2023-07-09 18:27:16,218 ERROR client_session.py Error processing client action 
+2023-07-09 18:27:16,302 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 33254) disconnected
+2023-07-09 18:27:18,424 ERROR client_session.py Error processing client action 
+2023-07-09 18:27:18,526 INFO session_manager.py Client <socket.socket [closed] fd=-1, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0> at ('127.0.0.1', 33536) disconnected
+2023-07-09 18:56:52,157 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7fd705199e80>
+2023-07-09 18:56:52,175 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 18:56:52,181 DEBUG app.py Message dispatcher thread started
+2023-07-09 18:56:52,191 DEBUG app.py GUI thread started
+2023-07-09 19:23:16,402 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7fbe3ab59f10>
+2023-07-09 19:23:16,412 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-09 19:23:16,412 DEBUG app.py Message dispatcher thread started
+2023-07-10 10:16:57,844 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7faf390e9eb0>
+2023-07-10 10:16:57,924 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-10 10:16:57,924 DEBUG app.py Message dispatcher thread started
+2023-07-10 10:16:57,937 DEBUG app.py GUI thread started
+2023-07-10 13:30:10,643 INFO app.py Starting threads: <gb_python_async01.server.config.ServerConfig object at 0x7f385b95aeb0>
+2023-07-10 13:30:10,653 INFO app.py Starting server on 127.0.0.1:7777
+2023-07-10 13:30:10,653 DEBUG app.py Message dispatcher thread started
+2023-07-10 13:30:10,670 DEBUG app.py GUI thread started

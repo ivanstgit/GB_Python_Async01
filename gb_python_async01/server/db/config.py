@@ -1,12 +1,12 @@
-from functools import wraps
+"""Конфигурация и общие функции для работы с БД"""
 import threading
+
 from sqlalchemy import create_engine
 
 from gb_python_async01.server.db.model import *
-# from gb_python_async01.server.db.errors import *
 
 
-class ServerStorage():
+class ServerStorage:
     def __init__(self, db_url) -> None:
         self.db_engine = create_engine(db_url, echo=False, pool_recycle=7200)
         self.lock = threading.Lock()
@@ -18,20 +18,9 @@ class ServerStorage():
         self.db_engine.dispose()
 
 
-class ServerDBBaseView():
+class ServerDBBaseView:
+    """Базовый класс для классов доступа к данным БД"""
+
     def __init__(self, db: ServerStorage) -> None:
         self.db = db
         self.db_engine = db.db_engine
-
-
-# class ServerDBLock():
-#     def __call__(self, func):
-#         @wraps(func)
-#         def with_lock(*args, **kwargs):
-#             view = args[0]  # type: ignore
-#             if isinstance(view, ServerDBBaseView):
-#                 with view.db.lock:
-#                     result = func(*args, **kwargs)
-#                 return result
-#             raise NotImplemented
-#         return with_lock

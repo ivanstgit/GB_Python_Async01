@@ -1,18 +1,26 @@
+"""Классы-абстракции для обеспечения передачи данных"""
 import socket
 
-from gb_python_async01.transport.errors import EndpointCommunicationError, EndpointTimeout
-from gb_python_async01.transport.metaclasses import EndpointVerifier, ClientEndpointVerifier, ServerEndpointVerifier
+from gb_python_async01.transport.errors import (
+    EndpointCommunicationError,
+    EndpointTimeout,
+)
+from gb_python_async01.transport.metaclasses import (
+    EndpointVerifier,
+    ClientEndpointVerifier,
+    ServerEndpointVerifier,
+)
 
 
 class Endpoint(metaclass=EndpointVerifier):
-    """ Communication class"""
+    """Базовый класс подключения"""
 
     def __init__(self, message_max_size, address=(), from_existing_resource=None):
         if from_existing_resource:
             self.resource = from_existing_resource
         else:
             self.resource = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.encoding = 'utf-8'
+        self.encoding = "utf-8"
         self.maxsize = message_max_size
         self.address = address
 
@@ -23,13 +31,13 @@ class Endpoint(metaclass=EndpointVerifier):
         self.close()
 
     def __str__(self):
-        return f'{str(self.resource)} at {str(self.address)}'
+        return f"{str(self.resource)} at {str(self.address)}"
 
     def __hash__(self) -> int:
         return self.fileno()
 
     def __eq__(self, __value: object) -> bool:
-        if hasattr(__value, 'fileno'):
+        if hasattr(__value, "fileno"):
             return self.fileno() == __value.fileno()  # type: ignore
         return False
 
@@ -56,6 +64,8 @@ class Endpoint(metaclass=EndpointVerifier):
 
 
 class ClientEndpoint(Endpoint, metaclass=ClientEndpointVerifier):
+    """Подключение со стороны клиентского приложения"""
+
     def connect_to_server(self, host: str, port: int, timeout=0.0):
         try:
             if timeout > 0.0:
@@ -68,13 +78,17 @@ class ClientEndpoint(Endpoint, metaclass=ClientEndpointVerifier):
 
 
 class ServerEndpoint(Endpoint, metaclass=ServerEndpointVerifier):
+    """Подключение со стороны серверного приложения (основной сокет, принимающий клиентов)"""
+
     def __init__(self, logger, message_max_size):
-        super().__init__(message_max_size,)
+        super().__init__(
+            message_max_size,
+        )
         self.logger = logger
 
     def start_server(self, host: str, port: int, connection_limit: int, timeout: float):
         try:
-            self.logger.info(f'Starting server on {host}:{port}', stacklevel=2)
+            self.logger.info(f"Starting server on {host}:{port}", stacklevel=2)
             self.resource.bind((host, port))
             if timeout:
                 self.resource.settimeout(timeout)
@@ -83,14 +97,16 @@ class ServerEndpoint(Endpoint, metaclass=ServerEndpointVerifier):
             self.is_connected = True
         except ConnectionRefusedError as e:
             self.is_connected = False
-            self.logger.critical(f'Connection error {e}')
+            self.logger.critical(f"Connection error {e}")
             raise EndpointCommunicationError(e)
 
     def get_client(self):
         try:
             client, client_address = self.resource.accept()
-            self.logger.debug(f'Client {client_address} connected')
+            self.logger.debug(f"Client {client_address} connected")
         except OSError as e:
             raise EndpointCommunicationError(e)
         else:
-            return Endpoint(self.maxsize, address=client_address, from_existing_resource=client)
+            return Endpoint(
+                self.maxsize, address=client_address, from_existing_resource=client
+            )

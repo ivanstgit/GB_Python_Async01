@@ -1,15 +1,22 @@
-# Обработчик событий (сигналов) между окнами/приложением
+"""Обработка событий (сигналов) между окнами/приложением"""
 import threading
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, qApp
-from gb_python_async01.server.config import ServerConfig
-from gb_python_async01.server.gui.model import *
 
+from PyQt5.QtWidgets import QWidget, qApp
+
+from gb_python_async01.server.config import ServerConfig
+from gb_python_async01.server.gui.model import SettingsModel
 from gb_python_async01.utils.observer import ObserverNotifier
 
 
 class ServerGUIController(ObserverNotifier):
-    def __init__(self, config_changed: threading.Event, config: ServerConfig, config_model: SettingsModel) -> None:
+    """Класс-бработчик событий (сигналов) между окнами/приложением"""
+
+    def __init__(
+        self,
+        config_changed: threading.Event,
+        config: ServerConfig,
+        config_model: SettingsModel,
+    ) -> None:
         super().__init__()
         self.config = config
         self.config_model = config_model

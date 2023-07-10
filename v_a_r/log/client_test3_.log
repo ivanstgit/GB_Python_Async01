@@ -57,3 +57,24 @@
 2023-07-08 22:54:39,591 DEBUG transport.py Response Response 200: OK
 2023-07-08 22:54:39,591 DEBUG app.py test3 Starting server integration thread
 2023-07-08 22:54:39,591 DEBUG app.py test3 Reader thread started
+2023-07-09 17:55:05,931 DEBUG app.py test3 Synchronizing contacts
+2023-07-09 17:55:05,932 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688914505.932177, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:05,936 DEBUG transport.py Response Response 202: 
+2023-07-09 17:55:05,943 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688914505.9435556, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:05,952 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:05,952 DEBUG app.py test3 Starting server integration thread
+2023-07-09 17:55:05,952 DEBUG app.py test3 Reader thread started
+2023-07-09 17:55:05,969 CRITICAL app.py 'ContactsGroupBox' object has no attribute 'model_сhanged'
+2023-07-09 17:55:05,970 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688914505.9706116, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:05,978 DEBUG transport.py Response Response 500: Server error
+2023-07-09 17:55:05,978 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 18:06:23,718 DEBUG app.py test3 Synchronizing contacts
+2023-07-09 18:06:23,719 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688915183.7189765, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:23,722 DEBUG transport.py Response Response 202: 
+2023-07-09 18:06:23,729 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688915183.729114, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:23,736 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:23,736 DEBUG app.py test3 Starting server integration thread
+2023-07-09 18:06:23,736 DEBUG app.py test3 Reader thread started
+2023-07-09 18:27:18,416 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688916437.6359541, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:27:18,425 DEBUG transport.py Response Response 500: Server error
+2023-07-09 18:27:18,425 DEBUG transport.py Error response on action quit message: Response 500: Server error

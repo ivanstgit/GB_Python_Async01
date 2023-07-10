@@ -4,5 +4,6 @@ python gb_python_async01/client.py -a 127.0.0.1 -p 8080
 
 
 poetry export --without-hashes --format=requirements.txt > requirements.txt
-
 safety check
+sphinx-apidoc -o ./source/gb_python_async01 -d 5 -M '../gb_python_async01' -e -f
+make html
