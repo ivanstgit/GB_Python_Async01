@@ -71,3 +71,25 @@
 2023-07-08 22:54:43,565 DEBUG app.py test2 Reader thread started
 2023-07-08 22:55:04,696 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688846104.148886, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?qze29vptrsuAbGY21oX9V6Ge2nEyvj7rfi+3nilPSHqMBj65TvjfK0GYQo8QpBNAgpwMeN29Up9vNtWLXrVweAZ7DlA8oRpOCuWL2yHLAWWz1YEM32BVV84F1/Ip9b81dOW4vlGkVPpakbEXZPCDzeZmHASPzZsxj1HOTToKvg0KCrlyxc44aTJbemHXp+Fw63R4+MbigoHKRV7FREaDJ2T5WJQxNqerFeqJuz5MGdhBbn4DLTP/OuWkJQ3lpdrC5TDy60qzBq76/hTyj6DPJklA8NBKYwqlQYmOgV4HTwHjYpW1FrRDhUrhrY/tBP2G8e9CPJQ4/BltE1IGp0LbSQ==\n', '_contact': None}
 2023-07-08 22:55:15,573 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688846115.124632, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?KAJTJMsA0ZkhZpuzq8H2ytzaQc9A9tXo/mlT/jA2bTqwt/NT80hkGZa+Yt102GSZmI9LRSuAnYpKHynVsoqG0AqpO8M9mJIcIdyN+Lp4c3LNJSCtQGYkjUjUUpgfJJYbjsxs9KZMVf9R2lAv6ZRu2Uh4c3QUJQvdeizO23W7RnWt5e0SjtE8Or7nn/vhXqqDR0VtGIjrIKk1chJxdaKU5MvoqIB3firmybu6Tw+MEjFHAz2g+0o/0ppkm6ECMeExUo0fvA63p5jIpQ/5/DM4dTK5ml46QLzsFm9E2cE6Ng0uR34H7zA0bLebA0WkRyY3N7C4b06pjBmRnBtkpqbexA==\n', '_contact': None}
+2023-07-09 17:55:17,095 DEBUG app.py test2 Synchronizing contacts
+2023-07-09 17:55:17,095 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688914517.0952194, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:17,102 DEBUG transport.py Response Response 202: 
+2023-07-09 17:55:17,120 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688914517.1207407, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:17,128 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:17,128 DEBUG app.py test2 Starting server integration thread
+2023-07-09 17:55:17,128 DEBUG app.py test2 Reader thread started
+2023-07-09 17:55:17,143 CRITICAL app.py 'ContactsGroupBox' object has no attribute 'model_сhanged'
+2023-07-09 17:55:17,145 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688914517.1451128, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:17,153 DEBUG transport.py Response Response 500: Server error
+2023-07-09 17:55:17,153 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 18:06:30,625 DEBUG app.py test2 Synchronizing contacts
+2023-07-09 18:06:30,625 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688915190.625744, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:30,633 DEBUG transport.py Response Response 202: 
+2023-07-09 18:06:30,643 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688915190.6434815, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:30,651 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:30,651 DEBUG app.py test2 Starting server integration thread
+2023-07-09 18:06:30,651 DEBUG app.py test2 Reader thread started
+2023-07-09 18:06:49,012 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688915208.779258, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?ccD0XDfq9B1HSSU4rj8j5Rz/Tazobx6zn/BbDnEWQCed2R9FzC/+xMFOfNSWda2oSarxe30nFA+uYMB+4FUFLUbvS+CMKm7ia9CaYjxzggLgUg1RzpI2pYKkC59mwadi8ET2UjoK7mRVm98mAAUp0tFHQWbXZPeduJq7kP6f3HFp4WY3aSRpQVKw5JitlJJD399J+UxQ5KDYy636RP6EhgsANktaECJKm/Eqa1rsbTtujKNHhwlGEZS18Rm8ONL2o+0FD7YtApVX2kEcxNLhh0R4gaPubXFzGMMbLW3dBi8tYVvVLlrQMRXSSWK//X/0V80y69FkoUFA6K97028oDQ==\n', '_contact': None}
+2023-07-09 18:27:16,212 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688916435.8059518, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:27:16,219 DEBUG transport.py Response Response 500: Server error
+2023-07-09 18:27:16,219 DEBUG transport.py Error response on action quit message: Response 500: Server error

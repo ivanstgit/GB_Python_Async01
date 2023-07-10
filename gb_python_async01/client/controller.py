@@ -1,6 +1,7 @@
-# Модуль отвечает за смысловую логику обработки сообщений и взаимодействие компонентов основного приложения
-# При этом максимально изолирован от технической реализации остальных компонентов (работает только с абстракциями)
-# В части обработки входящих сообщений по сути является самостоятельным приложением (запускается в отдельном потоке)
+""" Модуль отвечает за смысловую логику обработки сообщений и взаимодействие компонентов основного приложения
+При этом максимально изолирован от технической реализации остальных компонентов (работает только с абстракциями)
+В части обработки входящих сообщений по сути является самостоятельным приложением (запускается в отдельном потоке)
+"""
 
 from datetime import datetime
 import threading
@@ -9,20 +10,30 @@ import time
 from gb_python_async01.client.config import ClientConfig
 from gb_python_async01.client.db.view import ClientStorage
 from gb_python_async01.client.transport import ClientTransport
-from gb_python_async01.transport.errors import EndpointTimeout, JIMValidationError
+from gb_python_async01.transport.errors import (
+    EndpointTimeout,
+    JIMValidationError,
+    TransportError,
+)
 from gb_python_async01.transport.model.message import *
 from gb_python_async01.transport.serializers.user import JIMUserSerializer
-from gb_python_async01.utils.errors import UtilsSecurityValidationError
+from gb_python_async01.transport.errors import TransportSecurityValidationError
 from gb_python_async01.utils.observer import Observer, ObserverNotifier
 
 
 class ClientController(ObserverNotifier):
-    """ App controller - communicates between DB, CLI, Message dispatcher
+    """App controller - communicates between DB, CLI, Message dispatcher
     Two in one (UI + inbound controller)"""
 
-    def __init__(self, config: ClientConfig, logger,
-                 db: ClientStorage, db_lock: threading.Lock,
-                 transport: ClientTransport, server_lock: threading.Lock,) -> None:
+    def __init__(
+        self,
+        config: ClientConfig,
+        logger,
+        db: ClientStorage,
+        db_lock: threading.Lock,
+        transport: ClientTransport,
+        server_lock: threading.Lock,
+    ) -> None:
         super().__init__()
         self.config = config
         self.logger = logger
@@ -43,7 +54,7 @@ class ClientController(ObserverNotifier):
                     except EndpointTimeout:
                         if terminate_on_first_timeout:
                             break
-                    except UtilsSecurityValidationError:
+                    except TransportSecurityValidationError:
                         # Тут по идее надо и прежние ключи проверять или отдельный тип сообщения
                         # (в базе на сервере зафиксирован ключ из сессии, из которой пришло сообщение)
                         pass
@@ -52,29 +63,35 @@ class ClientController(ObserverNotifier):
                             try:
                                 self.process_inbound_message(action)  # type: ignore
                             except Exception as e:
-                                self.logger.critical(f'Error ({e}) processing inbound message ({action}) ')
+                                self.logger.critical(
+                                    f"Error ({e}) processing inbound message ({action}) "
+                                )
                 # self.logger.debug(f'{self.user} Reader: unlocked {lock.locked()}')
             time.sleep(timeout)
 
     def process_inbound_message(self, action: JIMAction):
         message = self.transport.sec.decrypt_e2e(action.message)  # type: ignore
         with self.db_lock:
-            self.db.message_add(contact_name=action.sender,  # type: ignore
-                                is_inbound=True,
-                                created_at=datetime.fromtimestamp(action.time),
-                                msg_txt=message)  # type: ignore
-        self.notifyObservers()
+            self.db.message_add(
+                contact_name=action.sender,  # type: ignore
+                is_inbound=True,
+                created_at=datetime.fromtimestamp(action.time),
+                msg_txt=message,
+            )  # type: ignore
+        self.notify_observers()
 
     def send_presence(self) -> Optional[str]:
         # Presence (identification) message generation
-        action = JIMActionPresence(time=time.time(),
-                                   user_account=self.config.user_name,
-                                   user_status=f'{self.config.user_name} is here')
+        action = JIMActionPresence(
+            time=time.time(),
+            user_account=self.config.user_name,
+            user_status=f"{self.config.user_name} is here",
+        )
         with self.server_lock:
             try:
                 response = self.transport.send_action(self.logger, action)
             except Exception as e:
-                return 'Ошибка при отправке запроса на сервер'
+                return "Ошибка при отправке запроса на сервер"
         if response.is_error:
             return response.error
         return None
@@ -95,40 +112,41 @@ class ClientController(ObserverNotifier):
             if self.transport.sec and contact and contact.pubkey:
                 msg_txt_enc = self.transport.sec.encrypt_e2e(msg_txt, contact.pubkey)
             else:
-                return 'Ошибка при шифровании сообщения'
+                return "Ошибка при шифровании сообщения"
         except Exception as e:
-            return 'Ошибка при шифровании сообщения'
+            return "Ошибка при шифровании сообщения"
 
-        action = JIMActionMessage(time=time.time(),
-                                  message=msg_txt_enc,
-                                  sender=sender,
-                                  receiver=receiver)
+        action = JIMActionMessage(
+            time=time.time(), message=msg_txt_enc, sender=sender, receiver=receiver
+        )
         with self.server_lock:
             try:
                 response = self.transport.send_action(self.logger, action)
             except Exception:
-                return 'Ошибка при отправке запроса на сервер'
+                return "Ошибка при отправке запроса на сервер"
         if response.is_error:
             return response.error
 
         with self.db_lock:
-            self.db.message_add(contact_name=action.receiver,  # type: ignore
-                                is_inbound=False,
-                                created_at=datetime.fromtimestamp(action.time),
-                                msg_txt=msg_txt)  # type: ignore
-        self.notifyObservers()
+            self.db.message_add(
+                contact_name=action.receiver,  # type: ignore
+                is_inbound=False,
+                created_at=datetime.fromtimestamp(action.time),
+                msg_txt=msg_txt,
+            )  # type: ignore
+        self.notify_observers()
         return None
 
     def add_contact(self, contact: str) -> Optional[str]:
         sender = self.config.user_name
-        action = JIMActionAddContact(time=time.time(),
-                                     user_account=sender,
-                                     contact=contact)
+        action = JIMActionAddContact(
+            time=time.time(), user_account=sender, contact=contact
+        )
         with self.server_lock:
             try:
                 response = self.transport.send_action(self.logger, action)
             except Exception:
-                return 'Ошибка при отправке запроса на сервер'
+                return "Ошибка при отправке запроса на сервер"
         if response.is_error:
             return response.error
         else:
@@ -141,42 +159,41 @@ class ClientController(ObserverNotifier):
                                 c = JIMUserSerializer.from_dict(contact)
                                 self.db.contact_update_from_server(c)
                             else:
-                                return 'Ошибка при разборе ответа сервера'
+                                return "Ошибка при разборе ответа сервера"
                 except JIMValidationError:
-                    return 'Ошибка при разборе ответа сервера'
+                    return "Ошибка при разборе ответа сервера"
                 else:
-                    self.notifyObservers()
+                    self.notify_observers()
             else:
-                return 'Контакт добавлен, но не готов к приему входящих сообщений. '
+                return "Контакт добавлен, но не готов к приему входящих сообщений. "
         return None
 
     def del_contact(self, contact: str) -> Optional[str]:
         sender = self.config.user_name
-        action = JIMActionDeleteContact(time=time.time(),
-                                        user_account=sender,
-                                        contact=contact)
+        action = JIMActionDeleteContact(
+            time=time.time(), user_account=sender, contact=contact
+        )
         with self.server_lock:
             try:
                 response = self.transport.send_action(self.logger, action)
             except Exception:
-                return 'Ошибка при отправке запроса на сервер'
+                return "Ошибка при отправке запроса на сервер"
         if response.is_error:
             return response.error
         else:
             with self.db_lock:
                 self.db.contact_delete(contact_name=contact)
-            self.notifyObservers()
+            self.notify_observers()
         return None
 
     def synchonize_contacts_from_server(self) -> Optional[str]:
         sender = self.config.user_name
-        action = JIMActionGetContacts(time=time.time(),
-                                      user_account=sender)
+        action = JIMActionGetContacts(time=time.time(), user_account=sender)
         with self.server_lock:
             try:
                 response = self.transport.send_action(self.logger, action)
-            except Exception:
-                return 'Ошибка при отправке запроса на сервер'
+            except TransportError:
+                return "Ошибка при отправке запроса на сервер"
         if response.is_error:
             return response.error
         if response.data:
@@ -194,7 +211,7 @@ class ClientController(ObserverNotifier):
                     self.db.contact_update_from_server(c)
                     contacts_server.append(c.username)
                 else:
-                    self.logger.error('Error updating contacts from server')
+                    self.logger.error("Error updating contacts from server")
 
             for contact in contacts_local:
                 if not contact in contacts_server:

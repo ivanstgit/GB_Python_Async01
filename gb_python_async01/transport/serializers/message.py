@@ -1,29 +1,29 @@
 from gb_python_async01.transport.model.message import *
 
 
-class JIMMessageSerializer():
-    auth_action = 'auth_action'
-    data1 = 'secret1'
-    data2 = 'secret2'
+class JIMMessageSerializer:
+    auth_action = "auth_action"
+    data1 = "secret1"
+    data2 = "secret2"
 
-    action = 'action'
+    action = "action"
 
-    time = 'time'
+    time = "time"
 
-    user = 'user'
-    user_account = 'account_name'
-    user_status = 'status'
+    user = "user"
+    user_account = "account_name"
+    user_status = "status"
 
-    receiver = 'to'
-    sender = 'from'
-    message = 'message'
+    receiver = "to"
+    sender = "from"
+    message = "message"
 
-    contact = 'contact'
+    contact = "contact"
 
-    response = 'response'
-    error = 'error'
-    alert = 'alert'
-    data = 'data'
+    response = "response"
+    error = "error"
+    alert = "alert"
+    data = "data"
 
     @staticmethod
     def to_dict(msg: JIMMessage):
@@ -39,16 +39,16 @@ class JIMAuthSerializer(JIMMessageSerializer):
         return {
             self.auth_action: msg.auth_action,
             self.data1: msg.data1,
-            self.data2: msg.data2
+            self.data2: msg.data2,
         }
 
     def from_dict(self, msg: dict) -> JIMAuth:
-        auth_action = msg.get(self.auth_action) or ''
+        auth_action = msg.get(self.auth_action) or ""
         if not auth_action:
             raise JIMValidationError(self.user)
 
-        data1 = msg.get(self.data1) or ''
-        data2 = msg.get(self.data2) or ''
+        data1 = msg.get(self.data1) or ""
+        data2 = msg.get(self.data2) or ""
         return JIMAuth(auth_action, data1, data2)
 
 
@@ -59,8 +59,8 @@ class JIMActionPresenceSerializer(JIMMessageSerializer):
             self.time: msg.time,
             self.user: {
                 self.user_account: msg.user_account,
-                self.user_status: msg.user_status
-            }
+                self.user_status: msg.user_status,
+            },
         }
 
     def from_dict(self, msg: dict) -> JIMActionPresence:
@@ -72,22 +72,23 @@ class JIMActionPresenceSerializer(JIMMessageSerializer):
         if not user:
             raise JIMValidationError(self.user)
         try:
-            return JIMActionPresence(time=time,
-                                     user_account=user.get(self.user_account),
-                                     user_status=user.get(self.user_status))
+            return JIMActionPresence(
+                time=time,
+                user_account=user.get(self.user_account),
+                user_status=user.get(self.user_status),
+            )
         except Exception as e:
             raise JIMValidationError
 
 
 class JIMActionMessageSerializer(JIMMessageSerializer):
-
     def to_dict(self, msg: JIMActionMessage) -> dict:
         return {
             self.action: msg.action,
             self.time: msg.time,
             self.receiver: msg.receiver,
             self.sender: msg.sender,
-            self.message: msg.message
+            self.message: msg.message,
         }
 
     def from_dict(self, msg: dict) -> JIMActionMessage:
@@ -99,21 +100,19 @@ class JIMActionMessageSerializer(JIMMessageSerializer):
         if not message:
             raise JIMValidationError(self.time)
         try:
-            return JIMActionMessage(time=time,
-                                    receiver=msg.get(self.receiver),
-                                    sender=msg.get(self.sender),
-                                    message=message)
+            return JIMActionMessage(
+                time=time,
+                receiver=msg.get(self.receiver),
+                sender=msg.get(self.sender),
+                message=message,
+            )
         except Exception as e:
             raise JIMValidationError
 
 
 class JIMActionExitSerializer(JIMMessageSerializer):
-
     def to_dict(self, msg: JIMActionExit) -> dict:
-        return {
-            self.action: msg.action,
-            self.time: msg.time
-        }
+        return {self.action: msg.action, self.time: msg.time}
 
     def from_dict(self, msg: dict) -> JIMActionExit:
         time = msg.get(self.time)
@@ -131,7 +130,7 @@ class JIMActionGetContactsSerializer(JIMMessageSerializer):
         return {
             self.action: msg.action,
             self.time: msg.time,
-            self.user_account: msg.user_account
+            self.user_account: msg.user_account,
         }
 
     def from_dict(self, msg: dict) -> JIMActionGetContacts:
@@ -154,7 +153,7 @@ class JIMActionAddDelContactSerializer(JIMMessageSerializer):
             self.action: msg.action,
             self.time: msg.time,
             self.user_account: msg.user_account,
-            self.contact: msg.contact
+            self.contact: msg.contact,
         }
 
     def from_dict(self, msg: dict) -> JIMAction:
@@ -173,9 +172,13 @@ class JIMActionAddDelContactSerializer(JIMMessageSerializer):
         try:
             action = msg.get(self.action)
             if action == JIMActionAddContact.get_action():
-                return JIMActionAddContact(time=time, user_account=user_account, contact=contact)
+                return JIMActionAddContact(
+                    time=time, user_account=user_account, contact=contact
+                )
             elif action == JIMActionDeleteContact.get_action():
-                return JIMActionDeleteContact(time=time, user_account=user_account, contact=contact)
+                return JIMActionDeleteContact(
+                    time=time, user_account=user_account, contact=contact
+                )
         except Exception as e:
             raise JIMValidationError
         raise JIMValidationError(self.action)
@@ -196,7 +199,7 @@ class JIMResponseSerializer(JIMMessageSerializer):
         response = msg.get(self.response)
         if not response:
             raise JIMValidationError(field=self.response)
-        message = msg.get(self.alert) or msg.get(self.error) or ''
+        message = msg.get(self.alert) or msg.get(self.error) or ""
         data = msg.get(self.data) or None
         try:
             return JIMResponse(int(response), message, data)

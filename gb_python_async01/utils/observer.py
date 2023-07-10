@@ -1,29 +1,34 @@
+"""Реализация паттерна 'Наблюдатель'"""
+
+
+from abc import abstractmethod
+from typing import List
+
+
 class Observer():
-
-    def modelChanged(self):
-        raise NotImplemented
-
-
-class ObserverExt(Observer):
-
-    def modelChanged(self, notifier):
-        raise NotImplemented
+    """Наблюдатель"""
+    @abstractmethod
+    def model_changed(self, notifier=None):
+        """Необходимо реализовать данный метод для получения уведомлений"""
+        raise NotImplementedError
 
 
 class ObserverNotifier():
+    """Объект, за которым ведется наблюдение"""
+    _observers: List[Observer]
 
     def __init__(self) -> None:
-        self._observers = list()  # список наблюдателей
+        self._observers = list()
 
-    def addObserver(self, inObserver: Observer):
-        self._observers.append(inObserver)
+    def add_observer(self, observer: Observer):
+        """Добавить наблюдателя"""
+        self._observers.append(observer)
 
-    def removeObserver(self, inObserver: Observer):
-        self._observers.remove(inObserver)
+    def remove_observer(self, observer: Observer):
+        """Удалить наблюдателя"""
+        self._observers.remove(observer)
 
-    def notifyObservers(self):
-        for x in self._observers:
-            if isinstance(x, ObserverExt):
-                x.modelChanged(self)
-            else:
-                x.modelChanged()
+    def notify_observers(self):
+        """Уведомить наблюдателей"""
+        for observer in self._observers:
+            observer.model_changed(self)

@@ -1,15 +1,18 @@
+"""Классы для хранения и управления клиентскими сессиями"""
 # Keeps & manages client sessions and interactions between them (Model/Mapper)
 from logging import Logger
-from typing import Dict, List, Optional, Tuple
-from gb_python_async01.server.core.client_session import ClientSession, OutMessagesObserver
+from typing import Dict, List, Optional
+
+from gb_python_async01.server.core.client_session import (
+    ClientSession,
+    ClientSessionObserver,
+)
 from gb_python_async01.server.db.config import ServerStorage
-from gb_python_async01.server.db.user_session_view import UserSessionView
+from gb_python_async01.server.db.view import UserSessionView, MessageInfo
 from gb_python_async01.transport.endpoints import Endpoint
-from gb_python_async01.transport.model.message import *
-from gb_python_async01.server.db.message_view import MessageInfo
 
 
-class ClientSessionManager(OutMessagesObserver):
+class ClientSessionManager(ClientSessionObserver):
     client_sessions: Dict[Endpoint, ClientSession]
 
     def __init__(self, logger: Logger, db: ServerStorage) -> None:
@@ -23,7 +26,11 @@ class ClientSessionManager(OutMessagesObserver):
     def _get_endpoint_from_username(self, user_name: str) -> Optional[Endpoint]:
         if not self.client_sessions:
             return None
-        ep = [ep for ep, sess in self.client_sessions.items() if sess.is_authenticated and sess.username == user_name]
+        ep = [
+            ep
+            for ep, sess in self.client_sessions.items()
+            if sess.is_authenticated and sess.username == user_name
+        ]
         if ep:
             return ep.pop()
         return None
@@ -36,7 +43,7 @@ class ClientSessionManager(OutMessagesObserver):
 
     def get_client_session(self, ep: Endpoint) -> Optional[ClientSession]:
         if not self.client_sessions:
-            self.logger.debug(f'No session found for {ep}')
+            self.logger.debug(f"No session found for {ep}")
             return None
         return self.client_sessions.get(ep)
 
@@ -46,8 +53,10 @@ class ClientSessionManager(OutMessagesObserver):
         return list(self.client_sessions.keys())
 
     def add_client(self, ep: Endpoint):
-        self.client_sessions[ep] = ClientSession(self.logger, self.db, ep.address[0], ep.address[1], self)
-        self.logger.info(f'Client {ep} connected')
+        self.client_sessions[ep] = ClientSession(
+            self.logger, self.db, ep.address[0], ep.address[1], self
+        )
+        self.logger.info(f"Client {ep} connected")
 
     def remove_client(self, ep: Endpoint):
         sess = self.get_client_session(ep)
@@ -56,7 +65,7 @@ class ClientSessionManager(OutMessagesObserver):
 
         self.client_sessions.pop(ep, None)
         ep.close()
-        self.logger.info(f'Client {ep} disconnected')
+        self.logger.info(f"Client {ep} disconnected")
 
     def register_out_message(self, m_out: MessageInfo):
         if m_out.action.receiver:

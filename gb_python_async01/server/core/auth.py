@@ -1,15 +1,14 @@
-from functools import wraps
+""" критические операции с пользователями """
 from typing import Optional
 
-from gb_python_async01.server.core.client_session import ClientSession
 from gb_python_async01.server.core.model import UserInfo
 from gb_python_async01.server.db.config import ServerStorage
-from gb_python_async01.server.db.user_view import UserAuthView
+from gb_python_async01.server.db.view import UserAuthView
 from gb_python_async01.utils.security import PasswordHash
 
 
-class UserManager():
-    """ critical function"""
+class UserManager:
+    """Класс для работы с пользователями (изменение)"""
 
     def __init__(self, db: ServerStorage) -> None:
         self._db_view = UserAuthView(db)

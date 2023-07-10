@@ -291,3 +291,166 @@
 2023-07-08 22:55:15,553 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688846115.1246316, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?KAJTJMsA0ZkhZpuzq8H2ytzaQc9A9tXo/mlT/jA2bTqwt/NT80hkGZa+Yt102GSZmI9LRSuAnYpKHynVsoqG0AqpO8M9mJIcIdyN+Lp4c3LNJSCtQGYkjUjUUpgfJJYbjsxs9KZMVf9R2lAv6ZRu2Uh4c3QUJQvdeizO23W7RnWt5e0SjtE8Or7nn/vhXqqDR0VtGIjrIKk1chJxdaKU5MvoqIB3firmybu6Tw+MEjFHAz2g+0o/0ppkm6ECMeExUo0fvA63p5jIpQ/5/DM4dTK5ml46QLzsFm9E2cE6Ng0uR34H7zA0bLebA0WkRyY3N7C4b06pjBmRnBtkpqbexA==\n', '_contact': None}
 2023-07-08 22:55:15,573 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688846115.124632, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?KAJTJMsA0ZkhZpuzq8H2ytzaQc9A9tXo/mlT/jA2bTqwt/NT80hkGZa+Yt102GSZmI9LRSuAnYpKHynVsoqG0AqpO8M9mJIcIdyN+Lp4c3LNJSCtQGYkjUjUUpgfJJYbjsxs9KZMVf9R2lAv6ZRu2Uh4c3QUJQvdeizO23W7RnWt5e0SjtE8Or7nn/vhXqqDR0VtGIjrIKk1chJxdaKU5MvoqIB3firmybu6Tw+MEjFHAz2g+0o/0ppkm6ECMeExUo0fvA63p5jIpQ/5/DM4dTK5ml46QLzsFm9E2cE6Ng0uR34H7zA0bLebA0WkRyY3N7C4b06pjBmRnBtkpqbexA==\n', '_contact': None}
 2023-07-08 22:55:15,573 DEBUG transport.py Response Response 202: 
+2023-07-09 17:54:57,253 DEBUG app.py Connecting to server
+2023-07-09 17:54:57,253 DEBUG app.py Connecting to server
+2023-07-09 17:54:57,343 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 17:54:57,346 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 17:54:57,351 DEBUG app.py Connecting to server
+2023-07-09 17:54:57,439 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 17:54:57,552 DEBUG transport.py Sending Auth 2
+2023-07-09 17:54:57,553 DEBUG transport.py Sending Auth 2
+2023-07-09 17:54:57,558 DEBUG transport.py Sending Auth 2
+2023-07-09 17:54:57,597 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:54:57,630 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:54:57,631 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:04,671 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 17:55:04,792 DEBUG transport.py Sending Auth 2
+2023-07-09 17:55:04,803 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:05,931 DEBUG app.py test3 Synchronizing contacts
+2023-07-09 17:55:05,932 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688914505.932177, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:05,936 DEBUG transport.py Response Response 202: 
+2023-07-09 17:55:05,943 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688914505.9435556, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:05,952 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:05,952 DEBUG app.py test3 Starting server integration thread
+2023-07-09 17:55:05,952 DEBUG app.py test3 Reader thread started
+2023-07-09 17:55:05,969 CRITICAL app.py 'ContactsGroupBox' object has no attribute 'model_сhanged'
+2023-07-09 17:55:05,970 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688914505.9706116, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:05,978 DEBUG transport.py Response Response 500: Server error
+2023-07-09 17:55:05,978 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 17:55:09,893 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 17:55:10,019 DEBUG transport.py Sending Auth 2
+2023-07-09 17:55:10,031 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:11,163 DEBUG app.py test1 Synchronizing contacts
+2023-07-09 17:55:11,163 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688914511.1637099, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:11,168 DEBUG transport.py Response Response 202: 
+2023-07-09 17:55:11,182 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688914511.1827543, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:11,189 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:11,189 DEBUG app.py test1 Starting server integration thread
+2023-07-09 17:55:11,190 DEBUG app.py test1 Reader thread started
+2023-07-09 17:55:11,205 CRITICAL app.py 'ContactsGroupBox' object has no attribute 'model_сhanged'
+2023-07-09 17:55:11,206 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688914511.2069294, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:11,214 DEBUG transport.py Response Response 500: Server error
+2023-07-09 17:55:11,215 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 17:55:15,828 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 17:55:15,954 DEBUG transport.py Sending Auth 2
+2023-07-09 17:55:15,965 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:17,095 DEBUG app.py test2 Synchronizing contacts
+2023-07-09 17:55:17,095 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688914517.0952194, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:17,102 DEBUG transport.py Response Response 202: 
+2023-07-09 17:55:17,120 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688914517.1207407, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:17,128 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:55:17,128 DEBUG app.py test2 Starting server integration thread
+2023-07-09 17:55:17,128 DEBUG app.py test2 Reader thread started
+2023-07-09 17:55:17,143 CRITICAL app.py 'ContactsGroupBox' object has no attribute 'model_сhanged'
+2023-07-09 17:55:17,145 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688914517.1451128, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:55:17,153 DEBUG transport.py Response Response 500: Server error
+2023-07-09 17:55:17,153 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 17:57:36,412 DEBUG app.py Connecting to server
+2023-07-09 17:57:44,566 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 17:57:44,823 DEBUG transport.py Sending Auth 2
+2023-07-09 17:57:44,842 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:58:06,954 DEBUG app.py test1 Synchronizing contacts
+2023-07-09 17:58:06,955 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688914686.9551616, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:58:06,962 DEBUG transport.py Response Response 202: 
+2023-07-09 17:58:13,704 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688914686.9965756, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:58:13,715 DEBUG transport.py Response Response 200: OK
+2023-07-09 17:58:13,724 DEBUG app.py test1 Starting server integration thread
+2023-07-09 17:58:13,726 DEBUG app.py test1 Reader thread started
+2023-07-09 17:58:13,765 CRITICAL app.py 'ContactsGroupBox' object has no attribute 'model_сhanged'
+2023-07-09 17:58:13,777 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688914693.7774441, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 17:58:13,789 DEBUG transport.py Response Response 500: Server error
+2023-07-09 17:58:13,789 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 18:02:14,912 DEBUG app.py Connecting to server
+2023-07-09 18:02:20,239 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:02:20,497 DEBUG transport.py Sending Auth 2
+2023-07-09 18:02:20,510 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:02:21,643 DEBUG app.py test1 Synchronizing contacts
+2023-07-09 18:02:21,643 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688914941.6437762, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:02:21,650 DEBUG transport.py Response Response 202: 
+2023-07-09 18:02:21,685 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688914941.6849027, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:02:21,710 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:02:21,710 DEBUG app.py test1 Starting server integration thread
+2023-07-09 18:02:21,711 DEBUG app.py test1 Reader thread started
+2023-07-09 18:02:21,729 CRITICAL app.py 'ContactsGroupBox' object has no attribute 'model_сhanged'
+2023-07-09 18:02:21,731 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688914941.7309668, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:02:21,742 DEBUG transport.py Response Response 500: Server error
+2023-07-09 18:02:21,742 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 18:05:01,371 DEBUG app.py Connecting to server
+2023-07-09 18:05:07,513 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:05:07,770 DEBUG transport.py Sending Auth 2
+2023-07-09 18:05:07,784 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:05:08,915 DEBUG app.py test1 Synchronizing contacts
+2023-07-09 18:05:08,916 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688915108.9159143, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:05:08,922 DEBUG transport.py Response Response 202: 
+2023-07-09 18:05:08,956 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688915108.9564922, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:05:08,965 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:05:08,966 DEBUG app.py test1 Starting server integration thread
+2023-07-09 18:05:08,967 DEBUG app.py test1 Reader thread started
+2023-07-09 18:05:24,545 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'add_contact', '_time': 1688915124.5449836, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': 'test1'}
+2023-07-09 18:05:24,550 DEBUG transport.py Response Response 400: Can't add yourself as a contact
+2023-07-09 18:05:24,550 DEBUG transport.py Error response on action add_contact message: Response 400: Can't add yourself as a contact
+2023-07-09 18:05:37,915 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'add_contact', '_time': 1688915137.915776, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': 'test3'}
+2023-07-09 18:05:37,933 DEBUG transport.py Response Response 202: 
+2023-07-09 18:05:47,539 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688915146.8762147, '_user_account': None, '_user_status': None, '_receiver': 'test3', '_sender': 'test1', '_message': 'e2e?O4JiJHEq0Pbu0YmijluwHY0PLz3wCEi3JZTzXdzTCkIdS71aldV6vaMyun2FNtB4w2HM3ffTwNtAsSlTpkCzZiv743cvER7eNeHseP0UI9DlCEH0Oqav4dIyixi+nLSm9utbxO5JZ0Ez0OlKkm8qddjcFdLBv+daHBYQQ85BKJk8NyHPn5aruGmDSRH4xjnppciu3iW1uALzciybhBCa0Akt29GjWFUZ1jFFlk+Yx18RW/4rda7qejO1uci65Qb2Tiy3no1tpT4u45R/uAqjBgIRnj6fN/S0KfahRsR0lF/c2cJO90J7VApNHG2VpgVwfhI++ZksYlhgTNbEBecn8A==\n', '_contact': None}
+2023-07-09 18:05:47,552 DEBUG transport.py Response Response 202: 
+2023-07-09 18:05:53,575 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688915152.7497413, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?sYa9+Q/2dw9mUqTVQ1rbPqat38FZbPe3XXHSX80fZrXqmgt4Bac0Ab8Gx6lvtQIKBEcKpsEIt0BR5P0Dho+Pzj8bL57ZTmSKZZtg9+c3h2AgVnmAzUpASIOqpqbybvD64D7dwoSsW2z4EbZm+v7+5GuTDWpoByQFEtejAu74bKcsZvFNmwjQdSbwj3e6boHj+tx9O8Xs/wh+uI7quzebmbh8TK895BvNMxlkeE5/8jbDXxqknVx9r/K1t0cBTrJ3HDtOaNar/jyMr7S7MPwr6eimYAclF9BoC6+bDaorbzMjfmLe2eG7V4F8vJn+EyQt009Wli4ag1aUCxFvzLOLSg==\n', '_contact': None}
+2023-07-09 18:05:53,594 DEBUG transport.py Response Response 202: 
+2023-07-09 18:05:57,190 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688915156.2631748, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:05:57,200 DEBUG transport.py Response Response 500: Server error
+2023-07-09 18:05:57,201 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 18:06:18,390 DEBUG app.py Connecting to server
+2023-07-09 18:06:18,476 DEBUG app.py Connecting to server
+2023-07-09 18:06:18,502 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:06:18,554 DEBUG app.py Connecting to server
+2023-07-09 18:06:18,562 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:06:18,621 DEBUG transport.py Sending Auth 2
+2023-07-09 18:06:18,633 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:18,641 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:06:18,680 DEBUG transport.py Sending Auth 2
+2023-07-09 18:06:18,695 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:18,760 DEBUG transport.py Sending Auth 2
+2023-07-09 18:06:18,774 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:22,446 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:06:22,554 DEBUG transport.py Sending Auth 2
+2023-07-09 18:06:22,565 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:23,718 DEBUG app.py test3 Synchronizing contacts
+2023-07-09 18:06:23,719 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688915183.7189765, '_user_account': 'test3', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:23,722 DEBUG transport.py Response Response 202: 
+2023-07-09 18:06:23,729 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688915183.729114, '_user_account': 'test3', '_user_status': 'test3 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:23,736 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:23,736 DEBUG app.py test3 Starting server integration thread
+2023-07-09 18:06:23,736 DEBUG app.py test3 Reader thread started
+2023-07-09 18:06:29,374 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:06:29,484 DEBUG transport.py Sending Auth 2
+2023-07-09 18:06:29,495 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:30,625 DEBUG app.py test2 Synchronizing contacts
+2023-07-09 18:06:30,625 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688915190.625744, '_user_account': 'test2', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:30,633 DEBUG transport.py Response Response 202: 
+2023-07-09 18:06:30,643 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688915190.6434815, '_user_account': 'test2', '_user_status': 'test2 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:30,651 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:30,651 DEBUG app.py test2 Starting server integration thread
+2023-07-09 18:06:30,651 DEBUG app.py test2 Reader thread started
+2023-07-09 18:06:35,791 INFO transport.py Connecting to 127.0.0.1:7777
+2023-07-09 18:06:35,900 DEBUG transport.py Sending Auth 2
+2023-07-09 18:06:35,911 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:37,028 DEBUG app.py test1 Synchronizing contacts
+2023-07-09 18:06:37,028 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'get_contacts', '_time': 1688915197.028696, '_user_account': 'test1', '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:37,035 DEBUG transport.py Response Response 202: 
+2023-07-09 18:06:37,048 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'presence', '_time': 1688915197.0484297, '_user_account': 'test1', '_user_status': 'test1 is here', '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:06:37,056 DEBUG transport.py Response Response 200: OK
+2023-07-09 18:06:37,056 DEBUG app.py test1 Starting server integration thread
+2023-07-09 18:06:37,056 DEBUG app.py test1 Reader thread started
+2023-07-09 18:06:49,000 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'msg', '_time': 1688915208.7792583, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?ccD0XDfq9B1HSSU4rj8j5Rz/Tazobx6zn/BbDnEWQCed2R9FzC/+xMFOfNSWda2oSarxe30nFA+uYMB+4FUFLUbvS+CMKm7ia9CaYjxzggLgUg1RzpI2pYKkC59mwadi8ET2UjoK7mRVm98mAAUp0tFHQWbXZPeduJq7kP6f3HFp4WY3aSRpQVKw5JitlJJD399J+UxQ5KDYy636RP6EhgsANktaECJKm/Eqa1rsbTtujKNHhwlGEZS18Rm8ONL2o+0FD7YtApVX2kEcxNLhh0R4gaPubXFzGMMbLW3dBi8tYVvVLlrQMRXSSWK//X/0V80y69FkoUFA6K97028oDQ==\n', '_contact': None}
+2023-07-09 18:06:49,012 DEBUG transport.py Accepting Action {'_type': 'action', '_action': 'msg', '_time': 1688915208.779258, '_user_account': None, '_user_status': None, '_receiver': 'test2', '_sender': 'test1', '_message': 'e2e?ccD0XDfq9B1HSSU4rj8j5Rz/Tazobx6zn/BbDnEWQCed2R9FzC/+xMFOfNSWda2oSarxe30nFA+uYMB+4FUFLUbvS+CMKm7ia9CaYjxzggLgUg1RzpI2pYKkC59mwadi8ET2UjoK7mRVm98mAAUp0tFHQWbXZPeduJq7kP6f3HFp4WY3aSRpQVKw5JitlJJD399J+UxQ5KDYy636RP6EhgsANktaECJKm/Eqa1rsbTtujKNHhwlGEZS18Rm8ONL2o+0FD7YtApVX2kEcxNLhh0R4gaPubXFzGMMbLW3dBi8tYVvVLlrQMRXSSWK//X/0V80y69FkoUFA6K97028oDQ==\n', '_contact': None}
+2023-07-09 18:06:49,013 DEBUG transport.py Response Response 202: 
+2023-07-09 18:27:13,104 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688916432.321513, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:27:13,113 DEBUG transport.py Response Response 500: Server error
+2023-07-09 18:27:13,113 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 18:27:16,212 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688916435.8059518, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:27:16,219 DEBUG transport.py Response Response 500: Server error
+2023-07-09 18:27:16,219 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-09 18:27:18,416 DEBUG transport.py Sending Action {'_type': 'action', '_action': 'quit', '_time': 1688916437.6359541, '_user_account': None, '_user_status': None, '_receiver': None, '_sender': None, '_message': None, '_contact': None}
+2023-07-09 18:27:18,425 DEBUG transport.py Response Response 500: Server error
+2023-07-09 18:27:18,425 DEBUG transport.py Error response on action quit message: Response 500: Server error
+2023-07-10 10:17:23,454 DEBUG app.py Connecting to server
+2023-07-10 13:29:59,121 DEBUG app.py Connecting to server

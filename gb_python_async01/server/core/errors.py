@@ -1,13 +1,13 @@
-class ServerError(Exception):
+class ServerCoreError(Exception):
     def __str__(self):
-        return f'Server error'
+        return f"Server error"
 
 
-class ServerNotAuthorized(ServerError):
+class ServerCoreNotAuthorizedError(ServerCoreError):
     def __str__(self):
-        return f'Not authorized'
+        return f"Not authorized"
 
 
-class ServerLogout(ServerError):
+class ServerCoreLogout(ServerCoreError):
     def __str__(self):
-        return f'Not an error'
+        return f"Not an error"
