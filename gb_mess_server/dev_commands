@@ -1,0 +1,19 @@
+Documentation generation
+~~~~~~~~~~~~~~~~~~~~~~~~
+cd doc
+sphinx-apidoc -o ./source/gbmessserver12345 -d 5 -M '../src/gbmessserver12345' -e -f
+make html
+
+Build
+~~~~~~~~
+python -m build
+
+// do not use poetry - it's cannot skip src folder
+
+Pub
+~~~~~~~~
+poetry publish -u '' -p ''
+
+Exe
+~~~~~~~~
+python setup_cx_freeze.py build_exe

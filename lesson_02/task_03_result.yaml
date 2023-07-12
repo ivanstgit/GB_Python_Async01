@@ -1,7 +1,0 @@
-param_list:
-- item 01
-- элемент 2
-param_int4: 4
-param_dict:
-  key1: € + ¥
-  key2: § ® Ыыы

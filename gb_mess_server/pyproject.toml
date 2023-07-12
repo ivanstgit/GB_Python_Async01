@@ -1,0 +1,48 @@
+[project]
+name = "gbmessserver12345"
+version = "0.1.2"
+authors = [
+    {name = "gb/Ivan St", email = "empty@mail.com"},
+]
+description = "Study project: Async messenger, server part"
+readme = "README.rst"
+requires-python = ">=3.9.11"
+license = {text = "MIT License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[tool.poetry]
+name = "gbmessserver12345"
+license = "MIT"
+version = "0.1.2"
+description = "Study project: Async messenger, server part"
+authors = ["Ivan St <empty@mail.com>"]
+readme = "README.rst"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+sqlalchemy = "^2.0.17"
+pyqt5 = "^5.15.9"
+pycryptodomex = "^3.18.0"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+tabulate = "^0.9.0"
+safety = "^2.3.5"
+bandit = "^1.7.5"
+black = "^23.3.0"
+sphinx = "^7.0.1"
+setuptools = "^68.0.0"
+build = "^0.10.0"
+cx-freeze = "^6.15.3"
+
+[build-system]
+requires = ["setuptools>=68.0.0"]
+build-backend = "setuptools.build_meta"
+
+# [tool.distutils.build_exe]
+# packages = ["gbmessserver12345"]
+# excludes = ["test", "doc/source"]
